@@ -219,14 +219,14 @@
 <div class="math" id="equation-mankamoparam">
 <p><span class="eqno">(10)<a class="headerlink" href="#equation-mankamoparam" title="Permalink to this equation">¶</a></span><img src="_images/math/87052c8fa704e35a9598db56d04aaae8a61ddef3.svg" alt="(P_t, P_x, C_{co}, C_x)"/></p>
 </div><p>The parameter <img class="math" src="_images/math/d2186a71c75d97bf24ebf70f22527235ee196885.svg" alt="P_t" style="vertical-align: -2px"/> is directly estimated from the total impact vector:</p>
-<div class="math">
-<p><img src="_images/math/f9c739adc0e591dfc91ba1030a849fcf4d4d85a3.svg" alt="\hat{P}_t = \sum_{i=1}^n\dfrac{iV_t^{n,N}[i]}{nN}"/></p>
+<div class="math" id="equation-eqpt">
+<p><span class="eqno">(11)<a class="headerlink" href="#equation-eqpt" title="Permalink to this equation">¶</a></span><img src="_images/math/30d7a8332c3926eddcfcd2895b3965ef106fb61b.svg" alt="\hat{P}_t = \sum_{i=1}^n\dfrac{iV_t^{n,N}[i]}{nN}"/></p>
 </div><p>The likelihood of the model is written with respect to the total impact vector <img class="math" src="_images/math/474bd1c9d2e7ca21a3659d3e1b2f00b198fba45e.svg" alt="V_t^{n,N}" style="vertical-align: -4px"/> and the set of parameters <img class="math" src="_images/math/73629d5aefd1ad3e8749c58df17557ace874dbad.svg" alt="(P_x, C_{co}, C_x)" style="vertical-align: -4px"/> :</p>
 <div class="math">
 <p><img src="_images/math/028289e1b4f61dfe44f7a3e0d9dcc84b947129f3.svg" alt="\log \mathcal{L}((P_x, C_{co}, C_x)|V_t^{n,N}) = \sum_{k=0}^n V_t^{n,N}[k] \log \mbox{PEG}(k|n)"/></p>
 </div><p>Then the optimal <img class="math" src="_images/math/73629d5aefd1ad3e8749c58df17557ace874dbad.svg" alt="(P_x, C_{co}, C_x)" style="vertical-align: -4px"/> maximises the log-likelihood of the model:</p>
 <div class="math" id="equation-optimmankamo">
-<p><span class="eqno">(11)<a class="headerlink" href="#equation-optimmankamo" title="Permalink to this equation">¶</a></span><img src="_images/math/427ea9dfcd7766a99c41ce216a2f849e25d3fad9.svg" alt="(P_x, C_{co}, C_x)_{optim}  = \arg \max_{(P_x, C_{co}, C_x)} \log \mathcal{L}((P_x, C_{co}, C_x)|V_t^{n,N})"/></p>
+<p><span class="eqno">(12)<a class="headerlink" href="#equation-optimmankamo" title="Permalink to this equation">¶</a></span><img src="_images/math/427ea9dfcd7766a99c41ce216a2f849e25d3fad9.svg" alt="(P_x, C_{co}, C_x)_{optim}  = \arg \max_{(P_x, C_{co}, C_x)} \log \mathcal{L}((P_x, C_{co}, C_x)|V_t^{n,N})"/></p>
 </div><p>The optimization is done under the following constraints:</p>
 <div class="math">
 <p><img src="_images/math/2677cbf2880f2acd10ffbf3e4eb7d700ef9fa75b.svg" alt="\begin{array}{l}
@@ -237,8 +237,8 @@
       0 \leq  d_R   = -\dfrac{\sqrt{1-c_{co}}}{\Phi^{-1}\left( \dfrac{P_t-P_x}{\pi} \right)}
 \end{array}"/></p>
 </div><p>Assuming that <img class="math" src="_images/math/acad8cbcf7750fdf7fc0cbadd415130eacb81f9a.svg" alt="P_t \leq \frac{1}{2}" style="vertical-align: -6px"/>, we can write the constraints as:</p>
-<div class="math">
-<p><img src="_images/math/a2ef8aa64caad698fa54ae774bed64d3703aa532.svg" alt="\begin{array}{l}
+<div class="math" id="equation-mankamoconstraints">
+<p><span class="eqno">(13)<a class="headerlink" href="#equation-mankamoconstraints" title="Permalink to this equation">¶</a></span><img src="_images/math/a2ef8aa64caad698fa54ae774bed64d3703aa532.svg" alt="\begin{array}{l}
     0\leq  P_t \leq \dfrac{1}{2}\\
     0 \leq P_x  \leq \min \left \{P_t, \left (P_t-\dfrac{1}{2}\right ) \left(
     1-\dfrac{1}{2\Phi\left(-\sqrt{1-c_{x}}\right)}\right)^{-1},  \Phi\left(- \sqrt{1-c_{x}}\right) \right \} \\
@@ -295,23 +295,29 @@
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">computePTSall</span></code>()</p></td>
 <td><p>Computes all the <img class="math" src="_images/math/2f31223c830b6073c478261ee6ba9151c7cb5286.svg" alt="\mbox{PTS}(k|n)" style="vertical-align: -4px"/> probabilities for <img class="math" src="_images/math/6f6ab46ade1ef9bbd544c8b6d827652bf8cc3d0d.svg" alt="0 \leq k \leq n" style="vertical-align: -2px"/>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">estimateBootstrapParamSampleFromMankamo</span></code>(Nb, ...)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_ValidMankamoStartingPoint</span></code>(Cx[, verbose])</p></td>
+<td><p>Gives a point <img class="math" src="_images/math/1bbd913bf0b4fe658e2dd0fe2e14ae8e07e5511a.svg" alt="(Px, C_{co})" style="vertical-align: -4px"/> given <img class="math" src="_images/math/53363630a2a04930ef5cbed78532c4923cb53bbd.svg" alt="C_x" style="vertical-align: -2px"/> and <img class="math" src="_images/math/d2186a71c75d97bf24ebf70f22527235ee196885.svg" alt="P_t" style="vertical-align: -2px"/> verifying the constraints.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">estimateBootstrapParamSampleFromMankamo</span></code>(Nb, ...)</p></td>
 <td><p>Generates a Bootstrap sample of the (Mankamo and general) parameters under the Mankamo assumption.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">estimateMaxLikelihoodFromMankamo</span></code>(...)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">estimateMaxLikelihoodFromMankamo</span></code>(...)</p></td>
 <td><p>Estimates the maximum likelihood (general and Mankamo) parameters under the Mankamo assumption.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGeneralParameter</span></code>()</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getGeneralParameter</span></code>()</p></td>
 <td><p>Accessor to the general parameter.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getIntegrationAlgorithm</span></code>()</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getIntegrationAlgorithm</span></code>()</p></td>
 <td><p>Accessor to the integration algorithm.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMankamoParameter</span></code>()</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getMankamoParameter</span></code>()</p></td>
 <td><p>Accessor to the Mankamo Parameter.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getN</span></code>()</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getN</span></code>()</p></td>
 <td><p>Accessor to the CCF group size <img class="math" src="_images/math/fe942672a0f17044a3184fd82e088fe3d815aca0.svg" alt="n" style="vertical-align: 0px"/>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getPt</span></code>()</p></td>
+<td><p>Accessor to the the probability <img class="math" src="_images/math/d2186a71c75d97bf24ebf70f22527235ee196885.svg" alt="P_t" style="vertical-align: -2px"/>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">getTotalImpactVector</span></code>()</p></td>
 <td><p>Accessor to the total impact vector.</p></td>
@@ -328,8 +334,14 @@
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setN</span></code>(n)</p></td>
 <td><p>Accessor to the size of the CCF group <img class="math" src="_images/math/fe942672a0f17044a3184fd82e088fe3d815aca0.svg" alt="n" style="vertical-align: 0px"/>.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setTotalImpactVector</span></code>(totalImpactVector)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setPt</span></code>(Pt)</p></td>
+<td><p>Accessor to the probability <img class="math" src="_images/math/d2186a71c75d97bf24ebf70f22527235ee196885.svg" alt="P_t" style="vertical-align: -2px"/>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setTotalImpactVector</span></code>(totalImpactVector)</p></td>
 <td><p>Accessor to the total impact vector.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">verify_MankamoConstraints</span></code>(X)</p></td>
+<td><p>Verifies if the point <img class="math" src="_images/math/80def80e7b953e2d7c92ee99896d4afbd7632e45.svg" alt="(Px, C_{co}, C_x)" style="vertical-align: -4px"/> verifies the constraints.</p></td>
 </tr>
 </tbody>
 </table>

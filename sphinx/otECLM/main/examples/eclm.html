@@ -367,7 +367,7 @@ div.rendered_html tbody tr:hover {
 <h1>Extended Common Load Modelling : example<a class="headerlink" href="#Extended-Common-Load-Modelling-:-example" title="Permalink to this heading">¶</a></h1>
 <p>Import the required modules</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -381,7 +381,7 @@ div.rendered_html tbody tr:hover {
 <div class="math">
 <p><img src="_images/math/8df06b7520ac9f62703b8248831a7a6ef440f4eb.svg" alt="V_t^{n,N} = [1000000, 2000, 200, 30, 20, 5, 0, 0]"/></p>
 </div><div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">7</span>
@@ -399,7 +399,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>Create the ECLM class. We will use the Gauss Legendre quadrature algorithm to compute all the integrals of the ECLM model. The use of 50 points is sufficicient to reach a good precision.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myECLM</span> <span class="o">=</span> <span class="n">otECLM</span><span class="o">.</span><span class="n">ECLM</span><span class="p">(</span><span class="n">vectImpactTotal</span><span class="p">,</span> <span class="n">ot</span><span class="o">.</span><span class="n">GaussLegendre</span><span class="p">([</span><span class="mi">50</span><span class="p">]))</span>
@@ -408,12 +408,47 @@ div.rendered_html tbody tr:hover {
 </div>
 <p><strong>Estimate the optimal parameter</strong></p>
 <p>We use the Mankamo assumption. We use the maximum likelihood estimators of the <em>Mankamo parameter</em>. We want to get all the graphs of the likelihood function at the optimal Mankamo parameter.</p>
+<p>We start by verifying that our starting point <img class="math" src="_images/math/e4aa398b481395b28a840a570204772798d03bf4.svg" alt="(P_x, C_{co}, c_x)" style="vertical-align: -4px"/> for the optimization algorithm verifies the constraints!</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">startingPoint</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.0e-5</span><span class="p">,</span> <span class="mf">0.51</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">]</span>
-<span class="n">visuLikelihood</span> <span class="o">=</span> <span class="kc">True</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">startingPoint</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.0e-3</span><span class="p">,</span> <span class="mf">0.51</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">myECLM</span><span class="o">.</span><span class="n">verify_MankamoConstraints</span><span class="p">(</span><span class="n">startingPoint</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+False
+</pre></div></div>
+</div>
+<p>If the point is not valid, we can ask for a valid one by giving <img class="math" src="_images/math/53363630a2a04930ef5cbed78532c4923cb53bbd.svg" alt="C_x" style="vertical-align: -2px"/>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">startingPoint</span> <span class="o">=</span> <span class="n">myECLM</span><span class="o">.</span><span class="n">compute_ValidMankamoStartingPoint</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">startingPoint</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<p>[0.00018494,0.35,0.7]</p></div>
+</div>
+<p>Anyway, if the starting point is not valid, the function <em>estimateMaxLikelihoodFromMankamo</em> will automatically change it by itself.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">visuLikelihood</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">mankamoParam</span><span class="p">,</span> <span class="n">generalParam</span><span class="p">,</span> <span class="n">finalLogLikValue</span><span class="p">,</span> <span class="n">graphesCol</span> <span class="o">=</span> <span class="n">myECLM</span><span class="o">.</span><span class="n">estimateMaxLikelihoodFromMankamo</span><span class="p">(</span><span class="n">startingPoint</span><span class="p">,</span> <span class="n">visuLikelihood</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Mankamo parameter : &#39;</span><span class="p">,</span> <span class="n">mankamoParam</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;general parameter : &#39;</span><span class="p">,</span> <span class="n">generalParam</span><span class="p">)</span>
@@ -433,13 +468,13 @@ graph (logPx, Cco) = (logPx_optim, Cco_optim)
 graph Cx = Cx_optim
 graph Cco = Cco_optim
 graph logPx = logPx_optim
-Mankamo parameter :  [0.00036988020585009376, 8.04135557919943e-05, 0.3409699644984777, 0.3409699654984777]
-general parameter :  [0.9996142333562342, 0.16968721302373846, 0.16968721340130874, 0.23590853774338646, 0.7640914622566135]
-finalLogLikValue :  -21715.8714091196
+Mankamo parameter :  [0.00036988020585009376, 0.00012801117569704847, 0.025288469742997276, 0.02528847074299728]
+general parameter :  [0.999208605667303, 0.045573412757286255, 0.04557341368173514, 0.2829360776452818, 0.7170639223547182]
+finalLogLikValue :  -21687.943415363392
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gl</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">GridLayout</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
@@ -454,16 +489,16 @@ finalLogLikValue :  -21715.8714091196
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/home/maison/.local/lib/python3.8/site-packages/openturns/viewer.py:442: UserWarning: No contour levels were found within the data range.
+/home/E13645/otconda3/lib/python3.8/site-packages/openturns/viewer.py:437: UserWarning: No contour levels were found within the data range.
   contourset = self._ax[0].contour(X, Y, Z, **contour_kw)
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_eclm_9_1.png" src="../_images/examples_eclm_9_1.png" />
+<img alt="../_images/examples_eclm_13_1.png" src="../_images/examples_eclm_13_1.png" />
 </div>
 </div>
 <p><strong>Compute the ECLM probabilities</strong></p>
@@ -557,7 +592,7 @@ PTS_list =  [0.99999648730856, 0.0022013553368436817, 0.00021080016775036807, 9.
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_eclm_19_0.png" src="../_images/examples_eclm_19_0.png" />
+<img alt="../_images/examples_eclm_23_0.png" src="../_images/examples_eclm_23_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -573,7 +608,7 @@ PTS_list =  [0.99999648730856, 0.0022013553368436817, 0.00021080016775036807, 9.
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_eclm_20_0.png" src="../_images/examples_eclm_20_0.png" />
+<img alt="../_images/examples_eclm_24_0.png" src="../_images/examples_eclm_24_0.png" />
 </div>
 </div>
 <p>We estimate the distribution of each parameter with a Histogram and a normal kernel smoothing.</p>
@@ -593,7 +628,7 @@ PTS_list =  [0.99999648730856, 0.0022013553368436817, 0.00021080016775036807, 9.
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_eclm_22_0.png" src="../_images/examples_eclm_22_0.png" />
+<img alt="../_images/examples_eclm_26_0.png" src="../_images/examples_eclm_26_0.png" />
 </div>
 </div>
 <p><strong>Graphically analyse the bootstrap sample of the ECLM probabilities</strong></p>
@@ -634,7 +669,7 @@ PTS_list =  [0.99999648730856, 0.0022013553368436817, 0.00021080016775036807, 9.
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_eclm_26_0.png" src="../_images/examples_eclm_26_0.png" />
+<img alt="../_images/examples_eclm_30_0.png" src="../_images/examples_eclm_30_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -650,7 +685,7 @@ PTS_list =  [0.99999648730856, 0.0022013553368436817, 0.00021080016775036807, 9.
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_eclm_27_0.png" src="../_images/examples_eclm_27_0.png" />
+<img alt="../_images/examples_eclm_31_0.png" src="../_images/examples_eclm_31_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -666,7 +701,7 @@ PTS_list =  [0.99999648730856, 0.0022013553368436817, 0.00021080016775036807, 9.
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_eclm_28_0.png" src="../_images/examples_eclm_28_0.png" />
+<img alt="../_images/examples_eclm_32_0.png" src="../_images/examples_eclm_32_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -682,7 +717,7 @@ PTS_list =  [0.99999648730856, 0.0022013553368436817, 0.00021080016775036807, 9.
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_eclm_29_0.png" src="../_images/examples_eclm_29_0.png" />
+<img alt="../_images/examples_eclm_33_0.png" src="../_images/examples_eclm_33_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -700,7 +735,7 @@ PTS_list =  [0.99999648730856, 0.0022013553368436817, 0.00021080016775036807, 9.
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_eclm_30_0.png" src="../_images/examples_eclm_30_0.png" />
+<img alt="../_images/examples_eclm_34_0.png" src="../_images/examples_eclm_34_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -720,7 +755,7 @@ PTS_list =  [0.99999648730856, 0.0022013553368436817, 0.00021080016775036807, 9.
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_eclm_31_0.png" src="../_images/examples_eclm_31_0.png" />
+<img alt="../_images/examples_eclm_35_0.png" src="../_images/examples_eclm_35_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -739,7 +774,7 @@ PTS_list =  [0.99999648730856, 0.0022013553368436817, 0.00021080016775036807, 9.
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_eclm_32_0.png" src="../_images/examples_eclm_32_0.png" />
+<img alt="../_images/examples_eclm_36_0.png" src="../_images/examples_eclm_36_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -758,7 +793,7 @@ PTS_list =  [0.99999648730856, 0.0022013553368436817, 0.00021080016775036807, 9.
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_eclm_33_0.png" src="../_images/examples_eclm_33_0.png" />
+<img alt="../_images/examples_eclm_37_0.png" src="../_images/examples_eclm_37_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -777,7 +812,7 @@ PTS_list =  [0.99999648730856, 0.0022013553368436817, 0.00021080016775036807, 9.
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_eclm_34_0.png" src="../_images/examples_eclm_34_0.png" />
+<img alt="../_images/examples_eclm_38_0.png" src="../_images/examples_eclm_38_0.png" />
 </div>
 </div>
 <p><strong>Fit a distribution to the ECLM probabilities</strong></p>
@@ -923,7 +958,7 @@ IC_PTS_ 5  =  [2.49489e-06, 2.4346e-05]
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_eclm_39_0.png" src="../_images/examples_eclm_39_0.png" />
+<img alt="../_images/examples_eclm_43_0.png" src="../_images/examples_eclm_43_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -942,7 +977,7 @@ IC_PTS_ 5  =  [2.49489e-06, 2.4346e-05]
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_eclm_40_0.png" src="../_images/examples_eclm_40_0.png" />
+<img alt="../_images/examples_eclm_44_0.png" src="../_images/examples_eclm_44_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -961,7 +996,7 @@ IC_PTS_ 5  =  [2.49489e-06, 2.4346e-05]
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_eclm_41_0.png" src="../_images/examples_eclm_41_0.png" />
+<img alt="../_images/examples_eclm_45_0.png" src="../_images/examples_eclm_45_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -980,7 +1015,7 @@ IC_PTS_ 5  =  [2.49489e-06, 2.4346e-05]
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_eclm_42_0.png" src="../_images/examples_eclm_42_0.png" />
+<img alt="../_images/examples_eclm_46_0.png" src="../_images/examples_eclm_46_0.png" />
 </div>
 </div>
 <p><strong>Analyse the minimal multiplicity which probability is greater than a given threshold</strong></p>
@@ -1045,7 +1080,7 @@ Intervalle de confiance de niveau 90%: [ 4.0 ,  5.0 ]
 </pre></div>
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_eclm_48_0.png" src="../_images/examples_eclm_48_0.png" />
+<img alt="../_images/examples_eclm_52_0.png" src="../_images/examples_eclm_52_0.png" />
 </div>
 </div>
 <div class="nbinput nblast docutils container">
