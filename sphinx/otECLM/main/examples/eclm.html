@@ -402,7 +402,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">startingPoint</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.0e-3</span><span class="p">,</span> <span class="mf">0.51</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">myECLM</span><span class="o">.</span><span class="n">verify_MankamoConstraints</span><span class="p">(</span><span class="n">startingPoint</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">myECLM</span><span class="o">.</span><span class="n">verifyMankamoConstraints</span><span class="p">(</span><span class="n">startingPoint</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -419,7 +419,7 @@ False
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">startingPoint</span> <span class="o">=</span> <span class="n">myECLM</span><span class="o">.</span><span class="n">compute_ValidMankamoStartingPoint</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">startingPoint</span> <span class="o">=</span> <span class="n">myECLM</span><span class="o">.</span><span class="n">computeValidMankamoStartingPoint</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)</span>
 <span class="n">startingPoint</span>
 </pre></div>
 </div>
@@ -563,7 +563,7 @@ PTS_list =  [0.99999648730856, 0.0022013553368436817, 0.00021080016775036807, 9.
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graphPairsMankamoParam</span><span class="p">,</span> <span class="n">graphPairsGeneralParam</span><span class="p">,</span> <span class="n">graphMarg_list</span><span class="p">,</span> <span class="n">descParam</span> <span class="o">=</span> <span class="n">myECLM</span><span class="o">.</span><span class="n">analyse_graphsECLMParam</span><span class="p">(</span><span class="n">fileNameSampleParam</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graphPairsMankamoParam</span><span class="p">,</span> <span class="n">graphPairsGeneralParam</span><span class="p">,</span> <span class="n">graphMarg_list</span><span class="p">,</span> <span class="n">descParam</span> <span class="o">=</span> <span class="n">myECLM</span><span class="o">.</span><span class="n">analyseGraphsECLMParam</span><span class="p">(</span><span class="n">fileNameSampleParam</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -627,7 +627,7 @@ PTS_list =  [0.99999648730856, 0.0022013553368436817, 0.00021080016775036807, 9.
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kMax</span> <span class="o">=</span> <span class="mi">5</span>
 
-<span class="n">graphPairs_list</span><span class="p">,</span> <span class="n">graphPEG_PES_PTS_list</span><span class="p">,</span> <span class="n">graphMargPEG_list</span><span class="p">,</span> <span class="n">graphMargPSG_list</span><span class="p">,</span> <span class="n">graphMargPES_list</span><span class="p">,</span> <span class="n">graphMargPTS_list</span><span class="p">,</span> <span class="n">desc_list</span> <span class="o">=</span> <span class="n">myECLM</span><span class="o">.</span><span class="n">analyse_graphsECLMProbabilities</span><span class="p">(</span><span class="n">fileNameECLMProbabilities</span><span class="p">,</span> <span class="n">kMax</span><span class="p">)</span>
+<span class="n">graphPairs_list</span><span class="p">,</span> <span class="n">graphPEG_PES_PTS_list</span><span class="p">,</span> <span class="n">graphMargPEG_list</span><span class="p">,</span> <span class="n">graphMargPSG_list</span><span class="p">,</span> <span class="n">graphMargPES_list</span><span class="p">,</span> <span class="n">graphMargPTS_list</span><span class="p">,</span> <span class="n">desc_list</span> <span class="o">=</span> <span class="n">myECLM</span><span class="o">.</span><span class="n">analyseGraphsECLMProbabilities</span><span class="p">(</span><span class="n">fileNameECLMProbabilities</span><span class="p">,</span> <span class="n">kMax</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -811,7 +811,7 @@ PTS_list =  [0.99999648730856, 0.0022013553368436817, 0.00021080016775036807, 9.
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factoryColl</span> <span class="o">=</span> <span class="p">[</span><span class="n">ot</span><span class="o">.</span><span class="n">BetaFactory</span><span class="p">(),</span> <span class="n">ot</span><span class="o">.</span><span class="n">LogNormalFactory</span><span class="p">(),</span> <span class="n">ot</span><span class="o">.</span><span class="n">GammaFactory</span><span class="p">()]</span>
 <span class="n">confidenceLevel</span> <span class="o">=</span> <span class="mf">0.9</span>
-<span class="n">IC_list</span><span class="p">,</span> <span class="n">graphMarg_list</span><span class="p">,</span> <span class="n">descMarg_list</span> <span class="o">=</span> <span class="n">myECLM</span><span class="o">.</span><span class="n">analyse_distECLMProbabilities</span><span class="p">(</span><span class="n">fileNameECLMProbabilities</span><span class="p">,</span> <span class="n">kMax</span><span class="p">,</span> <span class="n">confidenceLevel</span><span class="p">,</span> <span class="n">factoryColl</span><span class="p">)</span>
+<span class="n">IC_list</span><span class="p">,</span> <span class="n">graphMarg_list</span><span class="p">,</span> <span class="n">descMarg_list</span> <span class="o">=</span> <span class="n">myECLM</span><span class="o">.</span><span class="n">analyseDistECLMProbabilities</span><span class="p">(</span><span class="n">fileNameECLMProbabilities</span><span class="p">,</span> <span class="n">kMax</span><span class="p">,</span> <span class="n">confidenceLevel</span><span class="p">,</span> <span class="n">factoryColl</span><span class="p">)</span>
 
 <span class="n">IC_PEG_list</span><span class="p">,</span> <span class="n">IC_PSG_list</span><span class="p">,</span> <span class="n">IC_PES_list</span><span class="p">,</span> <span class="n">IC_PTS_list</span> <span class="o">=</span> <span class="n">IC_list</span>
 <span class="n">graphMargPEG_list</span><span class="p">,</span> <span class="n">graphMargPSG_list</span><span class="p">,</span> <span class="n">graphMargPES_list</span><span class="p">,</span> <span class="n">graphMargPTS_list</span> <span class="o">=</span> <span class="n">graphMarg_list</span>
@@ -1023,7 +1023,7 @@ IC_PTS_ 5  =  [2.49489e-06, 2.4346e-05]
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kMax</span> <span class="o">=</span> <span class="n">myECLM</span><span class="o">.</span><span class="n">computeKMax_PTS</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kMax</span> <span class="o">=</span> <span class="n">myECLM</span><span class="o">.</span><span class="n">computeKMaxPTS</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;kMax = &#39;</span><span class="p">,</span> <span class="n">kMax</span><span class="p">)</span>
 </pre></div>
 </div>
