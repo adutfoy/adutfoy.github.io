@@ -1,3 +1,3 @@
 
 
-`Online documentation <https://adutfoy.github.io/sphinx/otECLM/main>`_
+`Online documentation <https://adutfoy.github.io/sphinx/oteclm/main>`_
