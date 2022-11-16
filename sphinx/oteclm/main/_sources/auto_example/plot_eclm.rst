@@ -18,9 +18,9 @@
 .. _sphx_glr_auto_example_plot_eclm.py:
 
 
-========================================
-Example : Extended Common Load Modelling
-========================================
+==============================
+Extended Common Load Modelling
+==============================
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-8
 
@@ -41,9 +41,8 @@ Import the required modules
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-26
+.. GENERATED FROM PYTHON SOURCE LINES 15-25
 
-===========
 Description
 ===========
 
@@ -55,7 +54,7 @@ We consider a common cause failure (CCF) groupe with *n=7* identical and indepen
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-39
+.. GENERATED FROM PYTHON SOURCE LINES 27-38
 
 .. code-block:: default
 
@@ -77,11 +76,11 @@ We consider a common cause failure (CCF) groupe with *n=7* identical and indepen
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-41
+.. GENERATED FROM PYTHON SOURCE LINES 39-40
 
 Create the ECLM class. We will use the Gauss Legendre quadrature algorithm to compute all the integrals of the ECLM model. The use of 50 points is sufficicient to reach a good precision.
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-45
+.. GENERATED FROM PYTHON SOURCE LINES 42-44
 
 .. code-block:: default
 
@@ -94,9 +93,8 @@ Create the ECLM class. We will use the Gauss Legendre quadrature algorithm to co
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-54
+.. GENERATED FROM PYTHON SOURCE LINES 45-52
 
-==============================
 Estimate the optimal parameter
 ==============================
 
@@ -105,7 +103,7 @@ We use the Mankamo assumption. We use the maximum likelihood estimators of the *
 We start by verifying that our starting point :math:`(P_x, C_{co}, c_x)` for the optimization algorithm verifies the constraints!
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-59
+.. GENERATED FROM PYTHON SOURCE LINES 54-57
 
 .. code-block:: default
 
@@ -125,11 +123,11 @@ We start by verifying that our starting point :math:`(P_x, C_{co}, c_x)` for the
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-61
+.. GENERATED FROM PYTHON SOURCE LINES 58-59
 
 If the point is not valid, we can ask for a valid one by giving $C_x$.
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-65
+.. GENERATED FROM PYTHON SOURCE LINES 59-63
 
 .. code-block:: default
 
@@ -150,11 +148,11 @@ If the point is not valid, we can ask for a valid one by giving $C_x$.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-67
+.. GENERATED FROM PYTHON SOURCE LINES 64-65
 
 Anyway, if the starting point is not valid, the function *estimateMaxLikelihoodFromMankamo* will automatically change it by itself.
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-75
+.. GENERATED FROM PYTHON SOURCE LINES 67-73
 
 .. code-block:: default
 
@@ -186,7 +184,7 @@ Anyway, if the starting point is not valid, the function *estimateMaxLikelihoodF
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-82
+.. GENERATED FROM PYTHON SOURCE LINES 74-80
 
 .. code-block:: default
 
@@ -215,13 +213,12 @@ Anyway, if the starting point is not valid, the function *estimateMaxLikelihoodF
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-86
+.. GENERATED FROM PYTHON SOURCE LINES 81-83
 
-==============================
 Compute the ECLM probabilities
 ==============================
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-103
+.. GENERATED FROM PYTHON SOURCE LINES 85-100
 
 .. code-block:: default
 
@@ -259,9 +256,8 @@ Compute the ECLM probabilities
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-114
+.. GENERATED FROM PYTHON SOURCE LINES 101-110
 
-================================================
 Generate a sample of the parameters by Bootstrap
 ================================================
 
@@ -272,7 +268,7 @@ Each optimisation problem is initalised with the optimal parameter found for the
 
 The sample is generated and saved in a csv file.
 
-.. GENERATED FROM PYTHON SOURCE LINES 116-119
+.. GENERATED FROM PYTHON SOURCE LINES 112-115
 
 .. code-block:: default
 
@@ -286,7 +282,7 @@ The sample is generated and saved in a csv file.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 120-126
+.. GENERATED FROM PYTHON SOURCE LINES 116-122
 
 .. code-block:: default
 
@@ -303,7 +299,7 @@ The sample is generated and saved in a csv file.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 127-130
+.. GENERATED FROM PYTHON SOURCE LINES 123-126
 
 .. code-block:: default
 
@@ -317,15 +313,14 @@ The sample is generated and saved in a csv file.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 131-136
+.. GENERATED FROM PYTHON SOURCE LINES 127-131
 
-======================================================
 Graphically analyse the bootstrap sample of parameters
 ======================================================
 
 We create the Pairs graphs of the Mankamo and general parameters.
 
-.. GENERATED FROM PYTHON SOURCE LINES 138-140
+.. GENERATED FROM PYTHON SOURCE LINES 133-135
 
 .. code-block:: default
 
@@ -338,7 +333,7 @@ We create the Pairs graphs of the Mankamo and general parameters.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-144
+.. GENERATED FROM PYTHON SOURCE LINES 136-139
 
 .. code-block:: default
 
@@ -357,7 +352,7 @@ We create the Pairs graphs of the Mankamo and general parameters.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 145-150
+.. GENERATED FROM PYTHON SOURCE LINES 140-145
 
 .. code-block:: default
 
@@ -378,7 +373,7 @@ We create the Pairs graphs of the Mankamo and general parameters.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-157
+.. GENERATED FROM PYTHON SOURCE LINES 146-152
 
 .. code-block:: default
 
@@ -400,15 +395,14 @@ We create the Pairs graphs of the Mankamo and general parameters.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 158-163
+.. GENERATED FROM PYTHON SOURCE LINES 153-157
 
-==================================================================
 Graphically analyse the bootstrap sample of the ECLM probabilities
 ==================================================================
 
 We create the Pairs graphs of all the ECLM probabilities. We limit the graphical study to the multiplicities lesser than :math:`k_{max}`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 165-169
+.. GENERATED FROM PYTHON SOURCE LINES 159-163
 
 .. code-block:: default
 
@@ -423,7 +417,7 @@ We create the Pairs graphs of all the ECLM probabilities. We limit the graphical
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 170-177
+.. GENERATED FROM PYTHON SOURCE LINES 164-171
 
 .. code-block:: default
 
@@ -441,7 +435,7 @@ We create the Pairs graphs of all the ECLM probabilities. We limit the graphical
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 178-181
+.. GENERATED FROM PYTHON SOURCE LINES 172-175
 
 .. code-block:: default
 
@@ -460,7 +454,7 @@ We create the Pairs graphs of all the ECLM probabilities. We limit the graphical
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 182-185
+.. GENERATED FROM PYTHON SOURCE LINES 176-179
 
 .. code-block:: default
 
@@ -479,7 +473,7 @@ We create the Pairs graphs of all the ECLM probabilities. We limit the graphical
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 186-189
+.. GENERATED FROM PYTHON SOURCE LINES 180-183
 
 .. code-block:: default
 
@@ -498,7 +492,7 @@ We create the Pairs graphs of all the ECLM probabilities. We limit the graphical
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 190-193
+.. GENERATED FROM PYTHON SOURCE LINES 184-187
 
 .. code-block:: default
 
@@ -517,11 +511,11 @@ We create the Pairs graphs of all the ECLM probabilities. We limit the graphical
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 194-195
+.. GENERATED FROM PYTHON SOURCE LINES 188-189
 
 Fix a k <=kMax
 
-.. GENERATED FROM PYTHON SOURCE LINES 195-200
+.. GENERATED FROM PYTHON SOURCE LINES 189-194
 
 .. code-block:: default
 
@@ -542,7 +536,7 @@ Fix a k <=kMax
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 201-208
+.. GENERATED FROM PYTHON SOURCE LINES 195-202
 
 .. code-block:: default
 
@@ -565,7 +559,7 @@ Fix a k <=kMax
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 209-215
+.. GENERATED FROM PYTHON SOURCE LINES 203-209
 
 .. code-block:: default
 
@@ -587,7 +581,7 @@ Fix a k <=kMax
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 216-222
+.. GENERATED FROM PYTHON SOURCE LINES 210-216
 
 .. code-block:: default
 
@@ -609,7 +603,7 @@ Fix a k <=kMax
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 223-229
+.. GENERATED FROM PYTHON SOURCE LINES 217-223
 
 .. code-block:: default
 
@@ -631,16 +625,15 @@ Fix a k <=kMax
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 230-236
+.. GENERATED FROM PYTHON SOURCE LINES 224-229
 
-============================================
 Fit a distribution to the ECLM probabilities
 ============================================
 
 We fit a distribution among a given list to each ECLM probability. We test it with the Lilliefors test. 
 We also compute the confidence interval of the specified level.
 
-.. GENERATED FROM PYTHON SOURCE LINES 238-246
+.. GENERATED FROM PYTHON SOURCE LINES 231-239
 
 .. code-block:: default
 
@@ -665,60 +658,60 @@ We also compute the confidence interval of the specified level.
 
     Ordre k= 0
     Best model PEG( 0 |n) :  Gamma(k = 40807, lambda = 4.11906e+06, gamma = 0.987842) p-value =  0.7169902912621359
-    Best model PSG( 0 |n) :  LogNormal(muLog = -26.1553, sigmaLog = 8.89975e-05, gamma = 1) p-value =  0.04095904095904096
-    Best model PES( 0 |n) :  Gamma(k = 40807, lambda = 4.11906e+06, gamma = 0.987842) p-value =  0.709186101856259
-    Best model PTS( 0 |n) :  LogNormal(muLog = -26.6129, sigmaLog = 0.000148879, gamma = 1) p-value =  0.3040604343720491
+    Best model PSG( 0 |n) :  LogNormal(muLog = -25.5838, sigmaLog = 5.02538e-05, gamma = 1) p-value =  0.03496503496503497
+    Best model PES( 0 |n) :  Gamma(k = 40807, lambda = 4.11906e+06, gamma = 0.987842) p-value =  0.7101207830070804
+    Best model PTS( 0 |n) :  LogNormal(muLog = -26.6129, sigmaLog = 0.000148879, gamma = 1) p-value =  0.3053470919324578
 
     Test de Lilliefors
     ==================
 
     Ordre k= 1
-    Best model PEG( 1 |n) :  LogNormal(muLog = -9.19699, sigmaLog = 0.0669016, gamma = 0.000184342) p-value =  0.40489017820140905
-    Best model PSG( 1 |n) :  Beta(alpha = 2.0922, beta = 2.36032, a = 0.000351093, b = 0.000392658) p-value =  0.6414359861591695
-    Best model PES( 1 |n) :  Beta(alpha = 2.36507, beta = 2.90073, a = 0.00189327, b = 0.00213401) p-value =  0.4499192245557351
-    Best model PTS( 1 |n) :  LogNormal(muLog = -6.07755, sigmaLog = 0.0212681, gamma = -4.35887e-05) p-value =  0.5795734208367515
+    Best model PEG( 1 |n) :  Beta(alpha = 2.36507, beta = 2.90073, a = 0.000270467, b = 0.000304859) p-value =  0.4321689683184403
+    Best model PSG( 1 |n) :  Beta(alpha = 2.0922, beta = 2.36032, a = 0.000351093, b = 0.000392658) p-value =  0.6408390410958904
+    Best model PES( 1 |n) :  Beta(alpha = 2.36507, beta = 2.90073, a = 0.00189327, b = 0.00213401) p-value =  0.4494202319072371
+    Best model PTS( 1 |n) :  LogNormal(muLog = -6.07755, sigmaLog = 0.0212681, gamma = -4.35884e-05) p-value =  0.570171931227509
 
     Test de Lilliefors
     ==================
 
     Ordre k= 2
-    Best model PEG( 2 |n) :  LogNormal(muLog = -12.1143, sigmaLog = 0.0954646, gamma = 2.75555e-06) p-value =  0.5424889246878775
-    Best model PSG( 2 |n) :  LogNormal(muLog = 0.844332, sigmaLog = 9.05054e-07, gamma = -2.3264) p-value =  0.10430980637101811
-    Best model PES( 2 |n) :  LogNormal(muLog = -9.06982, sigmaLog = 0.0954646, gamma = 5.78665e-05) p-value =  0.5531742822482815
-    Best model PTS( 2 |n) :  LogNormal(muLog = -8.35387, sigmaLog = 0.0690542, gamma = 1.32684e-05) p-value =  0.17801374141161774
+    Best model PEG( 2 |n) :  LogNormal(muLog = -12.1143, sigmaLog = 0.0954646, gamma = 2.75555e-06) p-value =  0.5506838294448914
+    Best model PSG( 2 |n) :  LogNormal(muLog = -3.31467, sigmaLog = 5.79227e-05, gamma = -0.0363242) p-value =  0.11538461538461539
+    Best model PES( 2 |n) :  LogNormal(muLog = -9.06982, sigmaLog = 0.0954646, gamma = 5.78665e-05) p-value =  0.5772224498156493
+    Best model PTS( 2 |n) :  LogNormal(muLog = -8.35387, sigmaLog = 0.0690542, gamma = 1.32684e-05) p-value =  0.16677076826983137
 
     Test de Lilliefors
     ==================
 
     Ordre k= 3
-    Best model PEG( 3 |n) :  LogNormal(muLog = -6.07117, sigmaLog = 6.48892e-05, gamma = -0.00230676) p-value =  0.1340734415029889
-    Best model PSG( 3 |n) :  Beta(alpha = 1.20877, beta = 1.77767, a = 2.77205e-06, b = 5.79554e-06) p-value =  0.003996003996003996
-    Best model PES( 3 |n) :  LogNormal(muLog = -1.70914, sigmaLog = 2.89626e-05, gamma = -0.180961) p-value =  0.10989010989010989
-    Best model PTS( 3 |n) :  Beta(alpha = 1.46728, beta = 1.42126, a = 5.86288e-05, b = 9.25024e-05) p-value =  0.10589410589410589
+    Best model PEG( 3 |n) :  LogNormal(muLog = -5.95952, sigmaLog = 5.80343e-05, gamma = -0.00257944) p-value =  0.11951447245564893
+    Best model PSG( 3 |n) :  Beta(alpha = 1.20877, beta = 1.77767, a = 2.77205e-06, b = 5.79554e-06) p-value =  0.011988011988011988
+    Best model PES( 3 |n) :  LogNormal(muLog = -2.05995, sigmaLog = 4.11329e-05, gamma = -0.127401) p-value =  0.11805121798875702
+    Best model PTS( 3 |n) :  Beta(alpha = 1.46728, beta = 1.42126, a = 5.86288e-05, b = 9.25024e-05) p-value =  0.11761904761904762
 
     Test de Lilliefors
     ==================
 
     Ordre k= 4
-    Best model PEG( 4 |n) :  Beta(alpha = 1.1208, beta = 1.57229, a = 2.63157e-07, b = 5.70431e-07) p-value =  0.001998001998001998
-    Best model PSG( 4 |n) :  Beta(alpha = 0.958575, beta = 2.08678, a = 4.42352e-07, b = 1.53262e-06) p-value =  0.023976023976023976
-    Best model PES( 4 |n) :  Beta(alpha = 1.1208, beta = 1.57229, a = 9.2105e-06, b = 1.99651e-05) p-value =  0.001998001998001998
-    Best model PTS( 4 |n) :  Beta(alpha = 1.0647, beta = 1.66919, a = 1.03286e-05, b = 2.48565e-05) p-value =  0.005994005994005994
+    Best model PEG( 4 |n) :  Beta(alpha = 1.1208, beta = 1.57229, a = 2.63157e-07, b = 5.70431e-07) p-value =  0.003996003996003996
+    Best model PSG( 4 |n) :  Beta(alpha = 0.958575, beta = 2.08678, a = 4.42352e-07, b = 1.53262e-06) p-value =  0.022977022977022976
+    Best model PES( 4 |n) :  Beta(alpha = 1.1208, beta = 1.57229, a = 9.2105e-06, b = 1.99651e-05) p-value =  0.0
+    Best model PTS( 4 |n) :  Beta(alpha = 1.0647, beta = 1.66919, a = 1.03286e-05, b = 2.48565e-05) p-value =  0.008991008991008992
 
     Test de Lilliefors
     ==================
 
     Ordre k= 5
-    Best model PEG( 5 |n) :  Beta(alpha = 0.89003, beta = 1.99864, a = 4.96753e-08, b = 2.1129e-07) p-value =  0.00999000999000999
-    Best model PSG( 5 |n) :  Beta(alpha = 0.81495, beta = 2.37197, a = 6.86841e-08, b = 4.52224e-07) p-value =  0.0899100899100899
-    Best model PES( 5 |n) :  Beta(alpha = 0.89003, beta = 1.99864, a = 1.04318e-06, b = 4.43709e-06) p-value =  0.013986013986013986
-    Best model PTS( 5 |n) :  Beta(alpha = 0.87676, beta = 2.09542, a = 1.10635e-06, b = 5.15319e-06) p-value =  0.02197802197802198
+    Best model PEG( 5 |n) :  Beta(alpha = 0.89003, beta = 1.99864, a = 4.96753e-08, b = 2.1129e-07) p-value =  0.014985014985014986
+    Best model PSG( 5 |n) :  Beta(alpha = 0.81495, beta = 2.37197, a = 6.86841e-08, b = 4.52224e-07) p-value =  0.09290709290709291
+    Best model PES( 5 |n) :  Beta(alpha = 0.89003, beta = 1.99864, a = 1.04318e-06, b = 4.43709e-06) p-value =  0.01998001998001998
+    Best model PTS( 5 |n) :  Beta(alpha = 0.87676, beta = 2.09542, a = 1.10635e-06, b = 5.15319e-06) p-value =  0.014985014985014986
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 247-261
+.. GENERATED FROM PYTHON SOURCE LINES 240-254
 
 .. code-block:: default
 
@@ -772,7 +765,7 @@ We also compute the confidence interval of the specified level.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 262-268
+.. GENERATED FROM PYTHON SOURCE LINES 255-261
 
 .. code-block:: default
 
@@ -786,7 +779,7 @@ We also compute the confidence interval of the specified level.
 
 
 .. image-sg:: /auto_example/images/sphx_glr_plot_eclm_014.png
-   :alt: , PEG(0|7) - best model : Gamma, PEG(1|7) - best model : LogNormal, PEG(2|7) - best model : LogNormal, PEG(3|7) - best model : LogNormal, PEG(4|7) - best model : Beta, PEG(5|7) - best model : Beta
+   :alt: , PEG(0|7) - best model : Gamma, PEG(1|7) - best model : Beta, PEG(2|7) - best model : LogNormal, PEG(3|7) - best model : LogNormal, PEG(4|7) - best model : Beta, PEG(5|7) - best model : Beta
    :srcset: /auto_example/images/sphx_glr_plot_eclm_014.png
    :class: sphx-glr-single-img
 
@@ -794,7 +787,7 @@ We also compute the confidence interval of the specified level.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 269-275
+.. GENERATED FROM PYTHON SOURCE LINES 262-268
 
 .. code-block:: default
 
@@ -816,7 +809,7 @@ We also compute the confidence interval of the specified level.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 276-282
+.. GENERATED FROM PYTHON SOURCE LINES 269-275
 
 .. code-block:: default
 
@@ -838,7 +831,7 @@ We also compute the confidence interval of the specified level.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 283-289
+.. GENERATED FROM PYTHON SOURCE LINES 276-282
 
 .. code-block:: default
 
@@ -860,9 +853,8 @@ We also compute the confidence interval of the specified level.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 290-300
+.. GENERATED FROM PYTHON SOURCE LINES 283-292
 
-====================================================================================
 Analyse the minimal multiplicity which probability is greater than a given threshold
 ====================================================================================
 
@@ -873,7 +865,7 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
    k_{max} = \arg\max \{k| \mbox{PTS}(k|n) \geq p \}
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 302-305
+.. GENERATED FROM PYTHON SOURCE LINES 294-297
 
 .. code-block:: default
 
@@ -887,7 +879,7 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 306-311
+.. GENERATED FROM PYTHON SOURCE LINES 298-303
 
 .. code-block:: default
 
@@ -909,7 +901,7 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 312-316
+.. GENERATED FROM PYTHON SOURCE LINES 304-308
 
 .. code-block:: default
 
@@ -930,7 +922,7 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 317-319
+.. GENERATED FROM PYTHON SOURCE LINES 309-311
 
 .. code-block:: default
 
@@ -951,7 +943,7 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  7.959 seconds)
+   **Total running time of the script:** ( 0 minutes  59.521 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_eclm.py:

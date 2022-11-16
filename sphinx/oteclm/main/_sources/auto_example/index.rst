@@ -10,18 +10,18 @@
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Example : Extended Common Load Modelling">
+    <div class="sphx-glr-thumbcontainer" tooltip="Extended Common Load Modelling">
 
 .. only:: html
 
   .. image:: /auto_example/images/thumb/sphx_glr_plot_eclm_thumb.png
-    :alt: Example : Extended Common Load Modelling
+    :alt: Extended Common Load Modelling
 
   :ref:`sphx_glr_auto_example_plot_eclm.py`
 
 .. raw:: html
 
-      <div class="sphx-glr-thumbnail-title">Example : Extended Common Load Modelling</div>
+      <div class="sphx-glr-thumbnail-title">Extended Common Load Modelling</div>
     </div>
 
 
