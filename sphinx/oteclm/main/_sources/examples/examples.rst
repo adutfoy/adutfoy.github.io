@@ -1,7 +1,10 @@
 Examples
 ========
 
-.. toctree::
-    :maxdepth: 1
+This section illustrates how to use the template.
 
-    eclm.ipynb
+
+
+.. toctree::
+
+   ../auto_example/plot_eclm
