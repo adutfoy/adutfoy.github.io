@@ -171,10 +171,10 @@ Anyway, if the starting point is not valid, the function *estimateMaxLikelihoodF
  .. code-block:: none
 
     Traceback (most recent call last):
-      File "/home/runner/work/otECLM/otECLM/oteclm/oteclm.py", line 357, in logVrais_Mankamo
+      File "/home/runner/work/otECLM/otECLM/oteclm/oteclm.py", line 361, in logVrais_Mankamo
         pi_weight, db, dx, dR, y_xm = self.computeGeneralParamFromMankamo([self.Pt, math.exp(logPx), Cco, Cx])
                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-      File "/home/runner/work/otECLM/otECLM/oteclm/oteclm.py", line 650, in computeGeneralParamFromMankamo
+      File "/home/runner/work/otECLM/otECLM/oteclm/oteclm.py", line 654, in computeGeneralParamFromMankamo
         db = -math.sqrt(Cco)/ot.DistFunc.qNormal((Pt-Px)/pi_weight)
               ^^^^^^^^^^^^^^
     ValueError: math domain error
@@ -303,6 +303,17 @@ The sample is generated and saved in a csv file.
 
 
 
+
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    boostrap param : 
+    Nbootstrap, blockSize, fileNameRes  =  100 256 sampleParamFromMankamo_100.csv
+    [ParamFromMankano] Try to import previous results from sampleParamFromMankamo_100.csv
+    No previous results
+    Skip =  0
+      0%|          | 0/1 [00:00<?, ?it/s]    100%|##########| 1/1 [00:08<00:00,  8.39s/it]    100%|##########| 1/1 [00:08<00:00,  8.39s/it]
 
 
 
@@ -665,55 +676,55 @@ We also compute the confidence interval of the specified level.
     ==================
 
     Ordre k= 0
-    Best model PEG( 0 |n) :  Beta(alpha = 2.22441, beta = 2.01594, a = 0.997621, b = 0.997858) p-value =  0.865
-    Best model PSG( 0 |n) :  LogNormal(muLog = -24.9791, sigmaLog = 3.48515e-05, gamma = 1) p-value =  0.001998001998001998
-    Best model PES( 0 |n) :  Beta(alpha = 2.22441, beta = 2.01594, a = 0.997621, b = 0.997858) p-value =  0.8759191176470589
-    Best model PTS( 0 |n) :  LogNormal(muLog = -25.5486, sigmaLog = 6.33377e-05, gamma = 1) p-value =  0.000999000999000999
+    Best model PEG( 0 |n) :  Beta(alpha = 2.22441, beta = 2.01594, a = 0.997621, b = 0.997858) p-value =  0.865625
+    Best model PSG( 0 |n) :  LogNormal(muLog = -23.6531, sigmaLog = 9.24007e-06, gamma = 1) p-value =  0.0
+    Best model PES( 0 |n) :  Beta(alpha = 2.22441, beta = 2.01594, a = 0.997621, b = 0.997858) p-value =  0.857686815801999
+    Best model PTS( 0 |n) :  LogNormal(muLog = -23.0036, sigmaLog = 4.97833e-06, gamma = 1) p-value =  0.001998001998001998
 
     Test de Lilliefors
     ==================
 
     Ordre k= 1
-    Best model PEG( 1 |n) :  LogNormal(muLog = -9.28383, sigmaLog = 0.0816526, gamma = 0.000193554) p-value =  0.965625
-    Best model PSG( 1 |n) :  Beta(alpha = 2.0922, beta = 2.36032, a = 0.000351093, b = 0.000392658) p-value =  0.6449781659388646
-    Best model PES( 1 |n) :  LogNormal(muLog = -7.33792, sigmaLog = 0.0816526, gamma = 0.00135488) p-value =  0.962037962037962
-    Best model PTS( 1 |n) :  Beta(alpha = 2.01594, beta = 2.22441, a = 0.00214164, b = 0.00237925) p-value =  0.871875
+    Best model PEG( 1 |n) :  LogNormal(muLog = -9.28383, sigmaLog = 0.0816526, gamma = 0.000193554) p-value =  0.951048951048951
+    Best model PSG( 1 |n) :  Beta(alpha = 2.0922, beta = 2.36032, a = 0.000351093, b = 0.000392658) p-value =  0.6481156879929886
+    Best model PES( 1 |n) :  LogNormal(muLog = -7.33792, sigmaLog = 0.0816526, gamma = 0.00135488) p-value =  0.9590409590409591
+    Best model PTS( 1 |n) :  Beta(alpha = 2.01594, beta = 2.22441, a = 0.00214164, b = 0.00237925) p-value =  0.8680851063829788
 
     Test de Lilliefors
     ==================
 
     Ordre k= 2
-    Best model PEG( 2 |n) :  Beta(alpha = 2.63448, beta = 3.30211, a = 6.73386e-06, b = 1.00707e-05) p-value =  0.676873857404022
-    Best model PSG( 2 |n) :  Beta(alpha = 2.08255, beta = 1.76742, a = 1.63471e-05, b = 2.60029e-05) p-value =  0.4885954381752701
-    Best model PES( 2 |n) :  Beta(alpha = 2.63448, beta = 3.30211, a = 0.000141411, b = 0.000211485) p-value =  0.6648721399730821
-    Best model PTS( 2 |n) :  LogNormal(muLog = 2.02785, sigmaLog = 2.4387e-06, gamma = -7.59749) p-value =  0.0999000999000999
+    Best model PEG( 2 |n) :  Beta(alpha = 2.63448, beta = 3.30211, a = 6.73386e-06, b = 1.00707e-05) p-value =  0.6674167416741675
+    Best model PSG( 2 |n) :  Beta(alpha = 2.08255, beta = 1.76742, a = 1.63471e-05, b = 2.60029e-05) p-value =  0.5044
+    Best model PES( 2 |n) :  Beta(alpha = 2.63448, beta = 3.30211, a = 0.000141411, b = 0.000211485) p-value =  0.676094890510949
+    Best model PTS( 2 |n) :  LogNormal(muLog = 0.939722, sigmaLog = 7.23933e-06, gamma = -2.55902) p-value =  0.0989010989010989
 
     Test de Lilliefors
     ==================
 
     Ordre k= 3
-    Best model PEG( 3 |n) :  LogNormal(muLog = -5.91812, sigmaLog = 5.79888e-05, gamma = -0.00268856) p-value =  0.614743856726364
-    Best model PSG( 3 |n) :  Beta(alpha = 1.29306, beta = 1.97543, a = 2.66657e-06, b = 5.79627e-06) p-value =  0.2857142857142857
-    Best model PES( 3 |n) :  LogNormal(muLog = -0.0197005, sigmaLog = 5.56876e-06, gamma = -0.980433) p-value =  0.6109954185755935
-    Best model PTS( 3 |n) :  Beta(alpha = 1.7864, beta = 1.60859, a = 5.54236e-05, b = 9.19529e-05) p-value =  0.7963190184049079
+    Best model PEG( 3 |n) :  LogNormal(muLog = -5.27597, sigmaLog = 3.05112e-05, gamma = -0.0051113) p-value =  0.6334763948497855
+    Best model PSG( 3 |n) :  Beta(alpha = 1.29306, beta = 1.97543, a = 2.66657e-06, b = 5.79627e-06) p-value =  0.2748244734202608
+    Best model PES( 3 |n) :  LogNormal(muLog = -1.1442, sigmaLog = 1.71445e-05, gamma = -0.318419) p-value =  0.628254374733248
+    Best model PTS( 3 |n) :  Beta(alpha = 1.7864, beta = 1.60859, a = 5.54236e-05, b = 9.19529e-05) p-value =  0.8139841688654353
 
     Test de Lilliefors
     ==================
 
     Ordre k= 4
-    Best model PEG( 4 |n) :  Beta(alpha = 1.1514, beta = 1.73015, a = 2.55536e-07, b = 5.70478e-07) p-value =  0.16138540899042003
-    Best model PSG( 4 |n) :  Beta(alpha = 0.860236, beta = 2.0805, a = 4.38527e-07, b = 1.53251e-06) p-value =  0.06293706293706294
-    Best model PES( 4 |n) :  Beta(alpha = 1.1514, beta = 1.73015, a = 8.94377e-06, b = 1.99667e-05) p-value =  0.17952380952380953
-    Best model PTS( 4 |n) :  Beta(alpha = 1.04652, beta = 1.78213, a = 1.00897e-05, b = 2.48574e-05) p-value =  0.15142857142857144
+    Best model PEG( 4 |n) :  Beta(alpha = 1.1514, beta = 1.73015, a = 2.55536e-07, b = 5.70478e-07) p-value =  0.16302311055590257
+    Best model PSG( 4 |n) :  Beta(alpha = 0.860236, beta = 2.0805, a = 4.38527e-07, b = 1.53251e-06) p-value =  0.06393606393606394
+    Best model PES( 4 |n) :  Beta(alpha = 1.1514, beta = 1.73015, a = 8.94377e-06, b = 1.99667e-05) p-value =  0.17966101694915254
+    Best model PTS( 4 |n) :  Beta(alpha = 1.04652, beta = 1.78213, a = 1.00897e-05, b = 2.48574e-05) p-value =  0.13624894869638352
 
     Test de Lilliefors
     ==================
 
     Ordre k= 5
-    Best model PEG( 5 |n) :  Beta(alpha = 0.804418, beta = 1.99689, a = 4.88689e-08, b = 2.11277e-07) p-value =  0.34059582036460656
-    Best model PSG( 5 |n) :  Beta(alpha = 0.718938, beta = 2.30618, a = 6.75452e-08, b = 4.52174e-07) p-value =  0.4519774011299435
-    Best model PES( 5 |n) :  Beta(alpha = 0.804418, beta = 1.99689, a = 1.02625e-06, b = 4.43682e-06) p-value =  0.34057649667405765
-    Best model PTS( 5 |n) :  Beta(alpha = 0.787536, beta = 2.07881, a = 1.08832e-06, b = 5.15282e-06) p-value =  0.42430441898527005
+    Best model PEG( 5 |n) :  Beta(alpha = 0.804418, beta = 1.99689, a = 4.88689e-08, b = 2.11277e-07) p-value =  0.34027488546438983
+    Best model PSG( 5 |n) :  Beta(alpha = 0.718938, beta = 2.30618, a = 6.75452e-08, b = 4.52174e-07) p-value =  0.47514033680834
+    Best model PES( 5 |n) :  Beta(alpha = 0.804418, beta = 1.99689, a = 1.02625e-06, b = 4.43682e-06) p-value =  0.34110787172011664
+    Best model PTS( 5 |n) :  Beta(alpha = 0.787536, beta = 2.07881, a = 1.08832e-06, b = 5.15282e-06) p-value =  0.45032310177705975
 
 
 
@@ -951,7 +962,7 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  3.987 seconds)
+   **Total running time of the script:** ( 1 minutes  6.322 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_eclm.py:
