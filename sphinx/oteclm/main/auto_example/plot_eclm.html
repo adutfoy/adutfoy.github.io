@@ -163,10 +163,10 @@ to download the full example code</p>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Traceback (most recent call last):
-  File &quot;/home/runner/work/otECLM/otECLM/oteclm/oteclm.py&quot;, line 385, in logVrais_Mankamo
+  File &quot;/home/runner/work/otECLM/otECLM/oteclm/oteclm.py&quot;, line 357, in logVrais_Mankamo
     pi_weight, db, dx, dR, y_xm = self.computeGeneralParamFromMankamo([self.Pt, math.exp(logPx), Cco, Cx])
                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File &quot;/home/runner/work/otECLM/otECLM/oteclm/oteclm.py&quot;, line 653, in computeGeneralParamFromMankamo
+  File &quot;/home/runner/work/otECLM/otECLM/oteclm/oteclm.py&quot;, line 650, in computeGeneralParamFromMankamo
     db = -math.sqrt(Cco)/ot.DistFunc.qNormal((Pt-Px)/pi_weight)
           ^^^^^^^^^^^^^^
 ValueError: math domain error
@@ -212,13 +212,13 @@ finalLogLikValue :  -21688.120239703418
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;PTS_list = &#39;</span><span class="p">,</span> <span class="n">PTS_list</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>PEG_list =  [0.9977485913625354, 0.0002861510889854867, 8.347694583374283e-06, 1.6764040860630268e-06, 3.5833417976024095e-07, 8.07082660839055e-08, 1.9134916288392158e-08, 4.770989149255409e-09]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>PEG_list =  [0.9977483889645519, 0.0002861850402018761, 8.350892113546664e-06, 1.6749396040137301e-06, 3.5721722230960404e-07, 8.020295446258585e-08, 1.8938521181587126e-08, 4.699016448412273e-09]
 
-PSG_list =  [0.9999999999999792, 0.0003698802058500902, 2.1220585042722106e-05, 3.675301055910247e-06, 6.626347160263894e-07, 1.2374908780994522e-07, 2.3905905437647563e-08, 4.770989149255409e-09]
+PSG_list =  [0.9999999999999792, 0.00036988020585009896, 2.1199183523693558e-05, 3.6654793212024215e-06, 6.593406656905352e-07, 1.227790132741724e-07, 2.3637537629999393e-08, 4.699016448412273e-09]
 
-PES_list =  [0.9977485913625354, 0.002003057622898407, 0.00017530158625085994, 5.867414301220594e-05, 1.2541696291608434e-05, 1.6948735877620157e-06, 1.3394441401874512e-07, 4.770989149255409e-09]
+PES_list =  [0.9977483889645519, 0.002003295281413133, 0.00017536873438447995, 5.8622886140480556e-05, 1.2502602780836142e-05, 1.6842620437143029e-06, 1.3256964827110988e-07, 4.699016448412273e-09]
 
-PTS_list =  [0.9999999999999795, 0.0022514086374440115, 0.00024835101454560437, 7.304942829474438e-05, 1.437528528253845e-05, 1.8335889909300163e-06, 1.3871540316800053e-07, 4.770989149255409e-09]
+PTS_list =  [0.9999999999999792, 0.0022516110354273635, 0.0002483157540142305, 7.294701962975052e-05, 1.4324133489269965e-05, 1.821530708433825e-06, 1.3726866471952215e-07, 4.699016448412273e-09]
 </pre></div>
 </div>
 </section>
@@ -355,7 +355,7 @@ We also compute the confidence interval of the specified level.</p>
 
 Ordre k= 0
 Best model PEG( 0 |n) :  Beta(alpha = 2.22441, beta = 2.01594, a = 0.997621, b = 0.997858) p-value =  0.865
-Best model PSG( 0 |n) :  LogNormal(muLog = -25.6653, sigmaLog = 6.92137e-05, gamma = 1) p-value =  0.001998001998001998
+Best model PSG( 0 |n) :  LogNormal(muLog = -24.9791, sigmaLog = 3.48515e-05, gamma = 1) p-value =  0.001998001998001998
 Best model PES( 0 |n) :  Beta(alpha = 2.22441, beta = 2.01594, a = 0.997621, b = 0.997858) p-value =  0.8759191176470589
 Best model PTS( 0 |n) :  LogNormal(muLog = -25.5486, sigmaLog = 6.33377e-05, gamma = 1) p-value =  0.000999000999000999
 
@@ -374,35 +374,35 @@ Test de Lilliefors
 Ordre k= 2
 Best model PEG( 2 |n) :  Beta(alpha = 2.63448, beta = 3.30211, a = 6.73386e-06, b = 1.00707e-05) p-value =  0.676873857404022
 Best model PSG( 2 |n) :  Beta(alpha = 2.08255, beta = 1.76742, a = 1.63471e-05, b = 2.60029e-05) p-value =  0.4885954381752701
-Best model PES( 2 |n) :  Beta(alpha = 2.63448, beta = 3.30211, a = 0.000141411, b = 0.000211485) p-value =  0.665972511453561
-Best model PTS( 2 |n) :  LogNormal(muLog = 2.19912, sigmaLog = 2.05485e-06, gamma = -9.01679) p-value =  0.07592407592407592
+Best model PES( 2 |n) :  Beta(alpha = 2.63448, beta = 3.30211, a = 0.000141411, b = 0.000211485) p-value =  0.6648721399730821
+Best model PTS( 2 |n) :  LogNormal(muLog = 2.02785, sigmaLog = 2.4387e-06, gamma = -7.59749) p-value =  0.0999000999000999
 
 Test de Lilliefors
 ==================
 
 Ordre k= 3
-Best model PEG( 3 |n) :  LogNormal(muLog = -5.91673, sigmaLog = 5.79083e-05, gamma = -0.00269231) p-value =  0.6164098292378176
-Best model PSG( 3 |n) :  Beta(alpha = 1.29306, beta = 1.97543, a = 2.66657e-06, b = 5.79627e-06) p-value =  0.26857142857142857
-Best model PES( 3 |n) :  LogNormal(muLog = -0.0197005, sigmaLog = 5.56876e-06, gamma = -0.980433) p-value =  0.6451478550603915
-Best model PTS( 3 |n) :  Beta(alpha = 1.7864, beta = 1.60859, a = 5.54236e-05, b = 9.19529e-05) p-value =  0.7884961054523667
+Best model PEG( 3 |n) :  LogNormal(muLog = -5.91812, sigmaLog = 5.79888e-05, gamma = -0.00268856) p-value =  0.614743856726364
+Best model PSG( 3 |n) :  Beta(alpha = 1.29306, beta = 1.97543, a = 2.66657e-06, b = 5.79627e-06) p-value =  0.2857142857142857
+Best model PES( 3 |n) :  LogNormal(muLog = -0.0197005, sigmaLog = 5.56876e-06, gamma = -0.980433) p-value =  0.6109954185755935
+Best model PTS( 3 |n) :  Beta(alpha = 1.7864, beta = 1.60859, a = 5.54236e-05, b = 9.19529e-05) p-value =  0.7963190184049079
 
 Test de Lilliefors
 ==================
 
 Ordre k= 4
-Best model PEG( 4 |n) :  Beta(alpha = 1.1514, beta = 1.73015, a = 2.55536e-07, b = 5.70478e-07) p-value =  0.1774628879892038
-Best model PSG( 4 |n) :  Beta(alpha = 0.860236, beta = 2.0805, a = 4.38527e-07, b = 1.53251e-06) p-value =  0.06593406593406594
-Best model PES( 4 |n) :  Beta(alpha = 1.1514, beta = 1.73015, a = 8.94377e-06, b = 1.99667e-05) p-value =  0.16055718475073313
-Best model PTS( 4 |n) :  Beta(alpha = 1.04652, beta = 1.78213, a = 1.00897e-05, b = 2.48574e-05) p-value =  0.15666666666666668
+Best model PEG( 4 |n) :  Beta(alpha = 1.1514, beta = 1.73015, a = 2.55536e-07, b = 5.70478e-07) p-value =  0.16138540899042003
+Best model PSG( 4 |n) :  Beta(alpha = 0.860236, beta = 2.0805, a = 4.38527e-07, b = 1.53251e-06) p-value =  0.06293706293706294
+Best model PES( 4 |n) :  Beta(alpha = 1.1514, beta = 1.73015, a = 8.94377e-06, b = 1.99667e-05) p-value =  0.17952380952380953
+Best model PTS( 4 |n) :  Beta(alpha = 1.04652, beta = 1.78213, a = 1.00897e-05, b = 2.48574e-05) p-value =  0.15142857142857144
 
 Test de Lilliefors
 ==================
 
 Ordre k= 5
-Best model PEG( 5 |n) :  Beta(alpha = 0.804418, beta = 1.99689, a = 4.88689e-08, b = 2.11277e-07) p-value =  0.3531728665207877
-Best model PSG( 5 |n) :  Beta(alpha = 0.718938, beta = 2.30618, a = 6.75452e-08, b = 4.52174e-07) p-value =  0.44349939246658565
-Best model PES( 5 |n) :  Beta(alpha = 0.804418, beta = 1.99689, a = 1.02625e-06, b = 4.43682e-06) p-value =  0.3531728665207877
-Best model PTS( 5 |n) :  Beta(alpha = 0.787536, beta = 2.07881, a = 1.08832e-06, b = 5.15282e-06) p-value =  0.4334266293482607
+Best model PEG( 5 |n) :  Beta(alpha = 0.804418, beta = 1.99689, a = 4.88689e-08, b = 2.11277e-07) p-value =  0.34059582036460656
+Best model PSG( 5 |n) :  Beta(alpha = 0.718938, beta = 2.30618, a = 6.75452e-08, b = 4.52174e-07) p-value =  0.4519774011299435
+Best model PES( 5 |n) :  Beta(alpha = 0.804418, beta = 1.99689, a = 1.02625e-06, b = 4.43682e-06) p-value =  0.34057649667405765
+Best model PTS( 5 |n) :  Beta(alpha = 0.787536, beta = 2.07881, a = 1.08832e-06, b = 5.15282e-06) p-value =  0.42430441898527005
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">IC_PEG_list</span><span class="p">)):</span>
@@ -505,7 +505,7 @@ IC_PTS_ 5  =  [1.11445e-06, 3.95285e-06]
 <span class="n">view</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_plot_eclm_018.png" srcset="../_images/sphx_glr_plot_eclm_018.png" alt="Loi de $K_{max} = \arg \max \{k | PTS(k|$7$) \geq $1.0e-05$\}$" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  12.231 seconds)</p>
+<img src="../_images/sphx_glr_plot_eclm_018.png" srcset="../_images/sphx_glr_plot_eclm_018.png" alt="Loi de $K_{max} = \arg \max \{k | PTS(k|$7$) \geq $1.0e-05$\}$" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  3.987 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-example-plot-eclm-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/492b1b0c68cfa324a509d88d3c34ee26/plot_eclm.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_eclm.py</span></code></a></p>
