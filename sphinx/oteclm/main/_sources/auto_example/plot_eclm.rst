@@ -657,13 +657,13 @@ We also compute the confidence interval of the specified level.
 
     Ordre k= 0
     PEG...
-    Best model PEG( 0 |n) :  LogNormal(muLog = 1.72957, sigmaLog = 1.44783e-05, gamma = -4.64037) p-value =  0.0979020979020979
+    Best model PEG( 0 |n) :  LogNormal(muLog = 1.72956, sigmaLog = 1.44785e-05, gamma = -4.6403) p-value =  0.0999000999000999
     PSG...
     Best model PSG( 0 |n) :  LogNormal(muLog = -27.6303, sigmaLog = 0.000218814, gamma = 1) p-value =  0.5531742822482815
     PES...
     Best model PES( 0 |n) :  Gamma(k = 15023.3, lambda = 1.49397e+06, gamma = 0.987805) p-value =  0.13005272407732874
     PTS...
-    Best model PTS( 0 |n) :  LogNormal(muLog = -26.9863, sigmaLog = 0.000121641, gamma = 1) p-value =  0.34506197520991605
+    Best model PTS( 0 |n) :  LogNormal(muLog = -26.5977, sigmaLog = 8.24784e-05, gamma = 1) p-value =  0.34466213514594163
 
     Test de Lilliefors
     ==================
@@ -687,48 +687,48 @@ We also compute the confidence interval of the specified level.
     PSG...
     Best model PSG( 2 |n) :  Beta(alpha = 1.94997, beta = 1.9295, a = 1.79475e-05, b = 5.2853e-05) p-value =  0.16333333333333333
     PES...
-    Best model PES( 2 |n) :  LogNormal(muLog = -7.46541, sigmaLog = 0.0247712, gamma = -0.00042594) p-value =  0.17051842598376016
+    Best model PES( 2 |n) :  LogNormal(muLog = -7.46541, sigmaLog = 0.0247712, gamma = -0.00042594) p-value =  0.1711430356027483
     PTS...
-    Best model PTS( 2 |n) :  LogNormal(muLog = 1.91414, sigmaLog = 4.60072e-06, gamma = -6.78081) p-value =  0.19175515302935664
+    Best model PTS( 2 |n) :  Beta(alpha = 1.97298, beta = 1.85807, a = 0.000194187, b = 0.000332085) p-value =  0.19093851132686085
 
     Test de Lilliefors
     ==================
 
     Ordre k= 3
     PEG...
-    Best model PEG( 3 |n) :  LogNormal(muLog = -10.9482, sigmaLog = 0.0144161, gamma = -1.55974e-05) p-value =  0.24429460580912862
+    Best model PEG( 3 |n) :  LogNormal(muLog = -10.9482, sigmaLog = 0.0144161, gamma = -1.55973e-05) p-value =  0.24469736161407138
     PSG...
-    Best model PSG( 3 |n) :  Beta(alpha = 1.96789, beta = 2.67636, a = 3.0368e-06, b = 2.46881e-05) p-value =  0.81
+    Best model PSG( 3 |n) :  Beta(alpha = 1.96789, beta = 2.67636, a = 3.0368e-06, b = 2.46881e-05) p-value =  0.816875
     PES...
-    Best model PES( 3 |n) :  LogNormal(muLog = -7.39285, sigmaLog = 0.0144161, gamma = -0.000545907) p-value =  0.23688569850911098
+    Best model PES( 3 |n) :  LogNormal(muLog = -7.39285, sigmaLog = 0.0144161, gamma = -0.000545907) p-value =  0.26033057851239666
     PTS...
-    Best model PTS( 3 |n) :  Beta(alpha = 2.08725, beta = 1.61163, a = 6.33341e-05, b = 0.000160945) p-value =  0.4076064489458454
+    Best model PTS( 3 |n) :  Beta(alpha = 2.08725, beta = 1.61163, a = 6.33341e-05, b = 0.000160945) p-value =  0.42042657916324855
 
     Test de Lilliefors
     ==================
 
     Ordre k= 4
     PEG...
-    Best model PEG( 4 |n) :  Beta(alpha = 2.37851, beta = 1.51056, a = 2.99821e-07, b = 1.28032e-06) p-value =  0.1736414740787008
+    Best model PEG( 4 |n) :  Beta(alpha = 2.37851, beta = 1.51056, a = 2.99821e-07, b = 1.28032e-06) p-value =  0.16677076826983137
     PSG...
-    Best model PSG( 4 |n) :  Beta(alpha = 1.68139, beta = 3.09722, a = 3.99687e-07, b = 1.40107e-05) p-value =  0.8113790970933829
+    Best model PSG( 4 |n) :  Beta(alpha = 1.68139, beta = 3.09722, a = 3.99687e-07, b = 1.40107e-05) p-value =  0.801875
     PES...
-    Best model PES( 4 |n) :  Beta(alpha = 2.37851, beta = 1.51056, a = 1.04937e-05, b = 4.48113e-05) p-value =  0.1438965238480194
+    Best model PES( 4 |n) :  Beta(alpha = 2.37851, beta = 1.51056, a = 1.04937e-05, b = 4.48113e-05) p-value =  0.15349194167306215
     PTS...
-    Best model PTS( 4 |n) :  Beta(alpha = 2.19485, beta = 1.96585, a = 1.15122e-05, b = 8.18545e-05) p-value =  0.6165824915824916
+    Best model PTS( 4 |n) :  Beta(alpha = 2.19485, beta = 1.96585, a = 1.15122e-05, b = 8.18545e-05) p-value =  0.5972568578553616
 
     Test de Lilliefors
     ==================
 
     Ordre k= 5
     PEG...
-    Best model PEG( 5 |n) :  Beta(alpha = 2.00772, beta = 2.06612, a = 5.03412e-08, b = 1.14186e-06) p-value =  0.916083916083916
+    Best model PEG( 5 |n) :  Beta(alpha = 2.00772, beta = 2.06612, a = 5.03412e-08, b = 1.14186e-06) p-value =  0.91875
     PSG...
-    Best model PSG( 5 |n) :  Beta(alpha = 1.31999, beta = 3.25439, a = 2.70436e-09, b = 8.82364e-06) p-value =  0.9140859140859141
+    Best model PSG( 5 |n) :  Beta(alpha = 1.31999, beta = 3.25439, a = 2.70436e-09, b = 8.82364e-06) p-value =  0.9330669330669331
     PES...
     Best model PES( 5 |n) :  Beta(alpha = 2.00772, beta = 2.06612, a = 1.05716e-06, b = 2.39791e-05) p-value =  0.9200799200799201
     PTS...
-    Best model PTS( 5 |n) :  Beta(alpha = 1.84893, beta = 2.64399, a = 9.87506e-07, b = 4.02314e-05) p-value =  0.8710138029509757
+    Best model PTS( 5 |n) :  Beta(alpha = 1.84893, beta = 2.64399, a = 9.87506e-07, b = 4.02314e-05) p-value =  0.8810090433127082
 
 
 
@@ -868,7 +868,7 @@ We also compute the confidence interval of the specified level.
 
 
 .. image-sg:: /auto_example/images/sphx_glr_plot_eclm_017.png
-   :alt: , PTS(0|7) - best model : LogNormal, PTS(1|7) - best model : LogNormal, PTS(2|7) - best model : LogNormal, PTS(3|7) - best model : Beta, PTS(4|7) - best model : Beta, PTS(5|7) - best model : Beta
+   :alt: , PTS(0|7) - best model : LogNormal, PTS(1|7) - best model : LogNormal, PTS(2|7) - best model : Beta, PTS(3|7) - best model : Beta, PTS(4|7) - best model : Beta, PTS(5|7) - best model : Beta
    :srcset: /auto_example/images/sphx_glr_plot_eclm_017.png
    :class: sphx-glr-single-img
 
@@ -966,7 +966,7 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  7.063 seconds)
+   **Total running time of the script:** ( 1 minutes  7.631 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_eclm.py:
