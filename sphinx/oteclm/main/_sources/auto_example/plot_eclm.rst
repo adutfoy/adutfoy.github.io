@@ -177,20 +177,36 @@ Anyway, if the starting point is not valid, the function *estimateMaxLikelihoodF
     graph Cx = Cx_optim
     graph Cco = Cco_optim
     graph logPx = logPx_optim
-    Mankamo parameter :  [0.00036988020585009376, 0.00013170558130323772, 0.2859592315814119, 0.28595923158141184]
-    general parameter :  [0.9993383385136969, 0.15306875658191693, 0.15306875658191693, 0.2418777934025751, 0.7581222065974249]
+    Mankamo parameter :  [0.00036988020585009376, 0.0001401307276164806, 0.1964204004682002, 0.1964204004682002]
+    general parameter :  [0.9992425883539947, 0.1265140156022435, 0.12651401560224348, 0.25589381906430914, 0.7441061809356908]
     finalLogLikValue :  -709.782712893384
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-80
+.. GENERATED FROM PYTHON SOURCE LINES 74-75
+
+Function to deactivate grid in GridLayout to make matplotlib happy
+
+.. GENERATED FROM PYTHON SOURCE LINES 75-93
 
 .. code-block:: default
 
-    gl = ot.GridLayout(2,3)
+    def deactivateGrid(gl):
+        for i in range(gl.getNbRows()):
+            for j in range(gl.getNbColumns()):
+                g = gl.getGraph(i, j)
+                g.setGrid(False)
+                gl.setGraph(i, j, g)
+        return gl
+
+    gl = ot.GridLayout(2, 3)
     for i in range(6):
-        gl.setGraph(i//3, i%3, graphesCol[i])
+        g = graphesCol[i]
+        gl.setGraph(i//3, i%3, g)
+
+    # Deactivate grid to make matplotlib happy
+    gl = deactivateGrid(gl)
     view = View(gl)
     view.show()
 
@@ -198,7 +214,7 @@ Anyway, if the starting point is not valid, the function *estimateMaxLikelihoodF
 
 
 .. image-sg:: /auto_example/images/sphx_glr_plot_eclm_001.png
-   :alt: , Log likelihood at $(\log P_{x}, C_{co}) = ($-8.93E+00,2.86E-01), Log likelihood at $(\log P_{x}, C_{x}) = ($-8.93E+00,2.86E-01), Log likelihood at $(C_{co}, C_{x}) = ($2.86E-01,2.86E-01), Log likelihood at $C_{x} = $2.86E-01, Log likelihood at $C_{co} = $2.86E-01, Log likelihood at $\log P_{x} = $-8.93E+00
+   :alt: , Log likelihood at $(\log P_{x}, C_{co}) = ($-8.87E+00,1.96E-01), Log likelihood at $(\log P_{x}, C_{x}) = ($-8.87E+00,1.96E-01), Log likelihood at $(C_{co}, C_{x}) = ($1.96E-01,1.96E-01), Log likelihood at $C_{x} = $1.96E-01, Log likelihood at $C_{co} = $1.96E-01, Log likelihood at $\log P_{x} = $-8.87E+00
    :srcset: /auto_example/images/sphx_glr_plot_eclm_001.png
    :class: sphx-glr-single-img
 
@@ -207,18 +223,18 @@ Anyway, if the starting point is not valid, the function *estimateMaxLikelihoodF
 
  .. code-block:: none
 
-    /usr/share/miniconda3/envs/test/lib/python3.11/site-packages/openturns/viewer.py:517: UserWarning: No contour levels were found within the data range.
+    /usr/share/miniconda3/envs/test/lib/python3.9/site-packages/openturns/viewer.py:517: UserWarning: No contour levels were found within the data range.
       contourset = self._ax[0].contour(X, Y, Z, **contour_kw)
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-83
+.. GENERATED FROM PYTHON SOURCE LINES 94-96
 
 Compute the ECLM probabilities
 ==============================
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-100
+.. GENERATED FROM PYTHON SOURCE LINES 98-113
 
 .. code-block:: default
 
@@ -245,18 +261,18 @@ Compute the ECLM probabilities
 
  .. code-block:: none
 
-    PEG_list =  [0.9979969028067912, 0.00024430917858305466, 6.849724937574918e-06, 1.925258340500105e-06, 1.166839778347915e-06, 1.1409356799804327e-06, 1.7626642205717672e-06, 4.5669864345680374e-06]
+    PEG_list =  [0.9979399214362695, 0.00025294613595550964, 7.094442183611174e-06, 2.168932180695968e-06, 1.118684041720839e-06, 8.400257200929238e-07, 9.058508189012665e-07, 1.424262526400267e-06]
 
-    PSG_list =  [0.9999999999999799, 0.0003698802058500994, 5.293407876078579e-05, 2.5055874850629467e-05, 1.4444625914572557e-05, 9.233250555692003e-06, 6.329650655139803e-06, 4.5669864345680374e-06]
+    PSG_list =  [1.0, 0.00036988020585009956, 4.347971732613524e-05, 1.6731488470142203e-05, 7.780576185103678e-06, 4.0759898842957235e-06, 2.3301133453015335e-06, 1.424262526400267e-06]
 
-    PES_list =  [0.9979969028067912, 0.0017101642500813826, 0.00014384422368907327, 6.738404191750367e-05, 4.0839392242177025e-05, 2.3959649279589087e-05, 1.233864954400237e-05, 4.5669864345680374e-06]
+    PES_list =  [0.9979399214362695, 0.0017706229516885675, 0.00014898328585583466, 7.591262632435887e-05, 3.9153941460229365e-05, 1.76405401219514e-05, 6.340955732308866e-06, 1.424262526400267e-06]
 
-    PTS_list =  [0.9999999999999796, 0.0020030971931882958, 0.00029293294310691345, 0.0001490887194178402, 8.170467750033652e-05, 4.08652852581595e-05, 1.6905635978570407e-05, 4.5669864345680374e-06]
-
-
+    PTS_list =  [1.0, 0.0020600785637096505, 0.0002894556120210835, 0.00014047232616524875, 6.45596998408899e-05, 2.5405758380660535e-05, 7.765218258709133e-06, 1.424262526400267e-06]
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 101-110
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 114-123
 
 Generate a sample of the parameters by Bootstrap
 ================================================
@@ -268,7 +284,7 @@ Each optimisation problem is initalised with the optimal parameter found for the
 
 The sample is generated and saved in a csv file.
 
-.. GENERATED FROM PYTHON SOURCE LINES 112-114
+.. GENERATED FROM PYTHON SOURCE LINES 125-127
 
 .. code-block:: default
 
@@ -281,7 +297,7 @@ The sample is generated and saved in a csv file.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 115-121
+.. GENERATED FROM PYTHON SOURCE LINES 128-134
 
 .. code-block:: default
 
@@ -298,7 +314,7 @@ The sample is generated and saved in a csv file.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-125
+.. GENERATED FROM PYTHON SOURCE LINES 135-138
 
 .. code-block:: default
 
@@ -312,14 +328,14 @@ The sample is generated and saved in a csv file.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 126-130
+.. GENERATED FROM PYTHON SOURCE LINES 139-143
 
 Graphically analyse the bootstrap sample of parameters
 ======================================================
 
 We create the Pairs graphs of the Mankamo and general parameters.
 
-.. GENERATED FROM PYTHON SOURCE LINES 132-134
+.. GENERATED FROM PYTHON SOURCE LINES 145-147
 
 .. code-block:: default
 
@@ -332,9 +348,15 @@ We create the Pairs graphs of the Mankamo and general parameters.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-138
+.. GENERATED FROM PYTHON SOURCE LINES 148-149
+
+Deactivate grid to make matplotlib happy
+
+.. GENERATED FROM PYTHON SOURCE LINES 149-154
 
 .. code-block:: default
+
+    graphPairsMankamoParam = deactivateGrid(graphPairsMankamoParam)
 
     view = View(graphPairsMankamoParam)
     view.show()
@@ -351,9 +373,15 @@ We create the Pairs graphs of the Mankamo and general parameters.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 139-144
+.. GENERATED FROM PYTHON SOURCE LINES 155-156
+
+Deactivate grid to make matplotlib happy
+
+.. GENERATED FROM PYTHON SOURCE LINES 156-163
 
 .. code-block:: default
+
+    graphPairsGeneralParam = deactivateGrid(graphPairsGeneralParam)
 
     view = View(graphPairsGeneralParam)
     view.show()
@@ -372,13 +400,17 @@ We create the Pairs graphs of the Mankamo and general parameters.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 145-151
+.. GENERATED FROM PYTHON SOURCE LINES 164-174
 
 .. code-block:: default
 
     gl = ot.GridLayout(3,3)
     for k in range(len(graphMarg_list)):
-        gl.setGraph(k//3, k%3, graphMarg_list[k])
+        g = graphMarg_list[k]
+        gl.setGraph(k//3, k%3, g)
+
+    # Deactivate grid to make matplotlib happy
+    gl = deactivateGrid(gl)
     view = View(gl)
     view.show()
 
@@ -394,14 +426,14 @@ We create the Pairs graphs of the Mankamo and general parameters.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 152-156
+.. GENERATED FROM PYTHON SOURCE LINES 175-179
 
 Graphically analyse the bootstrap sample of the ECLM probabilities
 ==================================================================
 
 We create the Pairs graphs of all the ECLM probabilities. We limit the graphical study to the multiplicities lesser than :math:`k_{max}`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 158-162
+.. GENERATED FROM PYTHON SOURCE LINES 181-185
 
 .. code-block:: default
 
@@ -416,7 +448,7 @@ We create the Pairs graphs of all the ECLM probabilities. We limit the graphical
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 163-170
+.. GENERATED FROM PYTHON SOURCE LINES 186-193
 
 .. code-block:: default
 
@@ -434,9 +466,15 @@ We create the Pairs graphs of all the ECLM probabilities. We limit the graphical
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 171-174
+.. GENERATED FROM PYTHON SOURCE LINES 194-195
+
+Deactivate grid to make matplotlib happy
+
+.. GENERATED FROM PYTHON SOURCE LINES 195-200
 
 .. code-block:: default
+
+    graphPairs_list[0] = deactivateGrid(graphPairs_list[0])
 
     view = View(graphPairs_list[0])
     view.show()
@@ -453,9 +491,15 @@ We create the Pairs graphs of all the ECLM probabilities. We limit the graphical
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 175-178
+.. GENERATED FROM PYTHON SOURCE LINES 201-202
+
+Deactivate grid to make matplotlib happy
+
+.. GENERATED FROM PYTHON SOURCE LINES 202-207
 
 .. code-block:: default
+
+    graphPairs_list[1] = deactivateGrid(graphPairs_list[1])
 
     view = View(graphPairs_list[1])
     view.show()
@@ -472,9 +516,15 @@ We create the Pairs graphs of all the ECLM probabilities. We limit the graphical
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 179-182
+.. GENERATED FROM PYTHON SOURCE LINES 208-209
+
+Deactivate grid to make matplotlib happy
+
+.. GENERATED FROM PYTHON SOURCE LINES 209-214
 
 .. code-block:: default
+
+    graphPairs_list[2] = deactivateGrid(graphPairs_list[2])
 
     view = View(graphPairs_list[2])
     view.show()
@@ -491,9 +541,15 @@ We create the Pairs graphs of all the ECLM probabilities. We limit the graphical
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 183-186
+.. GENERATED FROM PYTHON SOURCE LINES 215-216
+
+Deactivate grid to make matplotlib happy
+
+.. GENERATED FROM PYTHON SOURCE LINES 216-221
 
 .. code-block:: default
+
+    graphPairs_list[3] = deactivateGrid(graphPairs_list[3])
 
     view = View(graphPairs_list[3])
     view.show()
@@ -510,17 +566,19 @@ We create the Pairs graphs of all the ECLM probabilities. We limit the graphical
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 187-188
+.. GENERATED FROM PYTHON SOURCE LINES 222-223
 
 Fix a k <=kMax
 
-.. GENERATED FROM PYTHON SOURCE LINES 188-193
+.. GENERATED FROM PYTHON SOURCE LINES 223-230
 
 .. code-block:: default
 
 
     k = 0
-    view = View(graphPEG_PES_PTS_list[k])
+    gl = graphPEG_PES_PTS_list[k]
+    gl = deactivateGrid(gl)
+    view = View(gl)
     view.show()
 
 
@@ -535,14 +593,18 @@ Fix a k <=kMax
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 194-201
+.. GENERATED FROM PYTHON SOURCE LINES 231-242
 
 .. code-block:: default
 
     len(graphMargPEG_list)
-    gl = ot.GridLayout(2,3)
-    for k in range(len(graphMargPEG_list)):
-        gl.setGraph(k//3, k%3, graphMargPEG_list[k])
+    gl = ot.GridLayout(2, 3)
+    for k in range(6):
+        g = graphMargPEG_list[k]
+        gl.setGraph(k//3, k%3, g)
+
+    # Deactivate grid to make matplotlib happy
+    gl = deactivateGrid(gl)
     view = View(gl)
     view.show()
 
@@ -558,13 +620,17 @@ Fix a k <=kMax
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 202-208
+.. GENERATED FROM PYTHON SOURCE LINES 243-253
 
 .. code-block:: default
 
-    gl = ot.GridLayout(2,3)
-    for k in range(len(graphMargPSG_list)):
-        gl.setGraph(k//3, k%3, graphMargPSG_list[k])
+    gl = ot.GridLayout(2, 3)
+    for k in range(6):
+        g = graphMargPSG_list[k]
+        gl.setGraph(k//3, k%3, g)
+
+    # Deactivate grid to make matplotlib happy
+    gl = deactivateGrid(gl)
     view = View(gl)
     view.show()
 
@@ -580,13 +646,17 @@ Fix a k <=kMax
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 209-215
+.. GENERATED FROM PYTHON SOURCE LINES 254-264
 
 .. code-block:: default
 
-    gl = ot.GridLayout(2,3)
-    for k in range(len(graphMargPES_list)):
-        gl.setGraph(k//3, k%3, graphMargPES_list[k])
+    gl = ot.GridLayout(2, 3)
+    for k in range(6):
+        g = graphMargPES_list[k]
+        gl.setGraph(k//3, k%3, g)
+
+    # Deactivate grid to make matplotlib happy
+    gl = deactivateGrid(gl)
     view = View(gl)
     view.show()
 
@@ -602,13 +672,17 @@ Fix a k <=kMax
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 216-222
+.. GENERATED FROM PYTHON SOURCE LINES 265-275
 
 .. code-block:: default
 
-    gl = ot.GridLayout(2,3)
-    for k in range(len(graphMargPTS_list)):
-        gl.setGraph(k//3, k%3, graphMargPTS_list[k])
+    gl = ot.GridLayout(2, 3)
+    for k in range(6):
+        g = graphMargPTS_list[k]
+        gl.setGraph(k//3, k%3, g)
+
+    # Deactivate grid to make matplotlib happy
+    gl = deactivateGrid(gl)
     view = View(gl)
     view.show()
 
@@ -624,7 +698,7 @@ Fix a k <=kMax
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 223-228
+.. GENERATED FROM PYTHON SOURCE LINES 276-281
 
 Fit a distribution to the ECLM probabilities
 ============================================
@@ -632,7 +706,7 @@ Fit a distribution to the ECLM probabilities
 We fit a distribution among a given list to each ECLM probability. We test it with the Lilliefors test. 
 We also compute the confidence interval of the specified level.
 
-.. GENERATED FROM PYTHON SOURCE LINES 230-238
+.. GENERATED FROM PYTHON SOURCE LINES 283-291
 
 .. code-block:: default
 
@@ -657,84 +731,82 @@ We also compute the confidence interval of the specified level.
 
     Ordre k= 0
     PEG...
-    Best model PEG( 0 |n) :  LogNormal(muLog = 1.72956, sigmaLog = 1.44785e-05, gamma = -4.6403) p-value =  0.0999000999000999
+    Best model PEG( 0 |n) :  Gamma(k = 15194.7, lambda = 1.52473e+06, gamma = 0.987902) p-value =  0.8708260105448155
     PSG...
-    Best model PSG( 0 |n) :  LogNormal(muLog = -27.6303, sigmaLog = 0.000218814, gamma = 1) p-value =  0.5531742822482815
     PES...
-    Best model PES( 0 |n) :  Gamma(k = 15023.3, lambda = 1.49397e+06, gamma = 0.987805) p-value =  0.13005272407732874
+    Best model PES( 0 |n) :  Gamma(k = 15194.7, lambda = 1.52473e+06, gamma = 0.987902) p-value =  0.8830917874396135
     PTS...
-    Best model PTS( 0 |n) :  LogNormal(muLog = -26.5977, sigmaLog = 8.24784e-05, gamma = 1) p-value =  0.34466213514594163
 
     Test de Lilliefors
     ==================
 
     Ordre k= 1
     PEG...
-    Best model PEG( 1 |n) :  LogNormal(muLog = -9.30003, sigmaLog = 0.15745, gamma = 0.000175179) p-value =  0.868103448275862
+    Best model PEG( 1 |n) :  Gamma(k = 6.3376, lambda = 176730, gamma = 0.000230666) p-value =  0.07995003123048094
     PSG...
-    Best model PSG( 1 |n) :  Beta(alpha = 2.0922, beta = 2.36032, a = 0.000351093, b = 0.000392658) p-value =  0.648896293211162
+    Best model PSG( 1 |n) :  Beta(alpha = 2.0922, beta = 2.36032, a = 0.000351093, b = 0.000392658) p-value =  0.6511218653761549
     PES...
-    Best model PES( 1 |n) :  LogNormal(muLog = -7.35412, sigmaLog = 0.15745, gamma = 0.00122626) p-value =  0.865625
+    Best model PES( 1 |n) :  Gamma(k = 6.3376, lambda = 25247.2, gamma = 0.00161466) p-value =  0.09246147438567263
     PTS...
-    Best model PTS( 1 |n) :  LogNormal(muLog = -7.67793, sigmaLog = 0.172933, gamma = 0.00166948) p-value =  0.20161290322580644
+    Best model PTS( 1 |n) :  LogNormal(muLog = 3.69398, sigmaLog = 2.00009e-06, gamma = -40.2023) p-value =  0.8200270635994588
 
     Test de Lilliefors
     ==================
 
     Ordre k= 2
     PEG...
-    Best model PEG( 2 |n) :  LogNormal(muLog = -10.5099, sigmaLog = 0.0247712, gamma = -2.02828e-05) p-value =  0.1755153029356652
+    Best model PEG( 2 |n) :  Gamma(k = 4.15526, lambda = 2.9812e+06, gamma = 5.59795e-06) p-value =  0.06995627732667083
     PSG...
-    Best model PSG( 2 |n) :  Beta(alpha = 1.94997, beta = 1.9295, a = 1.79475e-05, b = 5.2853e-05) p-value =  0.16333333333333333
+    Best model PSG( 2 |n) :  Beta(alpha = 2.03418, beta = 2.00657, a = 1.8153e-05, b = 5.41383e-05) p-value =  0.42042657916324855
     PES...
-    Best model PES( 2 |n) :  LogNormal(muLog = -7.46541, sigmaLog = 0.0247712, gamma = -0.00042594) p-value =  0.1711430356027483
+    Best model PES( 2 |n) :  Gamma(k = 4.15526, lambda = 141962, gamma = 0.000117557) p-value =  0.07692307692307693
     PTS...
-    Best model PTS( 2 |n) :  Beta(alpha = 1.97298, beta = 1.85807, a = 0.000194187, b = 0.000332085) p-value =  0.19093851132686085
+    Best model PTS( 2 |n) :  Beta(alpha = 2.59769, beta = 2.58104, a = 0.000190452, b = 0.000343188) p-value =  0.2467013194722111
 
     Test de Lilliefors
     ==================
 
     Ordre k= 3
     PEG...
-    Best model PEG( 3 |n) :  LogNormal(muLog = -10.9482, sigmaLog = 0.0144161, gamma = -1.55973e-05) p-value =  0.24469736161407138
+    Best model PEG( 3 |n) :  LogNormal(muLog = -10.1543, sigmaLog = 0.00632765, gamma = -3.69058e-05) p-value =  0.017982017982017984
     PSG...
-    Best model PSG( 3 |n) :  Beta(alpha = 1.96789, beta = 2.67636, a = 3.0368e-06, b = 2.46881e-05) p-value =  0.816875
+    Best model PSG( 3 |n) :  LogNormal(muLog = -9.29199, sigmaLog = 0.0501818, gamma = -7.95733e-05) p-value =  0.4508460918614021
     PES...
-    Best model PES( 3 |n) :  LogNormal(muLog = -7.39285, sigmaLog = 0.0144161, gamma = -0.000545907) p-value =  0.26033057851239666
+    Best model PES( 3 |n) :  LogNormal(muLog = -6.59899, sigmaLog = 0.00632767, gamma = -0.0012917) p-value =  0.016983016983016984
     PTS...
-    Best model PTS( 3 |n) :  Beta(alpha = 2.08725, beta = 1.61163, a = 6.33341e-05, b = 0.000160945) p-value =  0.42042657916324855
+    Best model PTS( 3 |n) :  Beta(alpha = 2.57802, beta = 2.06838, a = 6.11557e-05, b = 0.000167641) p-value =  0.4682730923694779
 
     Test de Lilliefors
     ==================
 
     Ordre k= 4
     PEG...
-    Best model PEG( 4 |n) :  Beta(alpha = 2.37851, beta = 1.51056, a = 2.99821e-07, b = 1.28032e-06) p-value =  0.16677076826983137
+    Best model PEG( 4 |n) :  Beta(alpha = 2.90819, beta = 1.86051, a = 2.6672e-07, b = 1.33362e-06) p-value =  0.3630077787381158
     PSG...
-    Best model PSG( 4 |n) :  Beta(alpha = 1.68139, beta = 3.09722, a = 3.99687e-07, b = 1.40107e-05) p-value =  0.801875
+    Best model PSG( 4 |n) :  Beta(alpha = 1.60513, beta = 2.3902, a = 3.4225e-07, b = 1.31796e-05) p-value =  0.21571428571428572
     PES...
-    Best model PES( 4 |n) :  Beta(alpha = 2.37851, beta = 1.51056, a = 1.04937e-05, b = 4.48113e-05) p-value =  0.15349194167306215
+    Best model PES( 4 |n) :  Beta(alpha = 2.90819, beta = 1.86051, a = 9.33519e-06, b = 4.66765e-05) p-value =  0.36568096626405666
     PTS...
-    Best model PTS( 4 |n) :  Beta(alpha = 2.19485, beta = 1.96585, a = 1.15122e-05, b = 8.18545e-05) p-value =  0.5972568578553616
+    Best model PTS( 4 |n) :  Beta(alpha = 2.38405, beta = 2.00904, a = 1.01563e-05, b = 8.38845e-05) p-value =  0.259047619047619
 
     Test de Lilliefors
     ==================
 
     Ordre k= 5
     PEG...
-    Best model PEG( 5 |n) :  Beta(alpha = 2.00772, beta = 2.06612, a = 5.03412e-08, b = 1.14186e-06) p-value =  0.91875
+    Best model PEG( 5 |n) :  LogNormal(muLog = -5.07621, sigmaLog = 3.9823e-05, gamma = -0.00624289) p-value =  0.37401082882132447
     PSG...
-    Best model PSG( 5 |n) :  Beta(alpha = 1.31999, beta = 3.25439, a = 2.70436e-09, b = 8.82364e-06) p-value =  0.9330669330669331
+    Best model PSG( 5 |n) :  Gamma(k = 2.28995, lambda = 856210, gamma = 7.33367e-08) p-value =  0.21428571428571427
     PES...
-    Best model PES( 5 |n) :  Beta(alpha = 2.00772, beta = 2.06612, a = 1.05716e-06, b = 2.39791e-05) p-value =  0.9200799200799201
+    Best model PES( 5 |n) :  Beta(alpha = 2.04945, beta = 1.95541, a = 8.73906e-07, b = 2.43599e-05) p-value =  0.38626790227464197
     PTS...
-    Best model PTS( 5 |n) :  Beta(alpha = 1.84893, beta = 2.64399, a = 9.87506e-07, b = 4.02314e-05) p-value =  0.8810090433127082
+    Best model PTS( 5 |n) :  Beta(alpha = 1.79143, beta = 2.19822, a = 8.01405e-07, b = 3.92364e-05) p-value =  0.26211116777154514
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 239-253
+.. GENERATED FROM PYTHON SOURCE LINES 292-306
 
 .. code-block:: default
 
@@ -760,41 +832,45 @@ We also compute the confidence interval of the specified level.
 
  .. code-block:: none
 
-    IC_PEG_ 0  =  [0.997709, 0.997996]
-    IC_PEG_ 1  =  [0.000242827, 0.000295554]
-    IC_PEG_ 2  =  [5.80494e-06, 8.26078e-06]
-    IC_PEG_ 3  =  [1.56847e-06, 2.463e-06]
-    IC_PEG_ 4  =  [5.01127e-07, 1.2131e-06]
-    IC_PEG_ 5  =  [1.57426e-07, 1.00529e-06]
+    IC_PEG_ 0  =  [0.997722, 0.998014]
+    IC_PEG_ 1  =  [0.000243202, 0.000290828]
+    IC_PEG_ 2  =  [5.8467e-06, 8.31406e-06]
+    IC_PEG_ 3  =  [1.59285e-06, 2.44419e-06]
+    IC_PEG_ 4  =  [4.81427e-07, 1.22995e-06]
+    IC_PEG_ 5  =  [1.55528e-07, 1.04648e-06]
     IC_PSG_ 0  =  [1, 1]
     IC_PSG_ 1  =  [0.000354533, 0.000386447]
-    IC_PSG_ 2  =  [2.16182e-05, 4.85748e-05]
-    IC_PSG_ 3  =  [4.77323e-06, 1.98903e-05]
-    IC_PSG_ 4  =  [1.04711e-06, 1.00707e-05]
-    IC_PSG_ 5  =  [2.94417e-07, 5.67998e-06]
-    IC_PES_ 0  =  [0.997709, 0.997996]
-    IC_PES_ 1  =  [0.00169979, 0.00206888]
-    IC_PES_ 2  =  [0.000121904, 0.000173476]
-    IC_PES_ 3  =  [5.48967e-05, 8.62049e-05]
-    IC_PES_ 4  =  [1.75401e-05, 4.24574e-05]
-    IC_PES_ 5  =  [3.30636e-06, 2.11104e-05]
+    IC_PSG_ 2  =  [2.1457e-05, 5.00399e-05]
+    IC_PSG_ 3  =  [4.49871e-06, 2.10833e-05]
+    IC_PSG_ 4  =  [1.1831e-06, 1.03945e-05]
+    IC_PSG_ 5  =  [3.35925e-07, 5.91883e-06]
+    IC_PES_ 0  =  [0.997722, 0.998014]
+    IC_PES_ 1  =  [0.00170242, 0.0020358]
+    IC_PES_ 2  =  [0.000122781, 0.000174595]
+    IC_PES_ 3  =  [5.57501e-05, 8.55466e-05]
+    IC_PES_ 4  =  [1.685e-05, 4.30481e-05]
+    IC_PES_ 5  =  [3.26324e-06, 2.1981e-05]
     IC_PTS_ 0  =  [1, 1]
-    IC_PTS_ 1  =  [0.00200361, 0.00229086]
-    IC_PTS_ 2  =  [0.000209886, 0.000318829]
-    IC_PTS_ 3  =  [7.83573e-05, 0.000152162]
-    IC_PTS_ 4  =  [2.02811e-05, 7.47002e-05]
-    IC_PTS_ 5  =  [3.67077e-06, 3.16551e-05]
+    IC_PTS_ 1  =  [0.0019857, 0.00227805]
+    IC_PTS_ 2  =  [0.000214196, 0.000318199]
+    IC_PTS_ 3  =  [7.78457e-05, 0.000153955]
+    IC_PTS_ 4  =  [2.04623e-05, 7.65792e-05]
+    IC_PTS_ 5  =  [3.74705e-06, 3.3061e-05]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 254-260
+.. GENERATED FROM PYTHON SOURCE LINES 307-317
 
 .. code-block:: default
 
-    gl = ot.GridLayout(2,3)
-    for k in range(len(graphMargPEG_list)):
-        gl.setGraph(k//3, k%3, graphMargPEG_list[k])
+    gl = ot.GridLayout(2, 3)
+    for k in range(6):
+        g = graphMargPEG_list[k]
+        gl.setGraph(k//3, k%3, g)
+
+    # Deactivate grid to make matplotlib happy
+    gl = deactivateGrid(gl)
     view = View(gl)
     view.show()
 
@@ -802,7 +878,7 @@ We also compute the confidence interval of the specified level.
 
 
 .. image-sg:: /auto_example/images/sphx_glr_plot_eclm_014.png
-   :alt: , PEG(0|7) - best model : LogNormal, PEG(1|7) - best model : LogNormal, PEG(2|7) - best model : LogNormal, PEG(3|7) - best model : LogNormal, PEG(4|7) - best model : Beta, PEG(5|7) - best model : Beta
+   :alt: , PEG(0|7) - best model : Gamma, PEG(1|7) - best model : Gamma, PEG(2|7) - best model : Gamma, PEG(3|7) - best model : LogNormal, PEG(4|7) - best model : Beta, PEG(5|7) - best model : LogNormal
    :srcset: /auto_example/images/sphx_glr_plot_eclm_014.png
    :class: sphx-glr-single-img
 
@@ -810,13 +886,17 @@ We also compute the confidence interval of the specified level.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 261-267
+.. GENERATED FROM PYTHON SOURCE LINES 318-328
 
 .. code-block:: default
 
-    gl = ot.GridLayout(2,3)
-    for k in range(len(graphMargPSG_list)):
-        gl.setGraph(k//3, k%3, graphMargPSG_list[k])
+    gl = ot.GridLayout(2, 3)
+    for k in range(6):
+        g = graphMargPSG_list[k]
+        gl.setGraph(k//3, k%3, g)
+
+    # Deactivate grid to make matplotlib happy
+    gl = deactivateGrid(gl)
     view = View(gl)
     view.show()
 
@@ -824,7 +904,7 @@ We also compute the confidence interval of the specified level.
 
 
 .. image-sg:: /auto_example/images/sphx_glr_plot_eclm_015.png
-   :alt: , PSG(0|7) - best model : LogNormal, PSG(1|7) - best model : Beta, PSG(2|7) - best model : Beta, PSG(3|7) - best model : Beta, PSG(4|7) - best model : Beta, PSG(5|7) - best model : Beta
+   :alt: , PSG(0|7), PSG(1|7) - best model : Beta, PSG(2|7) - best model : Beta, PSG(3|7) - best model : LogNormal, PSG(4|7) - best model : Beta, PSG(5|7) - best model : Gamma
    :srcset: /auto_example/images/sphx_glr_plot_eclm_015.png
    :class: sphx-glr-single-img
 
@@ -832,13 +912,17 @@ We also compute the confidence interval of the specified level.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 268-274
+.. GENERATED FROM PYTHON SOURCE LINES 329-339
 
 .. code-block:: default
 
-    gl = ot.GridLayout(2,3)
-    for k in range(len(graphMargPES_list)):
-            gl.setGraph(k//3, k%3, graphMargPES_list[k])
+    gl = ot.GridLayout(2, 3)
+    for k in range(6):
+        g = graphMargPES_list[k]
+        gl.setGraph(k//3, k%3, g)
+
+    # Deactivate grid to make matplotlib happy
+    gl = deactivateGrid(gl)
     view = View(gl)
     view.show()
 
@@ -846,7 +930,7 @@ We also compute the confidence interval of the specified level.
 
 
 .. image-sg:: /auto_example/images/sphx_glr_plot_eclm_016.png
-   :alt: , PES(0|7) - best model : Gamma, PES(1|7) - best model : LogNormal, PES(2|7) - best model : LogNormal, PES(3|7) - best model : LogNormal, PES(4|7) - best model : Beta, PES(5|7) - best model : Beta
+   :alt: , PES(0|7) - best model : Gamma, PES(1|7) - best model : Gamma, PES(2|7) - best model : Gamma, PES(3|7) - best model : LogNormal, PES(4|7) - best model : Beta, PES(5|7) - best model : Beta
    :srcset: /auto_example/images/sphx_glr_plot_eclm_016.png
    :class: sphx-glr-single-img
 
@@ -854,13 +938,17 @@ We also compute the confidence interval of the specified level.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 275-281
+.. GENERATED FROM PYTHON SOURCE LINES 340-350
 
 .. code-block:: default
 
-    gl = ot.GridLayout(2,3)
-    for k in range(len(graphMargPTS_list)):
-        gl.setGraph(k//3, k%3, graphMargPTS_list[k])
+    gl = ot.GridLayout(2, 3)
+    for k in range(6):
+        g = graphMargPTS_list[k]
+        gl.setGraph(k//3, k%3, g)
+
+    # Deactivate grid to make matplotlib happy
+    gl = deactivateGrid(gl)
     view = View(gl)
     view.show()
 
@@ -868,7 +956,7 @@ We also compute the confidence interval of the specified level.
 
 
 .. image-sg:: /auto_example/images/sphx_glr_plot_eclm_017.png
-   :alt: , PTS(0|7) - best model : LogNormal, PTS(1|7) - best model : LogNormal, PTS(2|7) - best model : Beta, PTS(3|7) - best model : Beta, PTS(4|7) - best model : Beta, PTS(5|7) - best model : Beta
+   :alt: , PTS(0|7), PTS(1|7) - best model : LogNormal, PTS(2|7) - best model : Beta, PTS(3|7) - best model : Beta, PTS(4|7) - best model : Beta, PTS(5|7) - best model : Beta
    :srcset: /auto_example/images/sphx_glr_plot_eclm_017.png
    :class: sphx-glr-single-img
 
@@ -876,7 +964,7 @@ We also compute the confidence interval of the specified level.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 282-291
+.. GENERATED FROM PYTHON SOURCE LINES 351-360
 
 Analyse the minimal multiplicity which probability is greater than a given threshold
 ====================================================================================
@@ -888,7 +976,7 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
    k_{max} = \arg\max \{k| \mbox{PTS}(k|n) \geq p \}
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 293-296
+.. GENERATED FROM PYTHON SOURCE LINES 362-365
 
 .. code-block:: default
 
@@ -902,7 +990,7 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 297-302
+.. GENERATED FROM PYTHON SOURCE LINES 366-371
 
 .. code-block:: default
 
@@ -919,12 +1007,12 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
  .. code-block:: none
 
-    kMax =  6
+    kMax =  5
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 303-307
+.. GENERATED FROM PYTHON SOURCE LINES 372-376
 
 .. code-block:: default
 
@@ -945,10 +1033,11 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 308-310
+.. GENERATED FROM PYTHON SOURCE LINES 377-380
 
 .. code-block:: default
 
+    gKmax.setGrid(False)
     view = View(gKmax)
     view.show()
 
@@ -966,7 +1055,7 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  7.631 seconds)
+   **Total running time of the script:** ( 1 minutes  28.871 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_eclm.py:
