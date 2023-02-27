@@ -5,8 +5,8 @@
 
 Computation times
 =================
-**01:28.871** total execution time for **auto_example** files:
+**01:15.324** total execution time for **auto_example** files:
 
 +--------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_example_plot_eclm.py` (``plot_eclm.py``) | 01:28.871 | 0.0 MB |
+| :ref:`sphx_glr_auto_example_plot_eclm.py` (``plot_eclm.py``) | 01:15.324 | 0.0 MB |
 +--------------------------------------------------------------+-----------+--------+
