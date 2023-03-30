@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_auto_example_plot_eclm.py>`
+        :ref:`Go to the end <sphx_glr_download_auto_example_plot_eclm.py>`
         to download the full example code
 
 .. rst-class:: sphx-glr-example-title
@@ -748,7 +748,7 @@ We also compute the confidence interval of the specified level.
     PES...
     Best model PES( 1 |n) :  Gamma(k = 6.3376, lambda = 25247.2, gamma = 0.00161466) p-value =  0.09246147438567263
     PTS...
-    Best model PTS( 1 |n) :  LogNormal(muLog = 3.7649, sigmaLog = 1.86449e-06, gamma = -43.1571) p-value =  0.8262682418346073
+    Best model PTS( 1 |n) :  LogNormal(muLog = 3.77435, sigmaLog = 1.84678e-06, gamma = -43.5669) p-value =  0.8262682418346073
 
     Test de Lilliefors
     ==================
@@ -768,7 +768,7 @@ We also compute the confidence interval of the specified level.
 
     Ordre k= 3
     PEG...
-    Best model PEG( 3 |n) :  LogNormal(muLog = -10.1543, sigmaLog = 0.00632755, gamma = -3.69064e-05) p-value =  0.017982017982017984
+    Best model PEG( 3 |n) :  LogNormal(muLog = -10.1543, sigmaLog = 0.00632751, gamma = -3.69067e-05) p-value =  0.017982017982017984
     PSG...
     Best model PSG( 3 |n) :  LogNormal(muLog = -9.29199, sigmaLog = 0.0501818, gamma = -7.95733e-05) p-value =  0.4195402298850575
     PES...
@@ -787,20 +787,20 @@ We also compute the confidence interval of the specified level.
     PES...
     Best model PES( 4 |n) :  Beta(alpha = 2.90819, beta = 1.86051, a = 9.33519e-06, b = 4.66765e-05) p-value =  0.36855670103092786
     PTS...
-    Best model PTS( 4 |n) :  LogNormal(muLog = 0.534641, sigmaLog = 9.21984e-06, gamma = -1.70679) p-value =  0.26163391933815927
+    Best model PTS( 4 |n) :  LogNormal(muLog = 0.624451, sigmaLog = 8.42789e-06, gamma = -1.86717) p-value =  0.2603734439834025
 
     Test de Lilliefors
     ==================
 
     Ordre k= 5
     PEG...
-    Best model PEG( 5 |n) :  LogNormal(muLog = -5.16641, sigmaLog = 4.35817e-05, gamma = -0.00570442) p-value =  0.37401082882132447
+    Best model PEG( 5 |n) :  LogNormal(muLog = -5.08405, sigmaLog = 4.01363e-05, gamma = -0.00619416) p-value =  0.3744273219491878
     PSG...
-    Best model PSG( 5 |n) :  Beta(alpha = 1.24147, beta = 2.35748, a = -2.60495e-09, b = 7.97084e-06) p-value =  0.2053311120366514
+    Best model PSG( 5 |n) :  Gamma(k = 2.28995, lambda = 856210, gamma = 7.33367e-08) p-value =  0.21666666666666667
     PES...
-    Best model PES( 5 |n) :  Beta(alpha = 2.04945, beta = 1.95541, a = 8.73906e-07, b = 2.43599e-05) p-value =  0.35145941623350657
+    Best model PES( 5 |n) :  Beta(alpha = 2.04945, beta = 1.95541, a = 8.73906e-07, b = 2.43599e-05) p-value =  0.3675397166165737
     PTS...
-    Best model PTS( 5 |n) :  Beta(alpha = 1.79143, beta = 2.19822, a = 8.01405e-07, b = 3.92364e-05) p-value =  0.23990004164931278
+    Best model PTS( 5 |n) :  Beta(alpha = 1.79143, beta = 2.19822, a = 8.01405e-07, b = 3.92364e-05) p-value =  0.25563122053431114
 
 
 
@@ -904,7 +904,7 @@ We also compute the confidence interval of the specified level.
 
 
 .. image-sg:: /auto_example/images/sphx_glr_plot_eclm_015.png
-   :alt: , PSG(0|7), PSG(1|7) - best model : Beta, PSG(2|7) - best model : Beta, PSG(3|7) - best model : LogNormal, PSG(4|7) - best model : Beta, PSG(5|7) - best model : Beta
+   :alt: , PSG(0|7), PSG(1|7) - best model : Beta, PSG(2|7) - best model : Beta, PSG(3|7) - best model : LogNormal, PSG(4|7) - best model : Beta, PSG(5|7) - best model : Gamma
    :srcset: /auto_example/images/sphx_glr_plot_eclm_015.png
    :class: sphx-glr-single-img
 
@@ -1055,7 +1055,7 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  15.324 seconds)
+   **Total running time of the script:** ( 1 minutes  17.019 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_eclm.py:
@@ -1063,6 +1063,8 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 .. only:: html
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
+
+
 
 
     .. container:: sphx-glr-download sphx-glr-download-python

@@ -15,7 +15,7 @@
 .. only:: html
 
   .. image:: /auto_example/images/thumb/sphx_glr_plot_eclm_thumb.png
-    :alt: Extended Common Load Modelling
+    :alt:
 
   :ref:`sphx_glr_auto_example_plot_eclm.py`
 
