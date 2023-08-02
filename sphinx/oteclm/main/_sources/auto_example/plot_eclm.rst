@@ -108,7 +108,7 @@ We start by verifying that our starting point :math:`(P_x, C_{co}, c_x)` for the
 .. code-block:: default
 
     startingPoint = [5.0e-3, 0.51, 0.85]
-    print(myECLM.verifyMankamoConstraints(startingPoint))
+    print('Proposed starting point valid?: ', myECLM.verifyMankamoConstraints(startingPoint))
 
 
 
@@ -118,7 +118,7 @@ We start by verifying that our starting point :math:`(P_x, C_{co}, c_x)` for the
 
  .. code-block:: none
 
-    False
+    Proposed starting point valid?:  False
 
 
 
@@ -177,9 +177,9 @@ Anyway, if the starting point is not valid, the function *estimateMaxLikelihoodF
     graph Cx = Cx_optim
     graph Cco = Cco_optim
     graph logPx = logPx_optim
-    Mankamo parameter :  [0.00036988020585009376, 0.00013600155570105282, 0.2588505530765386, 0.2588505530765386]
-    general parameter :  [0.9993012893405384, 0.14543097230226737, 0.14543097230226737, 0.24608506300257849, 0.7539149369974215]
-    finalLogLikValue :  -709.782712893384
+    Mankamo parameter :  [0.00036988020585009376, 0.00012952147966373113, 0.2658266078353387, 0.26582660783533874]
+    general parameter :  [0.99933838922154, 0.1476851756628588, 0.14768517566285883, 0.24543528522847904, 0.754564714771521]
+    finalLogLikValue :  -0.02167747439543925
 
 
 
@@ -214,7 +214,7 @@ Function to deactivate grid in GridLayout to make matplotlib happy
 
 
 .. image-sg:: /auto_example/images/sphx_glr_plot_eclm_001.png
-   :alt: , Log likelihood at $(\log P_{x}, C_{co}) = ($-8.90E+00,2.59E-01), Log likelihood at $(\log P_{x}, C_{x}) = ($-8.90E+00,2.59E-01), Log likelihood at $(C_{co}, C_{x}) = ($2.59E-01,2.59E-01), Log likelihood at $C_{x} = $2.59E-01, Log likelihood at $C_{co} = $2.59E-01, Log likelihood at $\log P_{x} = $-8.90E+00
+   :alt: , Log likelihood at $(\log P_{x}, C_{co}) = ($-8.95E+00,2.66E-01), Log likelihood at $(\log P_{x}, C_{x}) = ($-8.95E+00,2.66E-01), Log likelihood at $(C_{co}, C_{x}) = ($2.66E-01,2.66E-01), Log likelihood at $C_{x} = $2.66E-01, Log likelihood at $C_{co} = $2.66E-01, Log likelihood at $\log P_{x} = $-8.95E+00
    :srcset: /auto_example/images/sphx_glr_plot_eclm_001.png
    :class: sphx-glr-single-img
 
@@ -223,7 +223,7 @@ Function to deactivate grid in GridLayout to make matplotlib happy
 
  .. code-block:: none
 
-    /usr/share/miniconda3/envs/test/lib/python3.11/site-packages/openturns/viewer.py:517: UserWarning: No contour levels were found within the data range.
+    /usr/share/miniconda3/envs/test/lib/python3.11/site-packages/openturns/viewer.py:532: UserWarning: No contour levels were found within the data range.
       contourset = self._ax[0].contour(X, Y, Z, **contour_kw)
 
 
@@ -261,13 +261,13 @@ Compute the ECLM probabilities
 
  .. code-block:: none
 
-    PEG_list =  [0.9979842444972018, 0.00024616830163108345, 6.851198010667661e-06, 2.018655522792095e-06, 1.1821721245361805e-06, 1.0796950990733763e-06, 1.5136540724374388e-06, 3.40408989274085e-06]
+    PEG_list =  [0.9979685128453654, 0.00024955737932482353, 6.732445116140214e-06, 1.922081438048188e-06, 1.1331572963762106e-06, 1.0535799779325168e-06, 1.515528008560812e-06, 3.5369206007148977e-06]
 
-    PSG_list =  [1.0, 0.0003698802058500854, 5.053550811565175e-05, 2.2684220797867682e-05, 1.2366309531809475e-05, 7.511093136689104e-06, 4.917743965178289e-06, 3.40408989274085e-06]
+    PSG_list =  [1.0, 0.000369880205850105, 4.9324785692987386e-05, 2.2375223126106277e-05, 1.2377401856571094e-05, 7.621556595769038e-06, 5.05244860927571e-06, 3.5369206007148977e-06]
 
-    PES_list =  [0.9979842444972018, 0.001723178111417584, 0.00014387515822402087, 7.065294329772333e-05, 4.137602435876632e-05, 2.26735970805409e-05, 1.0595578507062071e-05, 3.40408989274085e-06]
+    PES_list =  [0.9979685128453654, 0.0017469016552737646, 0.0001413813474389445, 6.727285033168659e-05, 3.966050537316737e-05, 2.2125179536582855e-05, 1.0608696059925683e-05, 3.5369206007148977e-06]
 
-    PTS_list =  [1.0, 0.002015755502778438, 0.0002925773913608544, 0.00014870223313683347, 7.804928983911013e-05, 3.6673265480343824e-05, 1.3999668399802922e-05, 3.40408989274085e-06]
+    PTS_list =  [1.0, 0.002031487154614786, 0.00028458549934102194, 0.00014320415190207742, 7.59313015703908e-05, 3.627079619722344e-05, 1.4145616660640582e-05, 3.5369206007148977e-06]
 
 
 
@@ -731,10 +731,10 @@ We also compute the confidence interval of the specified level.
 
     Ordre k= 0
     PEG...
-    Best model PEG( 0 |n) :  Beta(alpha = 2.73806, beta = 2.53511, a = 0.99763, b = 0.99805) p-value =  0.16584333098094567
+    Best model PEG( 0 |n) :  Beta(alpha = 2.3886, beta = 2.14454, a = 0.99775, b = 0.998033) p-value =  0.6630570595585173
     PSG...
     PES...
-    Best model PES( 0 |n) :  Beta(alpha = 2.73806, beta = 2.53511, a = 0.99763, b = 0.99805) p-value =  0.1679604798870854
+    Best model PES( 0 |n) :  Beta(alpha = 2.3886, beta = 2.14454, a = 0.99775, b = 0.998033) p-value =  0.6585365853658537
     PTS...
 
     Test de Lilliefors
@@ -742,65 +742,65 @@ We also compute the confidence interval of the specified level.
 
     Ordre k= 1
     PEG...
-    Best model PEG( 1 |n) :  Beta(alpha = 2.51879, beta = 2.40672, a = 0.00023197, b = 0.000305981) p-value =  0.5072
+    Best model PEG( 1 |n) :  Beta(alpha = 2.15125, beta = 2.38698, a = 0.000242765, b = 0.000282381) p-value =  0.6551436901291129
     PSG...
-    Best model PSG( 1 |n) :  Beta(alpha = 2.0922, beta = 2.36032, a = 0.000351093, b = 0.000392658) p-value =  0.6566371681415929
+    Best model PSG( 1 |n) :  Beta(alpha = 2.0922, beta = 2.36032, a = 0.000351093, b = 0.000392658) p-value =  0.646813827571845
     PES...
-    Best model PES( 1 |n) :  Beta(alpha = 2.51879, beta = 2.40672, a = 0.00162379, b = 0.00214187) p-value =  0.5076
+    Best model PES( 1 |n) :  Beta(alpha = 2.15125, beta = 2.38698, a = 0.00169936, b = 0.00197667) p-value =  0.6653338664534187
     PTS...
-    Best model PTS( 1 |n) :  Gamma(k = 6.7106, lambda = 30921.4, gamma = 0.00193484) p-value =  0.5122048819527811
+    Best model PTS( 1 |n) :  Beta(alpha = 2.14454, beta = 2.3886, a = 0.00196691, b = 0.00225046) p-value =  0.6705539358600583
 
     Test de Lilliefors
     ==================
 
     Ordre k= 2
     PEG...
-    Best model PEG( 2 |n) :  LogNormal(muLog = -12.177, sigmaLog = 0.147268, gamma = 1.89098e-06) p-value =  0.1290893015030946
+    Best model PEG( 2 |n) :  Beta(alpha = 2.02908, beta = 2.22899, a = 6.54325e-06, b = 6.82266e-06) p-value =  0.5813475760065735
     PSG...
-    Best model PSG( 2 |n) :  Beta(alpha = 1.97298, beta = 1.67328, a = 1.42172e-05, b = 5.06649e-05) p-value =  0.2653061224489796
+    Best model PSG( 2 |n) :  LogNormal(muLog = 0.461131, sigmaLog = 4.52496e-07, gamma = -1.58583) p-value =  0.0
     PES...
-    Best model PES( 2 |n) :  LogNormal(muLog = -9.13252, sigmaLog = 0.147268, gamma = 3.97105e-05) p-value =  0.1267957526545909
+    Best model PES( 2 |n) :  Beta(alpha = 2.02908, beta = 2.22899, a = 0.000137408, b = 0.000143276) p-value =  0.6001599360255898
     PTS...
-    Best model PTS( 2 |n) :  LogNormal(muLog = 0.791074, sigmaLog = 1.49198e-05, gamma = -2.2055) p-value =  0.5922249793217534
+    Best model PTS( 2 |n) :  Beta(alpha = 8.98097, beta = 2.1945, a = 0.000254019, b = 0.000274206) p-value =  0.000999000999000999
 
     Test de Lilliefors
     ==================
 
     Ordre k= 3
     PEG...
-    Best model PEG( 3 |n) :  LogNormal(muLog = -4.84711, sigmaLog = 3.5217e-05, gamma = -0.00784902) p-value =  0.42514239218877137
+    Best model PEG( 3 |n) :  LogNormal(muLog = -6.69594, sigmaLog = 6.44888e-06, gamma = -0.00123392) p-value =  0.0
     PSG...
-    Best model PSG( 3 |n) :  Beta(alpha = 1.39353, beta = 1.46783, a = 2.26297e-06, b = 2.06647e-05) p-value =  0.1620639534883721
+    Best model PSG( 3 |n) :  LogNormal(muLog = -0.941674, sigmaLog = 1.1672e-06, gamma = -0.389959) p-value =  0.0
     PES...
-    Best model PES( 3 |n) :  LogNormal(muLog = 0.646899, sigmaLog = 5.06757e-06, gamma = -1.90954) p-value =  0.44016227180527384
+    Best model PES( 3 |n) :  LogNormal(muLog = -3.5576, sigmaLog = 9.78561e-06, gamma = -0.0284373) p-value =  0.0
     PTS...
-    Best model PTS( 3 |n) :  Beta(alpha = 2.30739, beta = 1.64975, a = 4.85511e-05, b = 0.000161065) p-value =  0.6154170176916597
+    Best model PTS( 3 |n) :  LogNormal(muLog = 0.569423, sigmaLog = 9.04962e-07, gamma = -1.76712) p-value =  0.0
 
     Test de Lilliefors
     ==================
 
     Ordre k= 4
     PEG...
-    Best model PEG( 4 |n) :  Beta(alpha = 1.96303, beta = 1.36273, a = 2.25568e-07, b = 1.28432e-06) p-value =  0.09290709290709291
+    Best model PEG( 4 |n) :  LogNormal(muLog = -5.6057, sigmaLog = 4.14456e-06, gamma = -0.00367582) p-value =  0.0
     PSG...
-    Best model PSG( 4 |n) :  LogNormal(muLog = -11.6905, sigmaLog = 0.307824, gamma = -4.16353e-06) p-value =  0.31357466063348416
+    Best model PSG( 4 |n) :  LogNormal(muLog = -2.23317, sigmaLog = 2.75022e-06, gamma = -0.107181) p-value =  0.0
     PES...
-    Best model PES( 4 |n) :  Beta(alpha = 1.96303, beta = 1.36273, a = 7.89488e-06, b = 4.49514e-05) p-value =  0.10056214865708932
+    Best model PES( 4 |n) :  LogNormal(muLog = -2.14538, sigmaLog = 4.558e-06, gamma = -0.116988) p-value =  0.0
     PTS...
-    Best model PTS( 4 |n) :  LogNormal(muLog = 2.92446, sigmaLog = 9.06892e-07, gamma = -18.6241) p-value =  0.12822796081923418
+    Best model PTS( 4 |n) :  LogNormal(muLog = 0.0448481, sigmaLog = 1.32723e-06, gamma = -1.04581) p-value =  0.0
 
     Test de Lilliefors
     ==================
 
     Ordre k= 5
     PEG...
-    Best model PEG( 5 |n) :  LogNormal(muLog = -5.32331, sigmaLog = 5.29192e-05, gamma = -0.00487607) p-value =  0.30438886267107124
+    Best model PEG( 5 |n) :  LogNormal(muLog = -6.43907, sigmaLog = 1.45787e-05, gamma = -0.0015971) p-value =  0.0
     PSG...
-    Best model PSG( 5 |n) :  LogNormal(muLog = -12.8224, sigmaLog = 0.53466, gamma = -8.92945e-07) p-value =  0.248136315228967
+    Best model PSG( 5 |n) :  LogNormal(muLog = -3.67219, sigmaLog = 7.60526e-06, gamma = -0.0254168) p-value =  0.0
     PES...
-    Best model PES( 5 |n) :  LogNormal(muLog = -1.34193, sigmaLog = 2.07368e-05, gamma = -0.26133) p-value =  0.304654442877292
+    Best model PES( 5 |n) :  LogNormal(muLog = -0.920554, sigmaLog = 1.22806e-06, gamma = -0.398282) p-value =  0.0
     PTS...
-    Best model PTS( 5 |n) :  LogNormal(muLog = -9.89298, sigmaLog = 0.165056, gamma = -3.59029e-05) p-value =  0.1736414740787008
+    Best model PTS( 5 |n) :  LogNormal(muLog = 0.640873, sigmaLog = 4.52588e-07, gamma = -1.89811) p-value =  0.0
 
 
 
@@ -832,30 +832,30 @@ We also compute the confidence interval of the specified level.
 
  .. code-block:: none
 
-    IC_PEG_ 0  =  [0.997701, 0.997987]
-    IC_PEG_ 1  =  [0.000244775, 0.000296171]
-    IC_PEG_ 2  =  [5.80461e-06, 8.48198e-06]
-    IC_PEG_ 3  =  [1.51166e-06, 2.4675e-06]
-    IC_PEG_ 4  =  [3.52629e-07, 1.21813e-06]
-    IC_PEG_ 5  =  [8.46067e-08, 9.63401e-07]
+    IC_PEG_ 0  =  [0.997792, 0.998009]
+    IC_PEG_ 1  =  [0.000246163, 0.000276484]
+    IC_PEG_ 2  =  [6.56927e-06, 6.78492e-06]
+    IC_PEG_ 3  =  [1.98657e-06, 2.00655e-06]
+    IC_PEG_ 4  =  [1.03165e-06, 1.04412e-06]
+    IC_PEG_ 5  =  [7.77954e-07, 8.02603e-07]
     IC_PSG_ 0  =  [1, 1]
     IC_PSG_ 1  =  [0.000354533, 0.000386447]
-    IC_PSG_ 2  =  [1.95472e-05, 4.8159e-05]
-    IC_PSG_ 3  =  [3.507e-06, 1.94465e-05]
-    IC_PSG_ 4  =  [6.3584e-07, 9.69238e-06]
-    IC_PSG_ 5  =  [1.77432e-07, 5.4728e-06]
-    IC_PES_ 0  =  [0.997701, 0.997987]
-    IC_PES_ 1  =  [0.00171342, 0.0020732]
-    IC_PES_ 2  =  [0.000121897, 0.000178122]
-    IC_PES_ 3  =  [5.29079e-05, 8.63628e-05]
-    IC_PES_ 4  =  [1.2342e-05, 4.26345e-05]
-    IC_PES_ 5  =  [1.77627e-06, 2.02326e-05]
+    IC_PSG_ 2  =  [4.02934e-05, 4.10863e-05]
+    IC_PSG_ 3  =  [1.54995e-05, 1.60223e-05]
+    IC_PSG_ 4  =  [7.22339e-06, 7.5967e-06]
+    IC_PSG_ 5  =  [3.79208e-06, 4.05438e-06]
+    IC_PES_ 0  =  [0.997792, 0.998009]
+    IC_PES_ 1  =  [0.00172314, 0.00193539]
+    IC_PES_ 2  =  [0.000137956, 0.000142482]
+    IC_PES_ 3  =  [6.95282e-05, 7.02297e-05]
+    IC_PES_ 4  =  [3.61061e-05, 3.65452e-05]
+    IC_PES_ 5  =  [1.63351e-05, 1.68563e-05]
     IC_PTS_ 0  =  [1, 1]
-    IC_PTS_ 1  =  [0.00201261, 0.00229885]
-    IC_PTS_ 2  =  [0.000203267, 0.000323387]
-    IC_PTS_ 3  =  [6.95096e-05, 0.000153005]
-    IC_PTS_ 4  =  [1.39638e-05, 7.27902e-05]
-    IC_PTS_ 5  =  [1.92164e-06, 3.04038e-05]
+    IC_PTS_ 1  =  [0.00199096, 0.00220844]
+    IC_PTS_ 2  =  [0.000267524, 0.000273146]
+    IC_PTS_ 3  =  [0.000129525, 0.000131002]
+    IC_PTS_ 4  =  [5.97031e-05, 6.11001e-05]
+    IC_PTS_ 5  =  [2.3561e-05, 2.45753e-05]
 
 
 
@@ -878,7 +878,7 @@ We also compute the confidence interval of the specified level.
 
 
 .. image-sg:: /auto_example/images/sphx_glr_plot_eclm_014.png
-   :alt: , PEG(0|7) - best model : Beta, PEG(1|7) - best model : Beta, PEG(2|7) - best model : LogNormal, PEG(3|7) - best model : LogNormal, PEG(4|7) - best model : Beta, PEG(5|7) - best model : LogNormal
+   :alt: , PEG(0|7) - best model : Beta, PEG(1|7) - best model : Beta, PEG(2|7) - best model : Beta, PEG(3|7) - best model : LogNormal, PEG(4|7) - best model : LogNormal, PEG(5|7) - best model : LogNormal
    :srcset: /auto_example/images/sphx_glr_plot_eclm_014.png
    :class: sphx-glr-single-img
 
@@ -904,7 +904,7 @@ We also compute the confidence interval of the specified level.
 
 
 .. image-sg:: /auto_example/images/sphx_glr_plot_eclm_015.png
-   :alt: , PSG(0|7), PSG(1|7) - best model : Beta, PSG(2|7) - best model : Beta, PSG(3|7) - best model : Beta, PSG(4|7) - best model : LogNormal, PSG(5|7) - best model : LogNormal
+   :alt: , PSG(0|7), PSG(1|7) - best model : Beta, PSG(2|7) - best model : LogNormal, PSG(3|7) - best model : LogNormal, PSG(4|7) - best model : LogNormal, PSG(5|7) - best model : LogNormal
    :srcset: /auto_example/images/sphx_glr_plot_eclm_015.png
    :class: sphx-glr-single-img
 
@@ -930,7 +930,7 @@ We also compute the confidence interval of the specified level.
 
 
 .. image-sg:: /auto_example/images/sphx_glr_plot_eclm_016.png
-   :alt: , PES(0|7) - best model : Beta, PES(1|7) - best model : Beta, PES(2|7) - best model : LogNormal, PES(3|7) - best model : LogNormal, PES(4|7) - best model : Beta, PES(5|7) - best model : LogNormal
+   :alt: , PES(0|7) - best model : Beta, PES(1|7) - best model : Beta, PES(2|7) - best model : Beta, PES(3|7) - best model : LogNormal, PES(4|7) - best model : LogNormal, PES(5|7) - best model : LogNormal
    :srcset: /auto_example/images/sphx_glr_plot_eclm_016.png
    :class: sphx-glr-single-img
 
@@ -956,7 +956,7 @@ We also compute the confidence interval of the specified level.
 
 
 .. image-sg:: /auto_example/images/sphx_glr_plot_eclm_017.png
-   :alt: , PTS(0|7), PTS(1|7) - best model : Gamma, PTS(2|7) - best model : LogNormal, PTS(3|7) - best model : Beta, PTS(4|7) - best model : LogNormal, PTS(5|7) - best model : LogNormal
+   :alt: , PTS(0|7), PTS(1|7) - best model : Beta, PTS(2|7) - best model : Beta, PTS(3|7) - best model : LogNormal, PTS(4|7) - best model : LogNormal, PTS(5|7) - best model : LogNormal
    :srcset: /auto_example/images/sphx_glr_plot_eclm_017.png
    :class: sphx-glr-single-img
 
@@ -1028,7 +1028,7 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
  .. code-block:: none
 
-    Intervalle de confiance de niveau 90%: [ 4.0 ,  6.0 ]
+    Intervalle de confiance de niveau 90%: [ 5.0 ,  5.0 ]
 
 
 
@@ -1055,7 +1055,7 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  27.897 seconds)
+   **Total running time of the script:** ( 1 minutes  19.058 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_eclm.py:
