@@ -239,7 +239,7 @@ Each optimisation problem is initalised with the optimal parameter found for the
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">startingPoint</span> <span class="o">=</span> <span class="n">mankamoParam</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">fileNameSampleParam</span> <span class="o">=</span> <span class="s1">&#39;sampleParamFromMankamo_</span><span class="si">{}</span><span class="s1">.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Nbootstrap</span><span class="p">)</span>
-<span class="c1"># We use the parallalisation</span>
+<span class="c1"># We use the parallelisation</span>
 <span class="n">parallel</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">blocksize</span> <span class="o">=</span> <span class="mi">256</span>
 <span class="n">myECLM</span><span class="o">.</span><span class="n">estimateBootstrapParamSampleFromMankamo</span><span class="p">(</span><span class="n">Nbootstrap</span><span class="p">,</span> <span class="n">startingPoint</span><span class="p">,</span> <span class="n">fileNameSampleParam</span><span class="p">,</span> <span class="n">blocksize</span><span class="p">,</span> <span class="n">parallel</span><span class="p">)</span>
@@ -248,7 +248,7 @@ Each optimisation problem is initalised with the optimal parameter found for the
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fileNameECLMProbabilities</span> <span class="o">=</span> <span class="s1">&#39;sampleECLMProbabilitiesFromMankamo_</span><span class="si">{}</span><span class="s1">.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Nbootstrap</span><span class="p">)</span>
-<span class="c1"># We use the parallalisation</span>
+<span class="c1"># We use the parallelisation</span>
 <span class="n">parallel</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">myECLM</span><span class="o">.</span><span class="n">computeECLMProbabilitiesFromMankano</span><span class="p">(</span><span class="n">fileNameSampleParam</span><span class="p">,</span> <span class="n">fileNameECLMProbabilities</span><span class="p">,</span> <span class="n">blocksize</span><span class="p">,</span> <span class="n">parallel</span><span class="p">)</span>
 </pre></div>
@@ -294,6 +294,109 @@ Each optimisation problem is initalised with the optimal parameter found for the
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kMax</span> <span class="o">=</span> <span class="mi">5</span>
 
 <span class="n">graphPairs_list</span><span class="p">,</span> <span class="n">graphPEG_PES_PTS_list</span><span class="p">,</span> <span class="n">graphMargPEG_list</span><span class="p">,</span> <span class="n">graphMargPSG_list</span><span class="p">,</span> <span class="n">graphMargPES_list</span><span class="p">,</span> <span class="n">graphMargPTS_list</span><span class="p">,</span> <span class="n">desc_list</span> <span class="o">=</span> <span class="n">myECLM</span><span class="o">.</span><span class="n">analyseGraphsECLMProbabilities</span><span class="p">(</span><span class="n">fileNameECLMProbabilities</span><span class="p">,</span> <span class="n">kMax</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>     [ PSG(0) ]
+ 0 : [ 1      ]
+ 1 : [ 1      ]
+ 2 : [ 1      ]
+ 3 : [ 1      ]
+ 4 : [ 1      ]
+ 5 : [ 1      ]
+ 6 : [ 1      ]
+ 7 : [ 1      ]
+ 8 : [ 1      ]
+ 9 : [ 1      ]
+10 : [ 1      ]
+11 : [ 1      ]
+12 : [ 1      ]
+13 : [ 1      ]
+14 : [ 1      ]
+15 : [ 1      ]
+16 : [ 1      ]
+17 : [ 1      ]
+18 : [ 1      ]
+19 : [ 1      ]
+20 : [ 1      ]
+21 : [ 1      ]
+22 : [ 1      ]
+23 : [ 1      ]
+24 : [ 1      ]
+25 : [ 1      ]
+26 : [ 1      ]
+27 : [ 1      ]
+28 : [ 1      ]
+29 : [ 1      ]
+30 : [ 1      ]
+31 : [ 1      ]
+32 : [ 1      ]
+33 : [ 1      ]
+34 : [ 1      ]
+35 : [ 1      ]
+36 : [ 1      ]
+37 : [ 1      ]
+38 : [ 1      ]
+39 : [ 1      ]
+40 : [ 1      ]
+41 : [ 1      ]
+42 : [ 1      ]
+43 : [ 1      ]
+44 : [ 1      ]
+45 : [ 1      ]
+46 : [ 1      ]
+47 : [ 1      ]
+48 : [ 1      ]
+49 : [ 1      ]
+50 : [ 1      ]
+51 : [ 1      ]
+52 : [ 1      ]
+53 : [ 1      ]
+54 : [ 1      ]
+55 : [ 1      ]
+56 : [ 1      ]
+57 : [ 1      ]
+58 : [ 1      ]
+59 : [ 1      ]
+60 : [ 1      ]
+61 : [ 1      ]
+62 : [ 1      ]
+63 : [ 1      ]
+64 : [ 1      ]
+65 : [ 1      ]
+66 : [ 1      ]
+67 : [ 1      ]
+68 : [ 1      ]
+69 : [ 1      ]
+70 : [ 1      ]
+71 : [ 1      ]
+72 : [ 1      ]
+73 : [ 1      ]
+74 : [ 1      ]
+75 : [ 1      ]
+76 : [ 1      ]
+77 : [ 1      ]
+78 : [ 1      ]
+79 : [ 1      ]
+80 : [ 1      ]
+81 : [ 1      ]
+82 : [ 1      ]
+83 : [ 1      ]
+84 : [ 1      ]
+85 : [ 1      ]
+86 : [ 1      ]
+87 : [ 1      ]
+88 : [ 1      ]
+89 : [ 1      ]
+90 : [ 1      ]
+91 : [ 1      ]
+92 : [ 1      ]
+93 : [ 1      ]
+94 : [ 1      ]
+95 : [ 1      ]
+96 : [ 1      ]
+97 : [ 1      ]
+98 : [ 1      ]
+99 : [ 1      ]
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">descPairs</span> <span class="o">=</span> <span class="n">desc_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -582,7 +685,7 @@ IC_PTS_ 5  =  [4.74602e-06, 2.01807e-05]
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fileNameSampleParam</span> <span class="o">=</span> <span class="s1">&#39;sampleParamFromMankamo_</span><span class="si">{}</span><span class="s1">.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Nbootstrap</span><span class="p">)</span>
 <span class="n">fileNameSampleKmax</span> <span class="o">=</span> <span class="s1">&#39;sampleKmaxFromMankamo_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Nbootstrap</span><span class="p">,</span> <span class="n">nameSeuil</span><span class="p">)</span>
-<span class="c1"># We use the parallalisation</span>
+<span class="c1"># We use the parallelisation</span>
 <span class="n">parallel</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">gKmax</span> <span class="o">=</span> <span class="n">myECLM</span><span class="o">.</span><span class="n">computeAnalyseKMaxSample</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">fileNameSampleParam</span><span class="p">,</span> <span class="n">fileNameSampleKmax</span><span class="p">,</span> <span class="n">blocksize</span><span class="p">,</span> <span class="n">parallel</span><span class="p">)</span>
 </pre></div>
@@ -595,7 +698,7 @@ IC_PTS_ 5  =  [4.74602e-06, 2.01807e-05]
 <span class="n">view</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_plot_eclm_018.png" srcset="../_images/sphx_glr_plot_eclm_018.png" alt="Loi de $K_{max} = \arg \max \{k | PTS(k|$7$) \geq $1.0e-05$\}$" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  28.919 seconds)</p>
+<img src="../_images/sphx_glr_plot_eclm_018.png" srcset="../_images/sphx_glr_plot_eclm_018.png" alt="Loi de $K_{max} = \arg \max \{k | PTS(k|$7$) \geq $1.0e-05$\}$" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  23.109 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-example-plot-eclm-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/492b1b0c68cfa324a509d88d3c34ee26/plot_eclm.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_eclm.py</span></code></a></p>
