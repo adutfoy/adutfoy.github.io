@@ -62,7 +62,6 @@
         <div class="sphinxsidebarwrapper">
 <h3><a href="../index.html">Table of Contents</a></h3>
 <ul class="current">
-<li class="toctree-l1"><a class="reference external" href="To install the module, see `here &lt;https://github.com/adutfoy/otECLM&gt;`_">To install the module, see `here &lt;https://github.com/adutfoy/otECLM&gt;`_</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../user_manual/user_manual.html">API Reference</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples/examples.html">Examples</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Extended Common Load Modelling</a></li>
@@ -170,9 +169,9 @@ graph (logPx, Cco) = (logPx_optim, Cco_optim)
 graph Cx = Cx_optim
 graph Cco = Cco_optim
 graph logPx = logPx_optim
-Mankamo parameter :  [0.00036988020585009376, 0.00012952147966373113, 0.2658266078353387, 0.26582660783533874]
-general parameter :  [0.99933838922154, 0.1476851756628588, 0.14768517566285883, 0.24543528522847904, 0.754564714771521]
-finalLogLikValue :  -0.02167747439543925
+Mankamo parameter :  [0.00036988020585009376, 0.00013842210875154897, 0.22303390975238369, 0.22303393403772004]
+general parameter :  [0.9992677447205695, 0.1348884484265988, 0.13488845787842924, 0.25176209443183356, 0.7482379055681665]
+finalLogLikValue :  -0.021674757309715593
 </pre></div>
 </div>
 <p>Function to deactivate grid in GridLayout to make matplotlib happy</p>
@@ -195,7 +194,7 @@ finalLogLikValue :  -0.02167747439543925
 <span class="n">view</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_plot_eclm_001.png" srcset="../_images/sphx_glr_plot_eclm_001.png" alt=", Log likelihood at $(\log P_{x}, C_{co}) = ($-8.95E+00,2.66E-01), Log likelihood at $(\log P_{x}, C_{x}) = ($-8.95E+00,2.66E-01), Log likelihood at $(C_{co}, C_{x}) = ($2.66E-01,2.66E-01), Log likelihood at $C_{x} = $2.66E-01, Log likelihood at $C_{co} = $2.66E-01, Log likelihood at $\log P_{x} = $-8.95E+00" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/test/lib/python3.11/site-packages/openturns/viewer.py:532: UserWarning: No contour levels were found within the data range.
+<img src="../_images/sphx_glr_plot_eclm_001.png" srcset="../_images/sphx_glr_plot_eclm_001.png" alt=", Log likelihood at $(\log P_{x}, C_{co}) = ($-8.89E+00,2.23E-01), Log likelihood at $(\log P_{x}, C_{x}) = ($-8.89E+00,2.23E-01), Log likelihood at $(C_{co}, C_{x}) = ($2.23E-01,2.23E-01), Log likelihood at $C_{x} = $2.23E-01, Log likelihood at $C_{co} = $2.23E-01, Log likelihood at $\log P_{x} = $-8.89E+00" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/usr/share/miniconda3/envs/test/lib/python3.11/site-packages/openturns/viewer.py:532: UserWarning: No contour levels were found within the data range.
   contourset = self._ax[0].contour(X, Y, Z, **contour_kw)
 </pre></div>
 </div>
@@ -218,13 +217,13 @@ finalLogLikValue :  -0.02167747439543925
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;PTS_list = &#39;</span><span class="p">,</span> <span class="n">PTS_list</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>PEG_list =  [0.9979685128453654, 0.00024955737932482353, 6.732445116140214e-06, 1.922081438048188e-06, 1.1331572963762106e-06, 1.0535799779325168e-06, 1.515528008560812e-06, 3.5369206007148977e-06]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>PEG_list =  [0.9979586901351106, 0.0002501366662173221, 6.950682945934639e-06, 2.107855164507188e-06, 1.1558413235020206e-06, 9.500637076724003e-07, 1.1543121457508757e-06, 2.1279595219675494e-06]
 
-PSG_list =  [1.0, 0.000369880205850105, 4.9324785692987386e-05, 2.2375223126106277e-05, 1.2377401856571094e-05, 7.621556595769038e-06, 5.05244860927571e-06, 3.5369206007148977e-06]
+PSG_list =  [1.0, 0.0003698802058500906, 4.6448529330936715e-05, 1.9176810809520724e-05, 9.596928405739398e-06, 5.386647521141701e-06, 3.282271667718425e-06, 2.1279595219675494e-06]
 
-PES_list =  [0.9979685128453654, 0.0017469016552737646, 0.0001413813474389445, 6.727285033168659e-05, 3.966050537316737e-05, 2.2125179536582855e-05, 1.0608696059925683e-05, 3.5369206007148977e-06]
+PES_list =  [0.9979586901351106, 0.0017509566635212548, 0.0001459643418646274, 7.377493075775157e-05, 4.045444632257072e-05, 1.9951337861120407e-05, 8.080185020256129e-06, 2.1279595219675494e-06]
 
-PTS_list =  [1.0, 0.002031487154614786, 0.00028458549934102194, 0.00014320415190207742, 7.59313015703908e-05, 3.627079619722344e-05, 1.4145616660640582e-05, 3.5369206007148977e-06]
+PTS_list =  [1.0, 0.0020413098648695486, 0.0002903532013482938, 0.00014438885948366638, 7.061392872591481e-05, 3.0159482403344085e-05, 1.0208144542223677e-05, 2.1279595219675494e-06]
 </pre></div>
 </div>
 </section>
@@ -240,13 +239,18 @@ Each optimisation problem is initalised with the optimal parameter found for the
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">startingPoint</span> <span class="o">=</span> <span class="n">mankamoParam</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">fileNameSampleParam</span> <span class="o">=</span> <span class="s1">&#39;sampleParamFromMankamo_</span><span class="si">{}</span><span class="s1">.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Nbootstrap</span><span class="p">)</span>
-<span class="n">myECLM</span><span class="o">.</span><span class="n">estimateBootstrapParamSampleFromMankamo</span><span class="p">(</span><span class="n">Nbootstrap</span><span class="p">,</span> <span class="n">startingPoint</span><span class="p">,</span> <span class="n">fileNameSampleParam</span><span class="p">)</span>
+<span class="c1"># We use the parallalisation</span>
+<span class="n">parallel</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">blocksize</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">myECLM</span><span class="o">.</span><span class="n">estimateBootstrapParamSampleFromMankamo</span><span class="p">(</span><span class="n">Nbootstrap</span><span class="p">,</span> <span class="n">startingPoint</span><span class="p">,</span> <span class="n">fileNameSampleParam</span><span class="p">,</span> <span class="n">blocksize</span><span class="p">,</span> <span class="n">parallel</span><span class="p">)</span>
 
 <span class="c1"># Create the sample of all the ECLM probabilities associated to the sample of the parameters.</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fileNameECLMProbabilities</span> <span class="o">=</span> <span class="s1">&#39;sampleECLMProbabilitiesFromMankamo_</span><span class="si">{}</span><span class="s1">.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Nbootstrap</span><span class="p">)</span>
-<span class="n">myECLM</span><span class="o">.</span><span class="n">computeECLMProbabilitiesFromMankano</span><span class="p">(</span><span class="n">fileNameSampleParam</span><span class="p">,</span> <span class="n">fileNameECLMProbabilities</span><span class="p">)</span>
+<span class="c1"># We use the parallalisation</span>
+<span class="n">parallel</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">myECLM</span><span class="o">.</span><span class="n">computeECLMProbabilitiesFromMankano</span><span class="p">(</span><span class="n">fileNameSampleParam</span><span class="p">,</span> <span class="n">fileNameECLMProbabilities</span><span class="p">,</span> <span class="n">blocksize</span><span class="p">,</span> <span class="n">parallel</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -400,10 +404,10 @@ We also compute the confidence interval of the specified level.</p>
 
 Ordre k= 0
 PEG...
-Best model PEG( 0 |n) :  Beta(alpha = 2.3886, beta = 2.14454, a = 0.99775, b = 0.998033) p-value =  0.6630570595585173
+Best model PEG( 0 |n) :  LogNormal(muLog = -6.50028, sigmaLog = 0.0405954, gamma = 0.996374) p-value =  0.35305877648940426
 PSG...
 PES...
-Best model PES( 0 |n) :  Beta(alpha = 2.3886, beta = 2.14454, a = 0.99775, b = 0.998033) p-value =  0.6585365853658537
+Best model PES( 0 |n) :  LogNormal(muLog = -6.50028, sigmaLog = 0.0405954, gamma = 0.996374) p-value =  0.35305877648940426
 PTS...
 
 Test de Lilliefors
@@ -411,65 +415,65 @@ Test de Lilliefors
 
 Ordre k= 1
 PEG...
-Best model PEG( 1 |n) :  Beta(alpha = 2.15125, beta = 2.38698, a = 0.000242765, b = 0.000282381) p-value =  0.6551436901291129
+Best model PEG( 1 |n) :  LogNormal(muLog = -6.30659, sigmaLog = 0.00515296, gamma = -0.00156061) p-value =  0.6628062360801782
 PSG...
-Best model PSG( 1 |n) :  Beta(alpha = 2.0922, beta = 2.36032, a = 0.000351093, b = 0.000392658) p-value =  0.646813827571845
+Best model PSG( 1 |n) :  Beta(alpha = 2.0922, beta = 2.36032, a = 0.000351093, b = 0.000392658) p-value =  0.6588921282798834
 PES...
-Best model PES( 1 |n) :  Beta(alpha = 2.15125, beta = 2.38698, a = 0.00169936, b = 0.00197667) p-value =  0.6653338664534187
+Best model PES( 1 |n) :  LogNormal(muLog = -4.36066, sigmaLog = 0.00515283, gamma = -0.0109246) p-value =  0.698292220113852
 PTS...
-Best model PTS( 1 |n) :  Beta(alpha = 2.14454, beta = 2.3886, a = 0.00196691, b = 0.00225046) p-value =  0.6705539358600583
+Best model PTS( 1 |n) :  LogNormal(muLog = 1.43963, sigmaLog = 1.44785e-05, gamma = -4.217) p-value =  0.22782174094127447
 
 Test de Lilliefors
 ==================
 
 Ordre k= 2
 PEG...
-Best model PEG( 2 |n) :  Beta(alpha = 2.02908, beta = 2.22899, a = 6.54325e-06, b = 6.82266e-06) p-value =  0.5813475760065735
+Best model PEG( 2 |n) :  LogNormal(muLog = -15.859, sigmaLog = 0.63656, gamma = 7.09189e-06) p-value =  0.0
 PSG...
-Best model PSG( 2 |n) :  LogNormal(muLog = 0.461131, sigmaLog = 4.52496e-07, gamma = -1.58583) p-value =  0.0
+Best model PSG( 2 |n) :  LogNormal(muLog = 0.285117, sigmaLog = 3.61972e-06, gamma = -1.32988) p-value =  0.000999000999000999
 PES...
-Best model PES( 2 |n) :  Beta(alpha = 2.02908, beta = 2.22899, a = 0.000137408, b = 0.000143276) p-value =  0.6001599360255898
+Best model PES( 2 |n) :  LogNormal(muLog = -12.8144, sigmaLog = 0.63656, gamma = 0.00014893) p-value =  0.0
 PTS...
-Best model PTS( 2 |n) :  Beta(alpha = 8.98097, beta = 2.1945, a = 0.000254019, b = 0.000274206) p-value =  0.000999000999000999
+Best model PTS( 2 |n) :  LogNormal(muLog = 1.91503, sigmaLog = 1.80027e-06, gamma = -6.78689) p-value =  0.000999000999000999
 
 Test de Lilliefors
 ==================
 
 Ordre k= 3
 PEG...
-Best model PEG( 3 |n) :  LogNormal(muLog = -6.69594, sigmaLog = 6.44888e-06, gamma = -0.00123392) p-value =  0.0
+Best model PEG( 3 |n) :  Beta(alpha = 1.27542, beta = 0.183064, a = 1.63613e-06, b = 2.17564e-06) p-value =  0.08091908091908091
 PSG...
-Best model PSG( 3 |n) :  LogNormal(muLog = -0.941674, sigmaLog = 1.1672e-06, gamma = -0.389959) p-value =  0.0
+Best model PSG( 3 |n) :  Beta(alpha = 0.864411, beta = 0.180315, a = 3.79236e-06, b = 1.4085e-05) p-value =  0.23918992884510126
 PES...
-Best model PES( 3 |n) :  LogNormal(muLog = -3.5576, sigmaLog = 9.78561e-06, gamma = -0.0284373) p-value =  0.0
+Best model PES( 3 |n) :  Beta(alpha = 1.27542, beta = 0.183064, a = 5.72645e-05, b = 7.61476e-05) p-value =  0.1008991008991009
 PTS...
-Best model PTS( 3 |n) :  LogNormal(muLog = 0.569423, sigmaLog = 9.04962e-07, gamma = -1.76712) p-value =  0.0
+Best model PTS( 3 |n) :  Beta(alpha = 0.993192, beta = 0.16915, a = 7.26117e-05, b = 0.000132704) p-value =  0.11242973141786383
 
 Test de Lilliefors
 ==================
 
 Ordre k= 4
 PEG...
-Best model PEG( 4 |n) :  LogNormal(muLog = -5.6057, sigmaLog = 4.14456e-06, gamma = -0.00367582) p-value =  0.0
+Best model PEG( 4 |n) :  Beta(alpha = 0.957769, beta = 0.157024, a = 3.78504e-07, b = 1.04037e-06) p-value =  0.18193979933110369
 PSG...
-Best model PSG( 4 |n) :  LogNormal(muLog = -2.23317, sigmaLog = 2.75022e-06, gamma = -0.107181) p-value =  0.0
+Best model PSG( 4 |n) :  Beta(alpha = 0.820272, beta = 0.192159, a = 7.2085e-07, b = 6.02893e-06) p-value =  0.18725361366622864
 PES...
-Best model PES( 4 |n) :  LogNormal(muLog = -2.14538, sigmaLog = 4.558e-06, gamma = -0.116988) p-value =  0.0
+Best model PES( 4 |n) :  Beta(alpha = 0.957769, beta = 0.157024, a = 1.32476e-05, b = 3.64131e-05) p-value =  0.1716888577435179
 PTS...
-Best model PTS( 4 |n) :  LogNormal(muLog = 0.0448481, sigmaLog = 1.32723e-06, gamma = -1.04581) p-value =  0.0
+Best model PTS( 4 |n) :  Beta(alpha = 0.892748, beta = 0.166687, a = 1.53459e-05, b = 5.66863e-05) p-value =  0.23910435825669732
 
 Test de Lilliefors
 ==================
 
 Ordre k= 5
 PEG...
-Best model PEG( 5 |n) :  LogNormal(muLog = -6.43907, sigmaLog = 1.45787e-05, gamma = -0.0015971) p-value =  0.0
+Best model PEG( 5 |n) :  Beta(alpha = 0.83459, beta = 0.170047, a = 9.2766e-08, b = 7.04718e-07) p-value =  0.2532278217409413
 PSG...
-Best model PSG( 5 |n) :  LogNormal(muLog = -3.67219, sigmaLog = 7.60526e-06, gamma = -0.0254168) p-value =  0.0
+Best model PSG( 5 |n) :  Beta(alpha = 0.774881, beta = 0.203295, a = 1.35424e-07, b = 2.91557e-06) p-value =  0.1293916023993145
 PES...
-Best model PES( 5 |n) :  LogNormal(muLog = -0.920554, sigmaLog = 1.22806e-06, gamma = -0.398282) p-value =  0.0
+Best model PES( 5 |n) :  LogNormal(muLog = -0.759737, sigmaLog = 7.23941e-06, gamma = -0.467777) p-value =  0.000999000999000999
 PTS...
-Best model PTS( 5 |n) :  LogNormal(muLog = 0.640873, sigmaLog = 4.52588e-07, gamma = -1.89811) p-value =  0.0
+Best model PTS( 5 |n) :  Beta(alpha = 0.818785, beta = 0.181195, a = 2.09761e-06, b = 2.03368e-05) p-value =  0.22432587492828457
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">IC_PEG_list</span><span class="p">)):</span>
@@ -487,30 +491,30 @@ Best model PTS( 5 |n) :  LogNormal(muLog = 0.640873, sigmaLog = 4.52588e-07, gam
 <span class="c1"># We draw all the estimated distributions and the title gives the best model.</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>IC_PEG_ 0  =  [0.997792, 0.998009]
-IC_PEG_ 1  =  [0.000246163, 0.000276484]
-IC_PEG_ 2  =  [6.56927e-06, 6.78492e-06]
-IC_PEG_ 3  =  [1.98657e-06, 2.00655e-06]
-IC_PEG_ 4  =  [1.03165e-06, 1.04412e-06]
-IC_PEG_ 5  =  [7.77954e-07, 8.02603e-07]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>IC_PEG_ 0  =  [0.997776, 0.997987]
+IC_PEG_ 1  =  [0.000247049, 0.00028004]
+IC_PEG_ 2  =  [7.13113e-06, 7.53387e-06]
+IC_PEG_ 3  =  [1.82805e-06, 2.17015e-06]
+IC_PEG_ 4  =  [5.46603e-07, 1.03728e-06]
+IC_PEG_ 5  =  [1.96105e-07, 7.00371e-07]
 IC_PSG_ 0  =  [1, 1]
 IC_PSG_ 1  =  [0.000354533, 0.000386447]
-IC_PSG_ 2  =  [4.02934e-05, 4.10863e-05]
-IC_PSG_ 3  =  [1.54995e-05, 1.60223e-05]
-IC_PSG_ 4  =  [7.22339e-06, 7.5967e-06]
-IC_PSG_ 5  =  [3.79208e-06, 4.05438e-06]
-IC_PES_ 0  =  [0.997792, 0.998009]
-IC_PES_ 1  =  [0.00172314, 0.00193539]
-IC_PES_ 2  =  [0.000137956, 0.000142482]
-IC_PES_ 3  =  [6.95282e-05, 7.02297e-05]
-IC_PES_ 4  =  [3.61061e-05, 3.65452e-05]
-IC_PES_ 5  =  [1.63351e-05, 1.68563e-05]
+IC_PSG_ 2  =  [2.45992e-05, 3.956e-05]
+IC_PSG_ 3  =  [5.5691e-06, 1.40086e-05]
+IC_PSG_ 4  =  [1.4281e-06, 5.97618e-06]
+IC_PSG_ 5  =  [4.0673e-07, 2.88145e-06]
+IC_PES_ 0  =  [0.997776, 0.997987]
+IC_PES_ 1  =  [0.00172934, 0.00196028]
+IC_PES_ 2  =  [0.000149754, 0.000158211]
+IC_PES_ 3  =  [6.39816e-05, 7.59626e-05]
+IC_PES_ 4  =  [1.91311e-05, 3.6321e-05]
+IC_PES_ 5  =  [4.1181e-06, 1.47119e-05]
 IC_PTS_ 0  =  [1, 1]
-IC_PTS_ 1  =  [0.00199096, 0.00220844]
-IC_PTS_ 2  =  [0.000267524, 0.000273146]
-IC_PTS_ 3  =  [0.000129525, 0.000131002]
-IC_PTS_ 4  =  [5.97031e-05, 6.11001e-05]
-IC_PTS_ 5  =  [2.3561e-05, 2.45753e-05]
+IC_PTS_ 1  =  [0.00201273, 0.00222422]
+IC_PTS_ 2  =  [0.000245838, 0.000284499]
+IC_PTS_ 3  =  [8.78617e-05, 0.000132274]
+IC_PTS_ 4  =  [2.38798e-05, 5.64708e-05]
+IC_PTS_ 5  =  [4.74602e-06, 2.01807e-05]
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gl</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">GridLayout</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -524,7 +528,7 @@ IC_PTS_ 5  =  [2.3561e-05, 2.45753e-05]
 <span class="n">view</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_plot_eclm_014.png" srcset="../_images/sphx_glr_plot_eclm_014.png" alt=", PEG(0|7) - best model : Beta, PEG(1|7) - best model : Beta, PEG(2|7) - best model : Beta, PEG(3|7) - best model : LogNormal, PEG(4|7) - best model : LogNormal, PEG(5|7) - best model : LogNormal" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gl</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">GridLayout</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<img src="../_images/sphx_glr_plot_eclm_014.png" srcset="../_images/sphx_glr_plot_eclm_014.png" alt=", PEG(0|7) - best model : LogNormal, PEG(1|7) - best model : LogNormal, PEG(2|7) - best model : LogNormal, PEG(3|7) - best model : Beta, PEG(4|7) - best model : Beta, PEG(5|7) - best model : Beta" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gl</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">GridLayout</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
     <span class="n">g</span> <span class="o">=</span> <span class="n">graphMargPSG_list</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">setGraph</span><span class="p">(</span><span class="n">k</span><span class="o">//</span><span class="mi">3</span><span class="p">,</span> <span class="n">k</span><span class="o">%</span><span class="mi">3</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span>
@@ -535,7 +539,7 @@ IC_PTS_ 5  =  [2.3561e-05, 2.45753e-05]
 <span class="n">view</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_plot_eclm_015.png" srcset="../_images/sphx_glr_plot_eclm_015.png" alt=", PSG(0|7), PSG(1|7) - best model : Beta, PSG(2|7) - best model : LogNormal, PSG(3|7) - best model : LogNormal, PSG(4|7) - best model : LogNormal, PSG(5|7) - best model : LogNormal" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gl</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">GridLayout</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<img src="../_images/sphx_glr_plot_eclm_015.png" srcset="../_images/sphx_glr_plot_eclm_015.png" alt=", PSG(0|7), PSG(1|7) - best model : Beta, PSG(2|7) - best model : LogNormal, PSG(3|7) - best model : Beta, PSG(4|7) - best model : Beta, PSG(5|7) - best model : Beta" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gl</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">GridLayout</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
     <span class="n">g</span> <span class="o">=</span> <span class="n">graphMargPES_list</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">setGraph</span><span class="p">(</span><span class="n">k</span><span class="o">//</span><span class="mi">3</span><span class="p">,</span> <span class="n">k</span><span class="o">%</span><span class="mi">3</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span>
@@ -546,7 +550,7 @@ IC_PTS_ 5  =  [2.3561e-05, 2.45753e-05]
 <span class="n">view</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_plot_eclm_016.png" srcset="../_images/sphx_glr_plot_eclm_016.png" alt=", PES(0|7) - best model : Beta, PES(1|7) - best model : Beta, PES(2|7) - best model : Beta, PES(3|7) - best model : LogNormal, PES(4|7) - best model : LogNormal, PES(5|7) - best model : LogNormal" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gl</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">GridLayout</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<img src="../_images/sphx_glr_plot_eclm_016.png" srcset="../_images/sphx_glr_plot_eclm_016.png" alt=", PES(0|7) - best model : LogNormal, PES(1|7) - best model : LogNormal, PES(2|7) - best model : LogNormal, PES(3|7) - best model : Beta, PES(4|7) - best model : Beta, PES(5|7) - best model : LogNormal" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gl</span> <span class="o">=</span> <span class="n">ot</span><span class="o">.</span><span class="n">GridLayout</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
     <span class="n">g</span> <span class="o">=</span> <span class="n">graphMargPTS_list</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
     <span class="n">gl</span><span class="o">.</span><span class="n">setGraph</span><span class="p">(</span><span class="n">k</span><span class="o">//</span><span class="mi">3</span><span class="p">,</span> <span class="n">k</span><span class="o">%</span><span class="mi">3</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span>
@@ -557,7 +561,7 @@ IC_PTS_ 5  =  [2.3561e-05, 2.45753e-05]
 <span class="n">view</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_plot_eclm_017.png" srcset="../_images/sphx_glr_plot_eclm_017.png" alt=", PTS(0|7), PTS(1|7) - best model : Beta, PTS(2|7) - best model : Beta, PTS(3|7) - best model : LogNormal, PTS(4|7) - best model : LogNormal, PTS(5|7) - best model : LogNormal" class = "sphx-glr-single-img"/></section>
+<img src="../_images/sphx_glr_plot_eclm_017.png" srcset="../_images/sphx_glr_plot_eclm_017.png" alt=", PTS(0|7), PTS(1|7) - best model : LogNormal, PTS(2|7) - best model : LogNormal, PTS(3|7) - best model : Beta, PTS(4|7) - best model : Beta, PTS(5|7) - best model : Beta" class = "sphx-glr-single-img"/></section>
 <section id="analyse-the-minimal-multiplicity-which-probability-is-greater-than-a-given-threshold">
 <h2>Analyse the minimal multiplicity which probability is greater than a given threshold<a class="headerlink" href="#analyse-the-minimal-multiplicity-which-probability-is-greater-than-a-given-threshold" title="Permalink to this heading">¶</a></h2>
 <p>We fix <em>p</em> and we get the minimal multiplicity <img class="math" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4KPCEtLSBUaGlzIGZpbGUgd2FzIGdlbmVyYXRlZCBieSBkdmlzdmdtIDIuMTMuMSAtLT4KPHN2ZyB2ZXJzaW9uPScxLjEnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycgeG1sbnM6eGxpbms9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsnIHdpZHRoPScyMi44NDM2NThwdCcgaGVpZ2h0PScxMC4wOTU0NTRwdCcgdmlld0JveD0nMCAtOC4zMDIxOTEgMjIuODQzNjU4IDEwLjA5NTQ1NCc+CjxkZWZzPgo8cGF0aCBpZD0nZzAtOTcnIGQ9J00zLjEyNDI4NC0zLjAzNjYxM0MzLjA1MjU1My0zLjE3MjEwNSAyLjgyMTQyLTMuNTE0ODE5IDIuMzM1MjQzLTMuNTE0ODE5QzEuMzg2OC0zLjUxNDgxOSAuMzQyNzE1LTIuNDA2OTc0IC4zNDI3MTUtMS4yMjczOTdDLjM0MjcxNS0uMzk4NTA2IC44NzY3MTIgLjA3OTcwMSAxLjQ5MDQxMSAuMDc5NzAxQzIuMDAwNDk4IC4wNzk3MDEgMi40Mzg4NTQtLjMyNjc3NSAyLjU4MjMxNi0uNDg2MTc3QzIuNzI1Nzc4IC4wNjM3NjEgMy4yNjc3NDYgLjA3OTcwMSAzLjM2MzM4NyAuMDc5NzAxQzMuNzMwMDEyIC4wNzk3MDEgMy45MTMzMjUtLjIyMzE2MyAzLjk3NzA4Ni0uMzU4NjU1QzQuMTM2NDg4LS42NDU1NzkgNC4yNDgwNy0xLjEwNzg0NiA0LjI0ODA3LTEuMTM5NzI2QzQuMjQ4MDctMS4xODc1NDcgNC4yMTYxODktMS4yNDMzMzcgNC4xMjA1NDgtMS4yNDMzMzdTNC4wMDg5NjYtMS4xOTU1MTcgMy45NjExNDYtLjk5NjI2NEMzLjg0OTU2NC0uNTU3OTA4IDMuNjk4MTMyLS4xNDM0NjIgMy4zODcyOTgtLjE0MzQ2MkMzLjIwMzk4NS0uMTQzNDYyIDMuMTMyMjU0LS4yOTQ4OTQgMy4xMzIyNTQtLjUxODA1N0MzLjEzMjI1NC0uNjUzNTQ5IDMuMjAzOTg1LS45MjQ1MzMgMy4yNTE4MDYtMS4xMjM3ODZTMy40MTkxNzgtMS44MDEyNDUgMy40NTEwNTktMS45NDQ3MDdMMy42MTA0NjEtMi41NTA0MzZDMy42NTAzMTEtMi43NDE3MTkgMy43Mzc5ODMtMy4wNzY0NjMgMy43Mzc5ODMtMy4xMTYzMTRDMy43Mzc5ODMtMy4yOTk2MjYgMy41ODY1NS0zLjM2MzM4NyAzLjQ4MjkzOS0zLjM2MzM4N0MzLjM2MzM4Ny0zLjM2MzM4NyAzLjE2NDEzNC0zLjI4MzY4NiAzLjEyNDI4NC0zLjAzNjYxM1pNMi41ODIzMTYtLjg2MDc3MkMyLjE4MzgxMS0uMzEwODM0IDEuNzY5MzY1LS4xNDM0NjIgMS41MTQzMjEtLjE0MzQ2MkMxLjE0NzY5Ni0uMTQzNDYyIC45NjQzODQtLjQ3ODIwNyAuOTY0Mzg0LS44OTI2NTNDLjk2NDM4NC0xLjI2NzI0OCAxLjE3OTU3Ny0yLjEyMDA1IDEuMzU0OTE5LTIuNDcwNzM1QzEuNTg2MDUyLTIuOTU2OTEyIDEuOTc2NTg4LTMuMjkxNjU2IDIuMzQzMjEzLTMuMjkxNjU2QzIuODYxMjctMy4yOTE2NTYgMy4wMTI3MDItMi43MDk4MzggMy4wMTI3MDItMi42MTQxOTdDMy4wMTI3MDItMi41ODIzMTYgMi44MTM0NS0xLjgwMTI0NSAyLjc2NTYyOS0xLjU5NDAyMkMyLjY2MjAxNy0xLjIxOTQyNyAyLjY2MjAxNy0xLjIwMzQ4NyAyLjU4MjMxNi0uODYwNzcyWicvPgo8cGF0aCBpZD0nZzAtMTA5JyBkPSdNMS41OTQwMjItMS4zMDcwOThDMS42MTc5MzMtMS40MjY2NSAxLjY5NzYzNC0xLjcyOTUxNCAxLjcyMTU0NC0xLjg0OTA2NkMxLjc0NTQ1NS0xLjkyODc2NyAxLjc5MzI3NS0yLjEyMDA1IDEuODA5MjE1LTIuMTk5NzUxQzEuODI1MTU2LTIuMjM5NjAxIDIuMDg4MTY5LTIuNzU3NjU5IDIuNDM4ODU0LTMuMDIwNjcyQzIuNzA5ODM4LTMuMjI3ODk1IDIuOTcyODUyLTMuMjkxNjU2IDMuMTk2MDE1LTMuMjkxNjU2QzMuNDkwOTA5LTMuMjkxNjU2IDMuNjUwMzExLTMuMTE2MzE0IDMuNjUwMzExLTIuNzQ5Njg5QzMuNjUwMzExLTIuNTU4NDA2IDMuNjAyNDkxLTIuMzc1MDkzIDMuNTE0ODE5LTIuMDE2NDM4QzMuNDU5MDI5LTEuODA5MjE1IDMuMzIzNTM3LTEuMjc1MjE4IDMuMjc1NzE2LTEuMDYwMDI1TDMuMTU2MTY0LS41ODE4MThDMy4xMTYzMTQtLjQ0NjMyNiAzLjA2MDUyMy0uMjA3MjIzIDMuMDYwNTIzLS4xNjczNzJDMy4wNjA1MjMgLjAxNTk0IDMuMjExOTU1IC4wNzk3MDEgMy4zMTU1NjcgLjA3OTcwMUMzLjQ1OTAyOSAuMDc5NzAxIDMuNTc4NTgtLjAxNTk0IDMuNjM0MzcxLS4xMTE1ODJDMy42NTgyODEtLjE1OTQwMiAzLjcyMjA0Mi0uNDMwMzg2IDMuNzYxODkzLS41OTc3NThMMy45NDUyMDUtMS4zMDcwOThDMy45NjkxMTYtMS40MjY2NSA0LjA0ODgxNy0xLjcyOTUxNCA0LjA3MjcyNy0xLjg0OTA2NkM0LjE4NDMwOS0yLjI3OTQ1MiA0LjE4NDMwOS0yLjI4NzQyMiA0LjM2NzYyMS0yLjU1MDQzNkM0LjYzMDYzNS0yLjk0MDk3MSA1LjAwNTIzLTMuMjkxNjU2IDUuNTM5MjI4LTMuMjkxNjU2QzUuODI2MTUyLTMuMjkxNjU2IDUuOTkzNTI0LTMuMTI0Mjg0IDUuOTkzNTI0LTIuNzQ5Njg5QzUuOTkzNTI0LTIuMzExMzMzIDUuNjU4NzgtMS4zOTQ3NyA1LjUwNzM0Ny0xLjAxMjIwNEM1LjQyNzY0Ni0uODA0OTgxIDUuNDAzNzM2LS43NDkxOTEgNS40MDM3MzYtLjU5Nzc1OEM1LjQwMzczNi0uMTQzNDYyIDUuNzc4MzMxIC4wNzk3MDEgNi4xMjEwNDYgLjA3OTcwMUM2LjkwMjExNyAuMDc5NzAxIDcuMjI4ODkyLTEuMDM2MTE1IDcuMjI4ODkyLTEuMTM5NzI2QzcuMjI4ODkyLTEuMjE5NDI3IDcuMTY1MTMxLTEuMjQzMzM3IDcuMTA5MzQtMS4yNDMzMzdDNy4wMTM2OTktMS4yNDMzMzcgNi45OTc3NTgtMS4xODc1NDcgNi45NzM4NDgtMS4xMDc4NDZDNi43ODI1NjUtLjQ0NjMyNiA2LjQ0NzgyMS0uMTQzNDYyIDYuMTQ0OTU2LS4xNDM0NjJDNi4wMTc0MzUtLjE0MzQ2MiA1Ljk1MzY3NC0uMjIzMTYzIDUuOTUzNjc0LS40MDY0NzZTNi4wMTc0MzUtLjc2NTEzMSA2LjA5NzEzNi0uOTY0Mzg0QzYuMjE2Njg3LTEuMjY3MjQ4IDYuNTY3MzcyLTIuMTgzODExIDYuNTY3MzcyLTIuNjMwMTM3QzYuNTY3MzcyLTMuMjI3ODk1IDYuMTUyOTI3LTMuNTE0ODE5IDUuNTc5MDc4LTMuNTE0ODE5QzUuMDI5MTQxLTMuNTE0ODE5IDQuNTc0ODQ0LTMuMjI3ODk1IDQuMjE2MTg5LTIuNzMzNzQ4QzQuMTUyNDI4LTMuMzcxMzU3IDMuNjQyMzQxLTMuNTE0ODE5IDMuMjI3ODk1LTMuNTE0ODE5QzIuODYxMjctMy41MTQ4MTkgMi4zNzUwOTMtMy4zODcyOTggMS45MzY3MzctMi44MTM0NUMxLjg4MDk0Ni0zLjI5MTY1NiAxLjQ5ODM4MS0zLjUxNDgxOSAxLjEyMzc4Ni0zLjUxNDgxOUMuODQ0ODMyLTMuNTE0ODE5IC42NDU1NzktMy4zNDc0NDcgLjUxMDA4Ny0zLjA3NjQ2M0MuMzE4ODA0LTIuNzAxODY4IC4yMzkxMDMtMi4zMTEzMzMgLjIzOTEwMy0yLjI5NTM5MkMuMjM5MTAzLTIuMjIzNjYxIC4yOTQ4OTQtMi4xOTE3ODEgLjM1ODY1NS0yLjE5MTc4MUMuNDYyMjY3LTIuMTkxNzgxIC40NzAyMzctMi4yMjM2NjEgLjUyNjAyNy0yLjQzMDg4NEMuNjIxNjY5LTIuODIxNDIgLjc2NTEzMS0zLjI5MTY1NiAxLjA5OTg3NS0zLjI5MTY1NkMxLjMwNzA5OC0zLjI5MTY1NiAxLjM1NDkxOS0zLjA5MjQwMyAxLjM1NDkxOS0yLjkxNzA2MUMxLjM1NDkxOS0yLjc3MzU5OSAxLjMxNTA2OC0yLjYyMjE2NyAxLjI1MTMwOC0yLjM1OTE1M0MxLjIzNTM2Ny0yLjI5NTM5MiAxLjExNTgxNi0xLjgyNTE1NiAxLjA4MzkzNS0xLjcxMzU3NEwuNzg5MDQxLS41MTgwNTdDLjc1NzE2MS0uMzk4NTA2IC43MDkzNC0uMTk5MjUzIC43MDkzNC0uMTY3MzcyQy43MDkzNCAuMDE1OTQgLjg2MDc3MiAuMDc5NzAxIC45NjQzODQgLjA3OTcwMUMxLjEwNzg0NiAuMDc5NzAxIDEuMjI3Mzk3LS4wMTU5NCAxLjI4MzE4OC0uMTExNTgyQzEuMzA3MDk4LS4xNTk0MDIgMS4zNzA4NTktLjQzMDM4NiAxLjQxMDcxLS41OTc3NThMMS41OTQwMjItMS4zMDcwOThaJy8+CjxwYXRoIGlkPSdnMC0xMjAnIGQ9J00zLjk5MzAyNi0zLjE4MDA3NUMzLjY0MjM0MS0zLjA5MjQwMyAzLjYyNjQwMS0yLjc4MTU2OSAzLjYyNjQwMS0yLjc0OTY4OUMzLjYyNjQwMS0yLjU3NDM0NiAzLjc2MTg5My0yLjQ1NDc5NSAzLjkzNzIzNS0yLjQ1NDc5NVM0LjM4MzU2Mi0yLjU5MDI4NiA0LjM4MzU2Mi0yLjkzMzAwMUM0LjM4MzU2Mi0zLjM4NzI5OCAzLjg4MTQ0NS0zLjUxNDgxOSAzLjU4NjU1LTMuNTE0ODE5QzMuMjExOTU1LTMuNTE0ODE5IDIuOTA5MDkxLTMuMjUxODA2IDIuNzI1Nzc4LTIuOTQwOTcxQzIuNTUwNDM2LTMuMzYzMzg3IDIuMTM1OTktMy41MTQ4MTkgMS44MDkyMTUtMy41MTQ4MTlDLjk0MDQ3My0zLjUxNDgxOSAuNDU0Mjk2LTIuNTE4NTU1IC40NTQyOTYtMi4yOTUzOTJDLjQ1NDI5Ni0yLjIyMzY2MSAuNTEwMDg3LTIuMTkxNzgxIC41NzM4NDgtMi4xOTE3ODFDLjY2OTQ4OS0yLjE5MTc4MSAuNjg1NDMtMi4yMzE2MzEgLjcwOTM0LTIuMzI3MjczQy44OTI2NTMtMi45MDkwOTEgMS4zNzA4NTktMy4yOTE2NTYgMS43ODUzMDUtMy4yOTE2NTZDMi4wOTYxMzktMy4yOTE2NTYgMi4yNDc1NzItMy4wNjg0OTMgMi4yNDc1NzItMi43ODE1NjlDMi4yNDc1NzItMi42MjIxNjcgMi4xNTE5My0yLjI1NTU0MiAyLjA4ODE2OS0yLjAwMDQ5OEMyLjAzMjM3OS0xLjc2OTM2NSAxLjg1NzAzNi0xLjA2MDAyNSAxLjgxNzE4Ni0uOTA4NTkzQzEuNzA1NjA0LS40NzgyMDcgMS40MTg2OC0uMTQzNDYyIDEuMDYwMDI1LS4xNDM0NjJDMS4wMjgxNDQtLjE0MzQ2MiAuODIwOTIyLS4xNDM0NjIgLjY1MzU0OS0uMjU1MDQ0QzEuMDIwMTc0LS4zNDI3MTUgMS4wMjAxNzQtLjY3NzQ2IDEuMDIwMTc0LS42ODU0M0MxLjAyMDE3NC0uODY4NzQyIC44NzY3MTItLjk4MDMyNCAuNzAxMzctLjk4MDMyNEMuNDg2MTc3LS45ODAzMjQgLjI1NTA0NC0uNzk3MDExIC4yNTUwNDQtLjQ5NDE0N0MuMjU1MDQ0LS4xMjc1MjIgLjY0NTU3OSAuMDc5NzAxIDEuMDUyMDU1IC4wNzk3MDFDMS40NzQ0NzEgLjA3OTcwMSAxLjc2OTM2NS0uMjM5MTAzIDEuOTEyODI3LS40OTQxNDdDMi4wODgxNjktLjEwMzYxMSAyLjQ1NDc5NSAuMDc5NzAxIDIuODM3MzYgLjA3OTcwMUMzLjcwNjEwMiAuMDc5NzAxIDQuMTg0MzA5LS45MTY1NjMgNC4xODQzMDktMS4xMzk3MjZDNC4xODQzMDktMS4yMTk0MjcgNC4xMjA1NDgtMS4yNDMzMzcgNC4wNjQ3NTctMS4yNDMzMzdDMy45NjkxMTYtMS4yNDMzMzcgMy45NTMxNzYtMS4xODc1NDcgMy45MjkyNjUtMS4xMDc4NDZDMy43Njk4NjMtLjU3Mzg0OCAzLjMxNTU2Ny0uMTQzNDYyIDIuODUzMy0uMTQzNDYyQzIuNTkwMjg2LS4xNDM0NjIgMi4zOTkwMDQtLjMxODgwNCAyLjM5OTAwNC0uNjUzNTQ5QzIuMzk5MDA0LS44MTI5NTEgMi40NDY4MjQtLjk5NjI2NCAyLjU1ODQwNi0xLjQ0MjU5QzIuNjE0MTk3LTEuNjgxNjk0IDIuNzg5NTM5LTIuMzgzMDY0IDIuODI5MzktMi41MzQ0OTZDMi45NDA5NzEtMi45NDg5NDEgMy4yMTk5MjUtMy4yOTE2NTYgMy41Nzg1OC0zLjI5MTY1NkMzLjYxODQzMS0zLjI5MTY1NiAzLjgyNTY1NC0zLjI5MTY1NiAzLjk5MzAyNi0zLjE4MDA3NVonLz4KPHBhdGggaWQ9J2cxLTEwNycgZD0nTTMuMzU5NDAyLTcuOTk4MDA3QzMuMzcxMzU3LTguMDQ1ODI4IDMuMzk1MjY4LTguMTE3NTU5IDMuMzk1MjY4LTguMTc3MzM1QzMuMzk1MjY4LTguMjk2ODg3IDMuMjc1NzE2LTguMjk2ODg3IDMuMjUxODA2LTguMjk2ODg3QzMuMjM5ODUxLTguMjk2ODg3IDIuODA5NDY1LTguMjYxMDIxIDIuNTk0MjcxLTguMjM3MTExQzIuMzkxMDM0LTguMjI1MTU2IDIuMjExNzA2LTguMjAxMjQ1IDEuOTk2NTEzLTguMTg5MjlDMS43MDk1ODktOC4xNjUzOCAxLjYyNTkwMy04LjE1MzQyNSAxLjYyNTkwMy03LjkzODIzMkMxLjYyNTkwMy03LjgxODY4IDEuNzQ1NDU1LTcuODE4NjggMS44NjUwMDYtNy44MTg2OEMyLjQ3NDcyLTcuODE4NjggMi40NzQ3Mi03LjcxMTA4MyAyLjQ3NDcyLTcuNTkxNTMyQzIuNDc0NzItNy41NDM3MTEgMi40NzQ3Mi03LjUxOTgwMSAyLjQxNDk0NC03LjMwNDYwOEwuNzA1MzU1LS40NjYyNTJDLjY1NzUzNC0uMjg2OTI0IC42NTc1MzQtLjI2MzAxNCAuNjU3NTM0LS4xOTEyODNDLjY1NzUzNCAuMDcxNzMxIC44NjA3NzIgLjExOTU1MiAuOTgwMzI0IC4xMTk1NTJDMS4zMTUwNjggLjExOTU1MiAxLjM4NjgtLjE0MzQ2MiAxLjQ4MjQ0MS0uNTE0MDcyTDIuMDQ0MzM0LTIuNzQ5Njg5QzIuOTA1MTA2LTIuNjU0MDQ3IDMuNDE5MTc4LTIuMjk1MzkyIDMuNDE5MTc4LTEuNzIxNTQ0QzMuNDE5MTc4LTEuNjQ5ODEzIDMuNDE5MTc4LTEuNjAxOTkzIDMuMzgzMzEzLTEuNDIyNjY1QzMuMzM1NDkyLTEuMjQzMzM3IDMuMzM1NDkyLTEuMDk5ODc1IDMuMzM1NDkyLTEuMDQwMUMzLjMzNTQ5Mi0uMzQ2NyAzLjc4OTc4OCAuMTE5NTUyIDQuMzk5NTAyIC4xMTk1NTJDNC45NDk0NCAuMTE5NTUyIDUuMjM2MzY0LS4zODI1NjUgNS4zMzIwMDUtLjU0OTkzOEM1LjU4MzA2NC0uOTkyMjc5IDUuNzM4NDgxLTEuNjYxNzY4IDUuNzM4NDgxLTEuNzA5NTg5QzUuNzM4NDgxLTEuNzY5MzY1IDUuNjkwNjYtMS44MTcxODYgNS42MTg5MjktMS44MTcxODZDNS41MTEzMzMtMS44MTcxODYgNS40OTkzNzctMS43NjkzNjUgNS40NTE1NTctMS41NzgwODJDNS4yODQxODQtLjk1NjQxMyA1LjAzMzEyNi0uMTE5NTUyIDQuNDIzNDEyLS4xMTk1NTJDNC4xODQzMDktLjExOTU1MiA0LjAyODg5Mi0uMjM5MTAzIDQuMDI4ODkyLS42OTM0QzQuMDI4ODkyLS45MjA1NDggNC4wNzY3MTItMS4xODM1NjIgNC4xMjQ1MzMtMS4zNjI4ODlDNC4xNzIzNTQtMS41NzgwODIgNC4xNzIzNTQtMS41OTAwMzcgNC4xNzIzNTQtMS43MzM0OTlDNC4xNzIzNTQtMi40Mzg4NTQgMy41Mzg3My0yLjgzMzM3NSAyLjQzODg1NC0yLjk3NjgzN0MyLjg2OTI0LTMuMjM5ODUxIDMuMjk5NjI2LTMuNzA2MTAyIDMuNDY2OTk5LTMuODg1NDNDNC4xNDg0NDMtNC42NTA1NiA0LjYxNDY5NS01LjAzMzEyNiA1LjE2NDYzMy01LjAzMzEyNkM1LjQzOTYwMS01LjAzMzEyNiA1LjUxMTMzMy00Ljk2MTM5NSA1LjU5NTAxOS00Ljg4OTY2NEM1LjE1MjY3Ny00Ljg0MTg0MyA0Ljk4NTMwNS00LjUzMTAwOSA0Ljk4NTMwNS00LjI5MTkwNUM0Ljk4NTMwNS00LjAwNDk4MSA1LjIxMjQ1My0zLjkwOTM0IDUuMzc5ODI2LTMuOTA5MzRDNS43MDI2MTUtMy45MDkzNCA1Ljk4OTUzOS00LjE4NDMwOSA1Ljk4OTUzOS00LjU2Njg3NEM1Ljk4OTUzOS00LjkxMzU3NCA1LjcxNDU3LTUuMjcyMjI5IDUuMTc2NTg4LTUuMjcyMjI5QzQuNTE5MDU0LTUuMjcyMjI5IDMuOTgxMDcxLTQuODA1OTc4IDMuMTMyMjU0LTMuODQ5NTY0QzMuMDEyNzAyLTMuNzA2MTAyIDIuNTcwMzYxLTMuMjUxODA2IDIuMTI4MDItMy4wODQ0MzNMMy4zNTk0MDItNy45OTgwMDdaJy8+CjwvZGVmcz4KPGcgaWQ9J3BhZ2UxJz4KPHVzZSB4PScwJyB5PScwJyB4bGluazpocmVmPScjZzEtMTA3Jy8+Cjx1c2UgeD0nNi4wODgyMjMnIHk9JzEuNzkzMjYzJyB4bGluazpocmVmPScjZzAtMTA5Jy8+Cjx1c2UgeD0nMTMuNTc4NzQ5JyB5PScxLjc5MzI2MycgeGxpbms6aHJlZj0nI2cwLTk3Jy8+Cjx1c2UgeD0nMTguMDc2NzU5JyB5PScxLjc5MzI2MycgeGxpbms6aHJlZj0nI2cwLTEyMCcvPgo8L2c+Cjwvc3ZnPgo8IS0tIERFUFRIPTIgLS0+" alt="k_{max}" style="vertical-align: -2px"/> such that :</p>
@@ -578,10 +582,12 @@ IC_PTS_ 5  =  [2.3561e-05, 2.45753e-05]
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fileNameSampleParam</span> <span class="o">=</span> <span class="s1">&#39;sampleParamFromMankamo_</span><span class="si">{}</span><span class="s1">.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Nbootstrap</span><span class="p">)</span>
 <span class="n">fileNameSampleKmax</span> <span class="o">=</span> <span class="s1">&#39;sampleKmaxFromMankamo_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Nbootstrap</span><span class="p">,</span> <span class="n">nameSeuil</span><span class="p">)</span>
-<span class="n">gKmax</span> <span class="o">=</span> <span class="n">myECLM</span><span class="o">.</span><span class="n">computeAnalyseKMaxSample</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">fileNameSampleParam</span><span class="p">,</span> <span class="n">fileNameSampleKmax</span><span class="p">)</span>
+<span class="c1"># We use the parallalisation</span>
+<span class="n">parallel</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">gKmax</span> <span class="o">=</span> <span class="n">myECLM</span><span class="o">.</span><span class="n">computeAnalyseKMaxSample</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">fileNameSampleParam</span><span class="p">,</span> <span class="n">fileNameSampleKmax</span><span class="p">,</span> <span class="n">blocksize</span><span class="p">,</span> <span class="n">parallel</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Intervalle de confiance de niveau 90%: [ 5.0 ,  5.0 ]
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Confidence interval of level 90%: [ 4.0 ,  5.0 ]
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gKmax</span><span class="o">.</span><span class="n">setGrid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
@@ -589,7 +595,7 @@ IC_PTS_ 5  =  [2.3561e-05, 2.45753e-05]
 <span class="n">view</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../_images/sphx_glr_plot_eclm_018.png" srcset="../_images/sphx_glr_plot_eclm_018.png" alt="Loi de $K_{max} = \arg \max \{k | PTS(k|$7$) \geq $1.0e-05$\}$" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  19.058 seconds)</p>
+<img src="../_images/sphx_glr_plot_eclm_018.png" srcset="../_images/sphx_glr_plot_eclm_018.png" alt="Loi de $K_{max} = \arg \max \{k | PTS(k|$7$) \geq $1.0e-05$\}$" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  28.919 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-example-plot-eclm-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/492b1b0c68cfa324a509d88d3c34ee26/plot_eclm.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">plot_eclm.py</span></code></a></p>

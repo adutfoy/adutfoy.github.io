@@ -177,9 +177,9 @@ Anyway, if the starting point is not valid, the function *estimateMaxLikelihoodF
     graph Cx = Cx_optim
     graph Cco = Cco_optim
     graph logPx = logPx_optim
-    Mankamo parameter :  [0.00036988020585009376, 0.00012952147966373113, 0.2658266078353387, 0.26582660783533874]
-    general parameter :  [0.99933838922154, 0.1476851756628588, 0.14768517566285883, 0.24543528522847904, 0.754564714771521]
-    finalLogLikValue :  -0.02167747439543925
+    Mankamo parameter :  [0.00036988020585009376, 0.00013842210875154897, 0.22303390975238369, 0.22303393403772004]
+    general parameter :  [0.9992677447205695, 0.1348884484265988, 0.13488845787842924, 0.25176209443183356, 0.7482379055681665]
+    finalLogLikValue :  -0.021674757309715593
 
 
 
@@ -214,7 +214,7 @@ Function to deactivate grid in GridLayout to make matplotlib happy
 
 
 .. image-sg:: /auto_example/images/sphx_glr_plot_eclm_001.png
-   :alt: , Log likelihood at $(\log P_{x}, C_{co}) = ($-8.95E+00,2.66E-01), Log likelihood at $(\log P_{x}, C_{x}) = ($-8.95E+00,2.66E-01), Log likelihood at $(C_{co}, C_{x}) = ($2.66E-01,2.66E-01), Log likelihood at $C_{x} = $2.66E-01, Log likelihood at $C_{co} = $2.66E-01, Log likelihood at $\log P_{x} = $-8.95E+00
+   :alt: , Log likelihood at $(\log P_{x}, C_{co}) = ($-8.89E+00,2.23E-01), Log likelihood at $(\log P_{x}, C_{x}) = ($-8.89E+00,2.23E-01), Log likelihood at $(C_{co}, C_{x}) = ($2.23E-01,2.23E-01), Log likelihood at $C_{x} = $2.23E-01, Log likelihood at $C_{co} = $2.23E-01, Log likelihood at $\log P_{x} = $-8.89E+00
    :srcset: /auto_example/images/sphx_glr_plot_eclm_001.png
    :class: sphx-glr-single-img
 
@@ -261,13 +261,13 @@ Compute the ECLM probabilities
 
  .. code-block:: none
 
-    PEG_list =  [0.9979685128453654, 0.00024955737932482353, 6.732445116140214e-06, 1.922081438048188e-06, 1.1331572963762106e-06, 1.0535799779325168e-06, 1.515528008560812e-06, 3.5369206007148977e-06]
+    PEG_list =  [0.9979586901351106, 0.0002501366662173221, 6.950682945934639e-06, 2.107855164507188e-06, 1.1558413235020206e-06, 9.500637076724003e-07, 1.1543121457508757e-06, 2.1279595219675494e-06]
 
-    PSG_list =  [1.0, 0.000369880205850105, 4.9324785692987386e-05, 2.2375223126106277e-05, 1.2377401856571094e-05, 7.621556595769038e-06, 5.05244860927571e-06, 3.5369206007148977e-06]
+    PSG_list =  [1.0, 0.0003698802058500906, 4.6448529330936715e-05, 1.9176810809520724e-05, 9.596928405739398e-06, 5.386647521141701e-06, 3.282271667718425e-06, 2.1279595219675494e-06]
 
-    PES_list =  [0.9979685128453654, 0.0017469016552737646, 0.0001413813474389445, 6.727285033168659e-05, 3.966050537316737e-05, 2.2125179536582855e-05, 1.0608696059925683e-05, 3.5369206007148977e-06]
+    PES_list =  [0.9979586901351106, 0.0017509566635212548, 0.0001459643418646274, 7.377493075775157e-05, 4.045444632257072e-05, 1.9951337861120407e-05, 8.080185020256129e-06, 2.1279595219675494e-06]
 
-    PTS_list =  [1.0, 0.002031487154614786, 0.00028458549934102194, 0.00014320415190207742, 7.59313015703908e-05, 3.627079619722344e-05, 1.4145616660640582e-05, 3.5369206007148977e-06]
+    PTS_list =  [1.0, 0.0020413098648695486, 0.0002903532013482938, 0.00014438885948366638, 7.061392872591481e-05, 3.0159482403344085e-05, 1.0208144542223677e-05, 2.1279595219675494e-06]
 
 
 
@@ -297,13 +297,16 @@ The sample is generated and saved in a csv file.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-134
+.. GENERATED FROM PYTHON SOURCE LINES 128-137
 
 .. code-block:: default
 
     startingPoint = mankamoParam[1:4]
     fileNameSampleParam = 'sampleParamFromMankamo_{}.csv'.format(Nbootstrap)
-    myECLM.estimateBootstrapParamSampleFromMankamo(Nbootstrap, startingPoint, fileNameSampleParam)
+    # We use the parallalisation
+    parallel = True
+    blocksize = 256
+    myECLM.estimateBootstrapParamSampleFromMankamo(Nbootstrap, startingPoint, fileNameSampleParam, blocksize, parallel)
 
     # Create the sample of all the ECLM probabilities associated to the sample of the parameters.
 
@@ -314,12 +317,14 @@ The sample is generated and saved in a csv file.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-138
+.. GENERATED FROM PYTHON SOURCE LINES 138-143
 
 .. code-block:: default
 
     fileNameECLMProbabilities = 'sampleECLMProbabilitiesFromMankamo_{}.csv'.format(Nbootstrap)
-    myECLM.computeECLMProbabilitiesFromMankano(fileNameSampleParam, fileNameECLMProbabilities)
+    # We use the parallalisation
+    parallel = True
+    myECLM.computeECLMProbabilitiesFromMankano(fileNameSampleParam, fileNameECLMProbabilities, blocksize, parallel)
 
 
 
@@ -328,14 +333,14 @@ The sample is generated and saved in a csv file.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 139-143
+.. GENERATED FROM PYTHON SOURCE LINES 144-148
 
 Graphically analyse the bootstrap sample of parameters
 ======================================================
 
 We create the Pairs graphs of the Mankamo and general parameters.
 
-.. GENERATED FROM PYTHON SOURCE LINES 145-147
+.. GENERATED FROM PYTHON SOURCE LINES 150-152
 
 .. code-block:: default
 
@@ -348,11 +353,11 @@ We create the Pairs graphs of the Mankamo and general parameters.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 148-149
+.. GENERATED FROM PYTHON SOURCE LINES 153-154
 
 Deactivate grid to make matplotlib happy
 
-.. GENERATED FROM PYTHON SOURCE LINES 149-154
+.. GENERATED FROM PYTHON SOURCE LINES 154-159
 
 .. code-block:: default
 
@@ -373,11 +378,11 @@ Deactivate grid to make matplotlib happy
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 155-156
+.. GENERATED FROM PYTHON SOURCE LINES 160-161
 
 Deactivate grid to make matplotlib happy
 
-.. GENERATED FROM PYTHON SOURCE LINES 156-163
+.. GENERATED FROM PYTHON SOURCE LINES 161-168
 
 .. code-block:: default
 
@@ -400,7 +405,7 @@ Deactivate grid to make matplotlib happy
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 164-174
+.. GENERATED FROM PYTHON SOURCE LINES 169-179
 
 .. code-block:: default
 
@@ -426,14 +431,14 @@ Deactivate grid to make matplotlib happy
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 175-179
+.. GENERATED FROM PYTHON SOURCE LINES 180-184
 
 Graphically analyse the bootstrap sample of the ECLM probabilities
 ==================================================================
 
 We create the Pairs graphs of all the ECLM probabilities. We limit the graphical study to the multiplicities lesser than :math:`k_{max}`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 181-185
+.. GENERATED FROM PYTHON SOURCE LINES 186-190
 
 .. code-block:: default
 
@@ -448,7 +453,7 @@ We create the Pairs graphs of all the ECLM probabilities. We limit the graphical
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 186-193
+.. GENERATED FROM PYTHON SOURCE LINES 191-198
 
 .. code-block:: default
 
@@ -466,11 +471,11 @@ We create the Pairs graphs of all the ECLM probabilities. We limit the graphical
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 194-195
+.. GENERATED FROM PYTHON SOURCE LINES 199-200
 
 Deactivate grid to make matplotlib happy
 
-.. GENERATED FROM PYTHON SOURCE LINES 195-200
+.. GENERATED FROM PYTHON SOURCE LINES 200-205
 
 .. code-block:: default
 
@@ -491,11 +496,11 @@ Deactivate grid to make matplotlib happy
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 201-202
+.. GENERATED FROM PYTHON SOURCE LINES 206-207
 
 Deactivate grid to make matplotlib happy
 
-.. GENERATED FROM PYTHON SOURCE LINES 202-207
+.. GENERATED FROM PYTHON SOURCE LINES 207-212
 
 .. code-block:: default
 
@@ -516,11 +521,11 @@ Deactivate grid to make matplotlib happy
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 208-209
+.. GENERATED FROM PYTHON SOURCE LINES 213-214
 
 Deactivate grid to make matplotlib happy
 
-.. GENERATED FROM PYTHON SOURCE LINES 209-214
+.. GENERATED FROM PYTHON SOURCE LINES 214-219
 
 .. code-block:: default
 
@@ -541,11 +546,11 @@ Deactivate grid to make matplotlib happy
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 215-216
+.. GENERATED FROM PYTHON SOURCE LINES 220-221
 
 Deactivate grid to make matplotlib happy
 
-.. GENERATED FROM PYTHON SOURCE LINES 216-221
+.. GENERATED FROM PYTHON SOURCE LINES 221-226
 
 .. code-block:: default
 
@@ -566,11 +571,11 @@ Deactivate grid to make matplotlib happy
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 222-223
+.. GENERATED FROM PYTHON SOURCE LINES 227-228
 
 Fix a k <=kMax
 
-.. GENERATED FROM PYTHON SOURCE LINES 223-230
+.. GENERATED FROM PYTHON SOURCE LINES 228-235
 
 .. code-block:: default
 
@@ -593,7 +598,7 @@ Fix a k <=kMax
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 231-242
+.. GENERATED FROM PYTHON SOURCE LINES 236-247
 
 .. code-block:: default
 
@@ -620,7 +625,7 @@ Fix a k <=kMax
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 243-253
+.. GENERATED FROM PYTHON SOURCE LINES 248-258
 
 .. code-block:: default
 
@@ -646,7 +651,7 @@ Fix a k <=kMax
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 254-264
+.. GENERATED FROM PYTHON SOURCE LINES 259-269
 
 .. code-block:: default
 
@@ -672,7 +677,7 @@ Fix a k <=kMax
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 265-275
+.. GENERATED FROM PYTHON SOURCE LINES 270-280
 
 .. code-block:: default
 
@@ -698,7 +703,7 @@ Fix a k <=kMax
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 276-281
+.. GENERATED FROM PYTHON SOURCE LINES 281-286
 
 Fit a distribution to the ECLM probabilities
 ============================================
@@ -706,7 +711,7 @@ Fit a distribution to the ECLM probabilities
 We fit a distribution among a given list to each ECLM probability. We test it with the Lilliefors test. 
 We also compute the confidence interval of the specified level.
 
-.. GENERATED FROM PYTHON SOURCE LINES 283-291
+.. GENERATED FROM PYTHON SOURCE LINES 288-296
 
 .. code-block:: default
 
@@ -731,10 +736,10 @@ We also compute the confidence interval of the specified level.
 
     Ordre k= 0
     PEG...
-    Best model PEG( 0 |n) :  Beta(alpha = 2.3886, beta = 2.14454, a = 0.99775, b = 0.998033) p-value =  0.6630570595585173
+    Best model PEG( 0 |n) :  LogNormal(muLog = -6.50028, sigmaLog = 0.0405954, gamma = 0.996374) p-value =  0.35305877648940426
     PSG...
     PES...
-    Best model PES( 0 |n) :  Beta(alpha = 2.3886, beta = 2.14454, a = 0.99775, b = 0.998033) p-value =  0.6585365853658537
+    Best model PES( 0 |n) :  LogNormal(muLog = -6.50028, sigmaLog = 0.0405954, gamma = 0.996374) p-value =  0.35305877648940426
     PTS...
 
     Test de Lilliefors
@@ -742,71 +747,71 @@ We also compute the confidence interval of the specified level.
 
     Ordre k= 1
     PEG...
-    Best model PEG( 1 |n) :  Beta(alpha = 2.15125, beta = 2.38698, a = 0.000242765, b = 0.000282381) p-value =  0.6551436901291129
+    Best model PEG( 1 |n) :  LogNormal(muLog = -6.30659, sigmaLog = 0.00515296, gamma = -0.00156061) p-value =  0.6628062360801782
     PSG...
-    Best model PSG( 1 |n) :  Beta(alpha = 2.0922, beta = 2.36032, a = 0.000351093, b = 0.000392658) p-value =  0.646813827571845
+    Best model PSG( 1 |n) :  Beta(alpha = 2.0922, beta = 2.36032, a = 0.000351093, b = 0.000392658) p-value =  0.6588921282798834
     PES...
-    Best model PES( 1 |n) :  Beta(alpha = 2.15125, beta = 2.38698, a = 0.00169936, b = 0.00197667) p-value =  0.6653338664534187
+    Best model PES( 1 |n) :  LogNormal(muLog = -4.36066, sigmaLog = 0.00515283, gamma = -0.0109246) p-value =  0.698292220113852
     PTS...
-    Best model PTS( 1 |n) :  Beta(alpha = 2.14454, beta = 2.3886, a = 0.00196691, b = 0.00225046) p-value =  0.6705539358600583
+    Best model PTS( 1 |n) :  LogNormal(muLog = 1.43963, sigmaLog = 1.44785e-05, gamma = -4.217) p-value =  0.22782174094127447
 
     Test de Lilliefors
     ==================
 
     Ordre k= 2
     PEG...
-    Best model PEG( 2 |n) :  Beta(alpha = 2.02908, beta = 2.22899, a = 6.54325e-06, b = 6.82266e-06) p-value =  0.5813475760065735
+    Best model PEG( 2 |n) :  LogNormal(muLog = -15.859, sigmaLog = 0.63656, gamma = 7.09189e-06) p-value =  0.0
     PSG...
-    Best model PSG( 2 |n) :  LogNormal(muLog = 0.461131, sigmaLog = 4.52496e-07, gamma = -1.58583) p-value =  0.0
+    Best model PSG( 2 |n) :  LogNormal(muLog = 0.285117, sigmaLog = 3.61972e-06, gamma = -1.32988) p-value =  0.000999000999000999
     PES...
-    Best model PES( 2 |n) :  Beta(alpha = 2.02908, beta = 2.22899, a = 0.000137408, b = 0.000143276) p-value =  0.6001599360255898
+    Best model PES( 2 |n) :  LogNormal(muLog = -12.8144, sigmaLog = 0.63656, gamma = 0.00014893) p-value =  0.0
     PTS...
-    Best model PTS( 2 |n) :  Beta(alpha = 8.98097, beta = 2.1945, a = 0.000254019, b = 0.000274206) p-value =  0.000999000999000999
+    Best model PTS( 2 |n) :  LogNormal(muLog = 1.91503, sigmaLog = 1.80027e-06, gamma = -6.78689) p-value =  0.000999000999000999
 
     Test de Lilliefors
     ==================
 
     Ordre k= 3
     PEG...
-    Best model PEG( 3 |n) :  LogNormal(muLog = -6.69594, sigmaLog = 6.44888e-06, gamma = -0.00123392) p-value =  0.0
+    Best model PEG( 3 |n) :  Beta(alpha = 1.27542, beta = 0.183064, a = 1.63613e-06, b = 2.17564e-06) p-value =  0.08091908091908091
     PSG...
-    Best model PSG( 3 |n) :  LogNormal(muLog = -0.941674, sigmaLog = 1.1672e-06, gamma = -0.389959) p-value =  0.0
+    Best model PSG( 3 |n) :  Beta(alpha = 0.864411, beta = 0.180315, a = 3.79236e-06, b = 1.4085e-05) p-value =  0.23918992884510126
     PES...
-    Best model PES( 3 |n) :  LogNormal(muLog = -3.5576, sigmaLog = 9.78561e-06, gamma = -0.0284373) p-value =  0.0
+    Best model PES( 3 |n) :  Beta(alpha = 1.27542, beta = 0.183064, a = 5.72645e-05, b = 7.61476e-05) p-value =  0.1008991008991009
     PTS...
-    Best model PTS( 3 |n) :  LogNormal(muLog = 0.569423, sigmaLog = 9.04962e-07, gamma = -1.76712) p-value =  0.0
+    Best model PTS( 3 |n) :  Beta(alpha = 0.993192, beta = 0.16915, a = 7.26117e-05, b = 0.000132704) p-value =  0.11242973141786383
 
     Test de Lilliefors
     ==================
 
     Ordre k= 4
     PEG...
-    Best model PEG( 4 |n) :  LogNormal(muLog = -5.6057, sigmaLog = 4.14456e-06, gamma = -0.00367582) p-value =  0.0
+    Best model PEG( 4 |n) :  Beta(alpha = 0.957769, beta = 0.157024, a = 3.78504e-07, b = 1.04037e-06) p-value =  0.18193979933110369
     PSG...
-    Best model PSG( 4 |n) :  LogNormal(muLog = -2.23317, sigmaLog = 2.75022e-06, gamma = -0.107181) p-value =  0.0
+    Best model PSG( 4 |n) :  Beta(alpha = 0.820272, beta = 0.192159, a = 7.2085e-07, b = 6.02893e-06) p-value =  0.18725361366622864
     PES...
-    Best model PES( 4 |n) :  LogNormal(muLog = -2.14538, sigmaLog = 4.558e-06, gamma = -0.116988) p-value =  0.0
+    Best model PES( 4 |n) :  Beta(alpha = 0.957769, beta = 0.157024, a = 1.32476e-05, b = 3.64131e-05) p-value =  0.1716888577435179
     PTS...
-    Best model PTS( 4 |n) :  LogNormal(muLog = 0.0448481, sigmaLog = 1.32723e-06, gamma = -1.04581) p-value =  0.0
+    Best model PTS( 4 |n) :  Beta(alpha = 0.892748, beta = 0.166687, a = 1.53459e-05, b = 5.66863e-05) p-value =  0.23910435825669732
 
     Test de Lilliefors
     ==================
 
     Ordre k= 5
     PEG...
-    Best model PEG( 5 |n) :  LogNormal(muLog = -6.43907, sigmaLog = 1.45787e-05, gamma = -0.0015971) p-value =  0.0
+    Best model PEG( 5 |n) :  Beta(alpha = 0.83459, beta = 0.170047, a = 9.2766e-08, b = 7.04718e-07) p-value =  0.2532278217409413
     PSG...
-    Best model PSG( 5 |n) :  LogNormal(muLog = -3.67219, sigmaLog = 7.60526e-06, gamma = -0.0254168) p-value =  0.0
+    Best model PSG( 5 |n) :  Beta(alpha = 0.774881, beta = 0.203295, a = 1.35424e-07, b = 2.91557e-06) p-value =  0.1293916023993145
     PES...
-    Best model PES( 5 |n) :  LogNormal(muLog = -0.920554, sigmaLog = 1.22806e-06, gamma = -0.398282) p-value =  0.0
+    Best model PES( 5 |n) :  LogNormal(muLog = -0.759737, sigmaLog = 7.23941e-06, gamma = -0.467777) p-value =  0.000999000999000999
     PTS...
-    Best model PTS( 5 |n) :  LogNormal(muLog = 0.640873, sigmaLog = 4.52588e-07, gamma = -1.89811) p-value =  0.0
+    Best model PTS( 5 |n) :  Beta(alpha = 0.818785, beta = 0.181195, a = 2.09761e-06, b = 2.03368e-05) p-value =  0.22432587492828457
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 292-306
+.. GENERATED FROM PYTHON SOURCE LINES 297-311
 
 .. code-block:: default
 
@@ -832,35 +837,35 @@ We also compute the confidence interval of the specified level.
 
  .. code-block:: none
 
-    IC_PEG_ 0  =  [0.997792, 0.998009]
-    IC_PEG_ 1  =  [0.000246163, 0.000276484]
-    IC_PEG_ 2  =  [6.56927e-06, 6.78492e-06]
-    IC_PEG_ 3  =  [1.98657e-06, 2.00655e-06]
-    IC_PEG_ 4  =  [1.03165e-06, 1.04412e-06]
-    IC_PEG_ 5  =  [7.77954e-07, 8.02603e-07]
+    IC_PEG_ 0  =  [0.997776, 0.997987]
+    IC_PEG_ 1  =  [0.000247049, 0.00028004]
+    IC_PEG_ 2  =  [7.13113e-06, 7.53387e-06]
+    IC_PEG_ 3  =  [1.82805e-06, 2.17015e-06]
+    IC_PEG_ 4  =  [5.46603e-07, 1.03728e-06]
+    IC_PEG_ 5  =  [1.96105e-07, 7.00371e-07]
     IC_PSG_ 0  =  [1, 1]
     IC_PSG_ 1  =  [0.000354533, 0.000386447]
-    IC_PSG_ 2  =  [4.02934e-05, 4.10863e-05]
-    IC_PSG_ 3  =  [1.54995e-05, 1.60223e-05]
-    IC_PSG_ 4  =  [7.22339e-06, 7.5967e-06]
-    IC_PSG_ 5  =  [3.79208e-06, 4.05438e-06]
-    IC_PES_ 0  =  [0.997792, 0.998009]
-    IC_PES_ 1  =  [0.00172314, 0.00193539]
-    IC_PES_ 2  =  [0.000137956, 0.000142482]
-    IC_PES_ 3  =  [6.95282e-05, 7.02297e-05]
-    IC_PES_ 4  =  [3.61061e-05, 3.65452e-05]
-    IC_PES_ 5  =  [1.63351e-05, 1.68563e-05]
+    IC_PSG_ 2  =  [2.45992e-05, 3.956e-05]
+    IC_PSG_ 3  =  [5.5691e-06, 1.40086e-05]
+    IC_PSG_ 4  =  [1.4281e-06, 5.97618e-06]
+    IC_PSG_ 5  =  [4.0673e-07, 2.88145e-06]
+    IC_PES_ 0  =  [0.997776, 0.997987]
+    IC_PES_ 1  =  [0.00172934, 0.00196028]
+    IC_PES_ 2  =  [0.000149754, 0.000158211]
+    IC_PES_ 3  =  [6.39816e-05, 7.59626e-05]
+    IC_PES_ 4  =  [1.91311e-05, 3.6321e-05]
+    IC_PES_ 5  =  [4.1181e-06, 1.47119e-05]
     IC_PTS_ 0  =  [1, 1]
-    IC_PTS_ 1  =  [0.00199096, 0.00220844]
-    IC_PTS_ 2  =  [0.000267524, 0.000273146]
-    IC_PTS_ 3  =  [0.000129525, 0.000131002]
-    IC_PTS_ 4  =  [5.97031e-05, 6.11001e-05]
-    IC_PTS_ 5  =  [2.3561e-05, 2.45753e-05]
+    IC_PTS_ 1  =  [0.00201273, 0.00222422]
+    IC_PTS_ 2  =  [0.000245838, 0.000284499]
+    IC_PTS_ 3  =  [8.78617e-05, 0.000132274]
+    IC_PTS_ 4  =  [2.38798e-05, 5.64708e-05]
+    IC_PTS_ 5  =  [4.74602e-06, 2.01807e-05]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 307-317
+.. GENERATED FROM PYTHON SOURCE LINES 312-322
 
 .. code-block:: default
 
@@ -878,7 +883,7 @@ We also compute the confidence interval of the specified level.
 
 
 .. image-sg:: /auto_example/images/sphx_glr_plot_eclm_014.png
-   :alt: , PEG(0|7) - best model : Beta, PEG(1|7) - best model : Beta, PEG(2|7) - best model : Beta, PEG(3|7) - best model : LogNormal, PEG(4|7) - best model : LogNormal, PEG(5|7) - best model : LogNormal
+   :alt: , PEG(0|7) - best model : LogNormal, PEG(1|7) - best model : LogNormal, PEG(2|7) - best model : LogNormal, PEG(3|7) - best model : Beta, PEG(4|7) - best model : Beta, PEG(5|7) - best model : Beta
    :srcset: /auto_example/images/sphx_glr_plot_eclm_014.png
    :class: sphx-glr-single-img
 
@@ -886,7 +891,7 @@ We also compute the confidence interval of the specified level.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 318-328
+.. GENERATED FROM PYTHON SOURCE LINES 323-333
 
 .. code-block:: default
 
@@ -904,7 +909,7 @@ We also compute the confidence interval of the specified level.
 
 
 .. image-sg:: /auto_example/images/sphx_glr_plot_eclm_015.png
-   :alt: , PSG(0|7), PSG(1|7) - best model : Beta, PSG(2|7) - best model : LogNormal, PSG(3|7) - best model : LogNormal, PSG(4|7) - best model : LogNormal, PSG(5|7) - best model : LogNormal
+   :alt: , PSG(0|7), PSG(1|7) - best model : Beta, PSG(2|7) - best model : LogNormal, PSG(3|7) - best model : Beta, PSG(4|7) - best model : Beta, PSG(5|7) - best model : Beta
    :srcset: /auto_example/images/sphx_glr_plot_eclm_015.png
    :class: sphx-glr-single-img
 
@@ -912,7 +917,7 @@ We also compute the confidence interval of the specified level.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 329-339
+.. GENERATED FROM PYTHON SOURCE LINES 334-344
 
 .. code-block:: default
 
@@ -930,7 +935,7 @@ We also compute the confidence interval of the specified level.
 
 
 .. image-sg:: /auto_example/images/sphx_glr_plot_eclm_016.png
-   :alt: , PES(0|7) - best model : Beta, PES(1|7) - best model : Beta, PES(2|7) - best model : Beta, PES(3|7) - best model : LogNormal, PES(4|7) - best model : LogNormal, PES(5|7) - best model : LogNormal
+   :alt: , PES(0|7) - best model : LogNormal, PES(1|7) - best model : LogNormal, PES(2|7) - best model : LogNormal, PES(3|7) - best model : Beta, PES(4|7) - best model : Beta, PES(5|7) - best model : LogNormal
    :srcset: /auto_example/images/sphx_glr_plot_eclm_016.png
    :class: sphx-glr-single-img
 
@@ -938,7 +943,7 @@ We also compute the confidence interval of the specified level.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 340-350
+.. GENERATED FROM PYTHON SOURCE LINES 345-355
 
 .. code-block:: default
 
@@ -956,7 +961,7 @@ We also compute the confidence interval of the specified level.
 
 
 .. image-sg:: /auto_example/images/sphx_glr_plot_eclm_017.png
-   :alt: , PTS(0|7), PTS(1|7) - best model : Beta, PTS(2|7) - best model : Beta, PTS(3|7) - best model : LogNormal, PTS(4|7) - best model : LogNormal, PTS(5|7) - best model : LogNormal
+   :alt: , PTS(0|7), PTS(1|7) - best model : LogNormal, PTS(2|7) - best model : LogNormal, PTS(3|7) - best model : Beta, PTS(4|7) - best model : Beta, PTS(5|7) - best model : Beta
    :srcset: /auto_example/images/sphx_glr_plot_eclm_017.png
    :class: sphx-glr-single-img
 
@@ -964,7 +969,7 @@ We also compute the confidence interval of the specified level.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 351-360
+.. GENERATED FROM PYTHON SOURCE LINES 356-365
 
 Analyse the minimal multiplicity which probability is greater than a given threshold
 ====================================================================================
@@ -976,7 +981,7 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
    k_{max} = \arg\max \{k| \mbox{PTS}(k|n) \geq p \}
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 362-365
+.. GENERATED FROM PYTHON SOURCE LINES 367-370
 
 .. code-block:: default
 
@@ -990,7 +995,7 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 366-371
+.. GENERATED FROM PYTHON SOURCE LINES 371-376
 
 .. code-block:: default
 
@@ -1012,13 +1017,15 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 372-376
+.. GENERATED FROM PYTHON SOURCE LINES 377-383
 
 .. code-block:: default
 
     fileNameSampleParam = 'sampleParamFromMankamo_{}.csv'.format(Nbootstrap)
     fileNameSampleKmax = 'sampleKmaxFromMankamo_{}_{}.csv'.format(Nbootstrap, nameSeuil)
-    gKmax = myECLM.computeAnalyseKMaxSample(p, fileNameSampleParam, fileNameSampleKmax)
+    # We use the parallalisation
+    parallel = True
+    gKmax = myECLM.computeAnalyseKMaxSample(p, fileNameSampleParam, fileNameSampleKmax, blocksize, parallel)
 
 
 
@@ -1028,12 +1035,12 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
  .. code-block:: none
 
-    Intervalle de confiance de niveau 90%: [ 5.0 ,  5.0 ]
+    Confidence interval of level 90%: [ 4.0 ,  5.0 ]
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 377-380
+.. GENERATED FROM PYTHON SOURCE LINES 384-387
 
 .. code-block:: default
 
@@ -1055,7 +1062,7 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  19.058 seconds)
+   **Total running time of the script:** ( 1 minutes  28.919 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_eclm.py:
