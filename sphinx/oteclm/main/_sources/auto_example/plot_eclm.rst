@@ -1168,7 +1168,7 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  23.109 seconds)
+   **Total running time of the script:** (1 minutes 44.684 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_eclm.py:
