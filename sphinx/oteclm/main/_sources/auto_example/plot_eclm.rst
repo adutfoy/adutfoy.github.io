@@ -223,7 +223,7 @@ Function to deactivate grid in GridLayout to make matplotlib happy
 
  .. code-block:: none
 
-    /usr/share/miniconda3/envs/test/lib/python3.11/site-packages/openturns/viewer.py:532: UserWarning: No contour levels were found within the data range.
+    /usr/share/miniconda3/envs/test/lib/python3.11/site-packages/openturns/viewer.py:526: UserWarning: No contour levels were found within the data range.
       contourset = self._ax[0].contour(X, Y, Z, **contour_kw)
 
 
@@ -1064,7 +1064,7 @@ We fix *p* and we get the minimal multiplicity :math:`k_{max}` such that :
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (1 minutes 23.513 seconds)
+   **Total running time of the script:** (1 minutes 21.017 seconds)
 
 
 .. _sphx_glr_download_auto_example_plot_eclm.py:
